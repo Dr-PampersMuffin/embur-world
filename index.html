@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Embur — The world's first creator super-platform. Social video, AI creation, live monetization, and verified news in one app.">
+<meta property="og:title" content="Embur — Create. Connect. Earn.">
+<meta property="og:description" content="The platform that ends the era of switching apps.">
+<title>Embur — Create. Connect. Earn.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#060C0A;
+  --teal:#1DB89A;
+  --teal-b:#26C9B2;
+  --teal-d:#0A5C4E;
+  --tx:#D6EDEA;
+  --mu:#5A8880;
+  --dm:#1C3530;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--tx);
+  font-family:'DM Sans',sans-serif;
+  overflow-x:hidden;
+  min-height:100vh;
+}
+
+/* CANVAS */
+#bg-canvas{
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  pointer-events:none;z-index:0;
+}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:20px 40px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(6,12,10,0.7);
+  backdrop-filter:blur(20px);
+  border-bottom:0.5px solid rgba(29,184,154,0.15);
+}
+.nav-logo{
+  font-family:'Syne',sans-serif;
+  font-size:24px;font-weight:800;
+  color:#fff;letter-spacing:-1px;
+}
+.nav-logo span{color:var(--teal-b)}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{
+  color:var(--mu);font-size:14px;font-weight:500;
+  text-decoration:none;transition:color .2s;
+}
+.nav-links a:hover{color:var(--teal-b)}
+.nav-cta{
+  background:var(--teal);color:#000;
+  padding:10px 24px;border-radius:100px;
+  font-size:14px;font-weight:700;
+  text-decoration:none;transition:all .2s;
+  border:none;cursor:pointer;
+}
+.nav-cta:hover{background:var(--teal-b);transform:scale(1.03)}
+
+/* HERO */
+.hero{
+  position:relative;z-index:1;
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;
+  padding:120px 20px 80px;
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(29,184,154,0.1);
+  border:0.5px solid rgba(29,184,154,0.3);
+  padding:8px 18px;border-radius:100px;
+  font-size:12px;font-weight:600;color:var(--teal-b);
+  letter-spacing:1px;text-transform:uppercase;
+  margin-bottom:28px;
+  animation:fadeUp .8s ease both;
+}
+.hero-tag-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--teal-b);
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+.hero h1{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(42px,8vw,96px);
+  font-weight:800;line-height:1;
+  letter-spacing:-3px;color:#fff;
+  margin-bottom:12px;
+  animation:fadeUp .8s .1s ease both;
+}
+.hero h1 span{color:var(--teal-b)}
+.hero-sub{
+  font-size:clamp(16px,2.5vw,22px);
+  color:var(--mu);font-weight:300;
+  max-width:600px;line-height:1.6;
+  margin:0 auto 20px;
+  animation:fadeUp .8s .2s ease both;
+}
+.hero-tagline{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(13px,2vw,16px);
+  color:var(--teal);font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;
+  margin-bottom:48px;
+  animation:fadeUp .8s .3s ease both;
+}
+.hero-btns{
+  display:flex;gap:14px;justify-content:center;flex-wrap:wrap;
+  animation:fadeUp .8s .4s ease both;
+  margin-bottom:80px;
+}
+.btn-primary{
+  background:var(--teal);color:#000;
+  padding:16px 36px;border-radius:100px;
+  font-size:16px;font-weight:700;
+  text-decoration:none;transition:all .25s;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.btn-primary:hover{background:var(--teal-b);transform:translateY(-2px);box-shadow:0 20px 40px rgba(29,184,154,0.3)}
+.btn-ghost{
+  background:transparent;color:var(--tx);
+  padding:16px 36px;border-radius:100px;
+  font-size:16px;font-weight:500;
+  text-decoration:none;transition:all .25s;
+  border:0.5px solid rgba(29,184,154,0.3);
+}
+.btn-ghost:hover{border-color:var(--teal-b);color:var(--teal-b);transform:translateY(-2px)}
+
+/* STATS */
+.stats{
+  display:flex;gap:60px;justify-content:center;flex-wrap:wrap;
+  animation:fadeUp .8s .5s ease both;
+}
+.stat{text-align:center}
+.stat-num{
+  font-family:'Syne',sans-serif;
+  font-size:32px;font-weight:800;color:#fff;
+  letter-spacing:-1px;
+}
+.stat-label{font-size:12px;color:var(--mu);margin-top:2px;text-transform:uppercase;letter-spacing:.5px}
+
+/* FEATURES SECTION */
+section{position:relative;z-index:1;padding:100px 40px;max-width:1200px;margin:0 auto}
+.section-tag{
+  font-size:11px;font-weight:700;color:var(--teal);
+  text-transform:uppercase;letter-spacing:2px;
+  margin-bottom:16px;
+}
+.section-title{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(32px,5vw,56px);
+  font-weight:800;color:#fff;
+  letter-spacing:-2px;line-height:1.05;
+  margin-bottom:60px;
+}
+
+/* FEATURE GRID */
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:20px;
+}
+.feature-card{
+  background:rgba(29,184,154,0.04);
+  border:0.5px solid rgba(29,184,154,0.15);
+  border-radius:20px;padding:32px;
+  transition:all .3s;
+  position:relative;overflow:hidden;
+}
+.feature-card::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 0% 0%,rgba(29,184,154,0.08) 0%,transparent 60%);
+  opacity:0;transition:opacity .3s;
+}
+.feature-card:hover{
+  border-color:rgba(29,184,154,0.4);
+  transform:translateY(-4px);
+}
+.feature-card:hover::before{opacity:1}
+.feature-icon{
+  width:52px;height:52px;border-radius:14px;
+  background:rgba(29,184,154,0.12);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:20px;font-size:24px;
+}
+.feature-title{
+  font-family:'Syne',sans-serif;
+  font-size:20px;font-weight:700;color:#fff;
+  margin-bottom:10px;
+}
+.feature-desc{font-size:14px;color:var(--mu);line-height:1.7}
+
+/* AI SECTION */
+.ai-section{
+  position:relative;z-index:1;
+  padding:100px 40px;
+  background:rgba(29,184,154,0.03);
+  border-top:0.5px solid rgba(29,184,154,0.1);
+  border-bottom:0.5px solid rgba(29,184,154,0.1);
+}
+.ai-inner{max-width:1200px;margin:0 auto}
+.ai-tools{
+  display:flex;flex-wrap:wrap;gap:10px;margin-top:40px;
+}
+.ai-tool{
+  background:rgba(29,184,154,0.08);
+  border:0.5px solid rgba(29,184,154,0.2);
+  border-radius:100px;
+  padding:10px 20px;
+  font-size:13px;color:var(--tx);font-weight:500;
+  transition:all .2s;
+}
+.ai-tool:hover{background:rgba(29,184,154,0.15);border-color:var(--teal-b);color:var(--teal-b)}
+
+/* CTA SECTION */
+.cta-section{
+  position:relative;z-index:1;
+  padding:120px 40px;text-align:center;
+}
+.cta-inner{max-width:700px;margin:0 auto}
+.cta-title{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(36px,6vw,72px);
+  font-weight:800;color:#fff;
+  letter-spacing:-2px;line-height:1;
+  margin-bottom:20px;
+}
+.cta-sub{
+  font-size:18px;color:var(--mu);
+  margin-bottom:48px;line-height:1.6;
+}
+
+/* FOOTER */
+footer{
+  position:relative;z-index:1;
+  padding:40px;
+  border-top:0.5px solid rgba(29,184,154,0.1);
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:20px;
+}
+.footer-logo{
+  font-family:'Syne',sans-serif;
+  font-size:18px;font-weight:800;color:#fff;
+}
+.footer-logo span{color:var(--teal-b)}
+.footer-links{display:flex;gap:24px}
+.footer-links a{
+  color:var(--mu);font-size:13px;
+  text-decoration:none;transition:color .2s;
+}
+.footer-links a:hover{color:var(--teal-b)}
+.footer-copy{color:var(--dm);font-size:12px}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(24px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  nav{padding:16px 20px}
+  .nav-links{display:none}
+  section{padding:60px 20px}
+  .stats{gap:30px}
+  footer{flex-direction:column;text-align:center}
+  .footer-links{justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+
+<nav>
+  <div class="nav-logo">EMBUR <span>•</span></div>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#ai">AI Studio</a>
+    <a href="credits.html">Credits</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
+  <a href="credits.html" class="nav-cta">Get Credits</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-tag">
+    <span class="hero-tag-dot"></span>
+    Now Available on iOS
+  </div>
+  <h1>Create.<br><span>Connect.</span><br>Earn.</h1>
+  <p class="hero-sub">The platform that ends the era of switching apps. Social video, AI creation, live monetization, and verified news — all in one.</p>
+  <p class="hero-tagline">Embur — The Creator Super-Platform</p>
+  <div class="hero-btns">
+    <a href="https://apps.apple.com/app/embur" class="btn-primary">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      Download for iOS
+    </a>
+    <a href="credits.html" class="btn-ghost">Buy AI Credits</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="stat-num">15+</div><div class="stat-label">AI Tools</div></div>
+    <div class="stat"><div class="stat-num">50</div><div class="stat-label">Live Call Capacity</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Creator Focused</div></div>
+  </div>
+</section>
+
+<section id="features" style="position:relative;z-index:1;padding:100px 40px;max-width:1200px;margin:0 auto">
+  <div class="section-tag">Everything in One</div>
+  <div class="section-title">Built for the<br>creator generation.</div>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="feature-icon">🎬</div>
+      <div class="feature-title">Director's Cut Reels</div>
+      <div class="feature-desc">15 cinematic color grades, 16 lens effects, AI narration studio, variable speed, draggable title cards. Professional cinema in your pocket.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📺</div>
+      <div class="feature-title">Mini Series Creator</div>
+      <div class="feature-desc">The only social platform where you can produce your own series. Season numbers, episode covers, synopsis, and full release control.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📰</div>
+      <div class="feature-title">Emburs — Verified News</div>
+      <div class="feature-desc">Two feeds in one. AI-powered fact-checking, source validation, misinformation removal, and real-time news translation by Nova AI.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📞</div>
+      <div class="feature-title">Next-Gen Calls</div>
+      <div class="feature-desc">Up to 50 simultaneous participants. Live AI voice modulation and real-time deepfake face filters applied during calls based on your prompts.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">💰</div>
+      <div class="feature-title">Creator Economy</div>
+      <div class="feature-desc">Virtual gifts, reel view rewards, tip jar, and your own in-profile shop. Withdraw real earnings directly to PayPal. The economy is the foundation.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🤖</div>
+      <div class="feature-title">Nova AI Companion</div>
+      <div class="feature-desc">Your floating AI lives inside every screen in Emburs. Fact-check news, translate articles, get summaries, and analyze sources without leaving what you're doing.</div>
+    </div>
+  </div>
+</section>
+
+<div class="ai-section" id="ai">
+  <div class="ai-inner">
+    <div class="section-tag">AI Studio</div>
+    <div class="section-title">15+ AI tools.<br>One tap away.</div>
+    <div class="ai-tools">
+      <span class="ai-tool">Text to Image</span>
+      <span class="ai-tool">AI Voice Design</span>
+      <span class="ai-tool">Background Removal</span>
+      <span class="ai-tool">Style Transfer</span>
+      <span class="ai-tool">Caption Generator</span>
+      <span class="ai-tool">Music Generator</span>
+      <span class="ai-tool">Voice Cloning</span>
+      <span class="ai-tool">Photo Animator</span>
+      <span class="ai-tool">Video Enhancer</span>
+      <span class="ai-tool">Live Face Filters</span>
+      <span class="ai-tool">Poem Generator</span>
+      <span class="ai-tool">AI Translator</span>
+      <span class="ai-tool">Deepfake Studio</span>
+      <span class="ai-tool">Object Removal</span>
+      <span class="ai-tool">AI Upscaler</span>
+      <span class="ai-tool">Text to Video</span>
+      <span class="ai-tool">Sound Effects</span>
+    </div>
+  </div>
+</div>
+
+<div class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-title">The operating system for the modern creator.</div>
+    <p class="cta-sub">Every post is a production. Every voice is designed. Every call is transformed. Every dollar earned is real.</p>
+    <div class="hero-btns">
+      <a href="https://apps.apple.com/app/embur" class="btn-primary">Download Embur Free</a>
+      <a href="credits.html" class="btn-ghost">Buy AI Credits</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">EMBUR <span>•</span></div>
+  <div class="footer-links">
+    <a href="credits.html">Credits</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="mailto:legal@embur.world">Legal</a>
+    <a href="mailto:support@embur.world">Support</a>
+  </div>
+  <div class="footer-copy">© 2025 Embur Inc. All rights reserved.</div>
+</footer>
+
+<script>
+const canvas = document.getElementById('bg-canvas');
+const ctx = canvas.getContext('2d');
+
+// Bubble colors from all 3 create screens
+const COLORS = [
+  '#30bdbb','#c2a70e','#7B2FBE', // create post, reel, story
+  '#E74C3C','#3498DB','#9B59B6', // credits packages
+  '#F39C12','#1ABC9C','#E67E22', // AI features
+  '#673AB7','#E91E63','#FF5722',
+  '#2196F3','#4CAF50','#FF1744',
+  '#FFC107','#00BCD4','#795548',
+];
+
+let bubbles = [];
+let W, H;
+
+function resize(){
+  W = canvas.width = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+for(let i=0;i<28;i++){
+  bubbles.push({
+    x: Math.random()*window.innerWidth,
+    y: Math.random()*window.innerHeight,
+    r: 40 + Math.random()*120,
+    color: COLORS[Math.floor(Math.random()*COLORS.length)],
+    vx: (Math.random()-.5)*0.3,
+    vy: (Math.random()-.5)*0.3,
+    alpha: 0.04 + Math.random()*0.08,
+  });
+}
+
+function draw(){
+  ctx.clearRect(0,0,W,H);
+  bubbles.forEach(b=>{
+    ctx.beginPath();
+    ctx.arc(b.x,b.y,b.r,0,Math.PI*2);
+    ctx.fillStyle = b.color + Math.floor(b.alpha*255).toString(16).padStart(2,'0');
+    ctx.fill();
+    b.x += b.vx;
+    b.y += b.vy;
+    if(b.x<-b.r) b.x=W+b.r;
+    if(b.x>W+b.r) b.x=-b.r;
+    if(b.y<-b.r) b.y=H+b.r;
+    if(b.y>H+b.r) b.y=-b.r;
+  });
+  requestAnimationFrame(draw);
+}
+draw();
+
+// Scroll reveal
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.style.opacity='1';
+      e.target.style.transform='translateY(0)';
+    }
+  });
+},{threshold:0.1});
+document.querySelectorAll('.feature-card,.ai-tool').forEach(el=>{
+  el.style.opacity='0';
+  el.style.transform='translateY(20px)';
+  el.style.transition='opacity .6s ease, transform .6s ease';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
