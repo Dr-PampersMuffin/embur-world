@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — AIDD | Artificial Intelligence Disease Diagnose</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #020B18;
+      color: #E8F4FD;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.8;
+    }
+    header {
+      background: #071428;
+      border-bottom: 1px solid #0D2040;
+      padding: 32px 40px;
+      text-align: center;
+    }
+    .logo {
+      font-size: 36px;
+      font-weight: 900;
+      color: #00D4FF;
+      letter-spacing: 8px;
+      text-shadow: 0 0 20px #00D4FF60;
+    }
+    .tagline {
+      font-size: 13px;
+      color: #7BA7C4;
+      letter-spacing: 2px;
+      margin-top: 6px;
+    }
+    .badge-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .badge {
+      background: #0D2040;
+      border: 1px solid #00D4FF30;
+      color: #00D4FF;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 20px;
+      letter-spacing: 1px;
+    }
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 60px 40px;
+    }
+    .meta {
+      background: #071428;
+      border-radius: 12px;
+      border: 1px solid #0D2040;
+      padding: 20px 24px;
+      margin-bottom: 48px;
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .meta-item { font-size: 13px; color: #7BA7C4; }
+    .meta-item strong { color: #E8F4FD; display: block; margin-bottom: 2px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+    .toc {
+      background: #071428;
+      border-radius: 16px;
+      border: 1px solid #0D2040;
+      padding: 28px 32px;
+      margin-bottom: 48px;
+    }
+    .toc h2 { font-size: 13px; color: #00D4FF; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; }
+    .toc ol { padding-left: 20px; }
+    .toc li { margin-bottom: 8px; }
+    .toc a { color: #7BA7C4; text-decoration: none; font-size: 14px; }
+    .toc a:hover { color: #00D4FF; }
+    section { margin-bottom: 56px; }
+    h2.section-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #00D4FF;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #0D2040;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    h2.section-title .num {
+      background: #00D4FF;
+      color: #000;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #E8F4FD;
+      margin: 24px 0 10px;
+    }
+    p { color: #B0C4D8; font-size: 15px; margin-bottom: 14px; }
+    ul, ol { padding-left: 22px; margin-bottom: 14px; }
+    li { color: #B0C4D8; font-size: 15px; margin-bottom: 8px; }
+    .highlight-box {
+      background: #071428;
+      border-left: 3px solid #00D4FF;
+      border-radius: 0 10px 10px 0;
+      padding: 18px 22px;
+      margin: 20px 0;
+    }
+    .highlight-box.green { border-left-color: #39FF14; }
+    .highlight-box.orange { border-left-color: #FF6B35; }
+    .highlight-box.red { border-left-color: #FF003C; }
+    .highlight-box.gold { border-left-color: #FFD700; }
+    .highlight-box p { margin: 0; font-size: 14px; }
+    .highlight-box strong { color: #E8F4FD; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: #071428;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    th {
+      background: #0D2040;
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 11px;
+      color: #7BA7C4;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    td {
+      padding: 12px 16px;
+      font-size: 14px;
+      color: #B0C4D8;
+      border-bottom: 1px solid #0D2040;
+    }
+    tr:last-child td { border-bottom: none; }
+    .rights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin: 20px 0;
+    }
+    .right-card {
+      background: #071428;
+      border: 1px solid #0D2040;
+      border-radius: 12px;
+      padding: 18px;
+    }
+    .right-card .icon { font-size: 22px; margin-bottom: 8px; }
+    .right-card h4 { font-size: 13px; color: #00D4FF; font-weight: 700; margin-bottom: 6px; }
+    .right-card p { font-size: 12px; color: #7BA7C4; margin: 0; }
+    footer {
+      background: #071428;
+      border-top: 1px solid #0D2040;
+      padding: 40px;
+      text-align: center;
+    }
+    footer .footer-logo { font-size: 24px; font-weight: 900; color: #00D4FF; letter-spacing: 6px; margin-bottom: 8px; }
+    footer p { color: #3A6080; font-size: 12px; margin: 0; }
+    footer a { color: #7BA7C4; text-decoration: none; }
+    .contact-box {
+      background: #071428;
+      border: 1px solid #00D4FF30;
+      border-radius: 14px;
+      padding: 28px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .contact-box h3 { color: #00D4FF; margin-bottom: 12px; }
+    .contact-box p { font-size: 14px; color: #7BA7C4; }
+    .contact-box a { color: #00D4FF; font-weight: 700; }
+    @media (max-width: 600px) {
+      .container { padding: 32px 20px; }
+      header { padding: 24px 20px; }
+      .meta { gap: 16px; }
+      footer { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">AIDD</div>
+  <div class="tagline">ARTIFICIAL INTELLIGENCE DISEASE DIAGNOSE</div>
+  <div class="tagline" style="margin-top:4px;font-size:12px;">Heal the World — Free, Forever 🌍</div>
+  <div class="badge-row">
+    <span class="badge">GDPR COMPLIANT</span>
+    <span class="badge">HIPAA ALIGNED</span>
+    <span class="badge">PDPL KUWAIT</span>
+    <span class="badge">COPPA SAFE</span>
+    <span class="badge">AES-256 ENCRYPTED</span>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Meta -->
+  <div class="meta">
+    <div class="meta-item"><strong>Document</strong>Privacy Policy</div>
+    <div class="meta-item"><strong>Version</strong>2.0</div>
+    <div class="meta-item"><strong>Effective Date</strong>April 11, 2026</div>
+    <div class="meta-item"><strong>Last Updated</strong>April 11, 2026</div>
+    <div class="meta-item"><strong>Jurisdiction</strong>Global (Kuwait HQ)</div>
+  </div>
+
+  <!-- Opening Statement -->
+  <div class="highlight-box green">
+    <p><strong>🌍 Our Promise:</strong> AIDD is a free, educational clinical decision support tool open to everyone on Earth. We are committed to the highest standards of data privacy, security, and transparency. We will never sell your personal data, never show you advertisements, and never charge you for access. This privacy policy explains exactly what data we collect, why we collect it, how we protect it, and how you control it.</p>
+  </div>
+
+  <!-- Table of Contents -->
+  <div class="toc">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#who">Who We Are</a></li>
+      <li><a href="#scope">Who This Policy Covers — Age & Eligibility</a></li>
+      <li><a href="#what">What Data We Collect & Why</a></li>
+      <li><a href="#images">How We Handle Your Images & Photos</a></li>
+      <li><a href="#camera">Camera & Media Library Access</a></li>
+      <li><a href="#ai">How Our AI Processes Your Information</a></li>
+      <li><a href="#medical">Medical Disclaimer & Educational Use</a></li>
+      <li><a href="#storage">Data Storage & Security</a></li>
+      <li><a href="#sharing">Who We Share Data With</a></li>
+      <li><a href="#retention">How Long We Keep Your Data</a></li>
+      <li><a href="#rights">Your Rights & Choices</a></li>
+      <li><a href="#children">Children's Privacy (Under 18)</a></li>
+      <li><a href="#international">International Data Transfers</a></li>
+      <li><a href="#cookies">Cookies & Tracking</a></li>
+      <li><a href="#changes">Changes to This Policy</a></li>
+      <li><a href="#contact">Contact & Data Protection Officer</a></li>
+    </ol>
+  </div>
+
+  <!-- Section 1 -->
+  <section id="who">
+    <h2 class="section-title"><span class="num">1</span>Who We Are</h2>
+    <p>AIDD (Artificial Intelligence Disease Diagnose) is a free universal diagnostic application developed and operated by its founding team, headquartered in Kuwait. AIDD is available globally on iOS and Android platforms.</p>
+    <p>AIDD is a clinical decision support tool — an educational application that uses artificial intelligence to analyze user-submitted images, symptoms, and descriptions to provide informational health guidance across four domains: <strong>Human health conditions</strong>, <strong>Insect identification</strong>, <strong>Plant health & disease</strong>, and <strong>Animal & pet health</strong>.</p>
+    <p>For privacy inquiries, data requests, or compliance matters, contact us at:</p>
+    <div class="contact-box">
+      <h3>Data Controller</h3>
+      <p>AIDD — Artificial Intelligence Disease Diagnose<br>
+      📧 <a href="mailto:privacy@embur.world">privacy@embur.world</a><br>
+      🌐 <a href="https://embur.world">embur.world</a><br>
+      📍 Kuwait</p>
+    </div>
+  </section>
+
+  <!-- Section 2 -->
+  <section id="scope">
+    <h2 class="section-title"><span class="num">2</span>Who This Policy Covers — Age & Eligibility</h2>
+
+    <h3>Who Can Use AIDD</h3>
+    <p>AIDD is designed for use by individuals of <strong>all ages worldwide</strong>, including families, caregivers, medical students, healthcare professionals, farmers, pet owners, nature enthusiasts, and the general public. Our mission is to democratize access to health intelligence for every person on Earth — free of charge.</p>
+
+    <h3>Age Requirements</h3>
+    <div class="highlight-box orange">
+      <p><strong>⚠️ Users Under 18:</strong> AIDD may be used by minors with the direct supervision and consent of a parent or legal guardian. By registering an account or submitting any data on behalf of a minor, the parent or guardian confirms they have reviewed and accepted this Privacy Policy and consented to the minor's use of the app.</p>
+    </div>
+
+    <table>
+      <tr>
+        <th>Age Group</th>
+        <th>Status</th>
+        <th>Requirement</th>
+      </tr>
+      <tr>
+        <td>Under 13 (COPPA regions)</td>
+        <td>Restricted</td>
+        <td>Must have verifiable parental consent. Parent must register account.</td>
+      </tr>
+      <tr>
+        <td>13–17</td>
+        <td>Permitted with supervision</td>
+        <td>Parent or guardian must review and accept this policy on their behalf.</td>
+      </tr>
+      <tr>
+        <td>18 and above</td>
+        <td>Full access</td>
+        <td>Standard registration and consent apply.</td>
+      </tr>
+    </table>
+
+    <p>AIDD does not knowingly collect personal data from children under 13 without verifiable parental consent. If we become aware that a child under 13 has provided personal data without parental consent, we will delete that data immediately. If you believe a child under 13 has used our app without parental consent, please contact us at <a href="mailto:privacy@embur.world" style="color:#00D4FF;">privacy@embur.world</a>.</p>
+  </section>
+
+  <!-- Section 3 -->
+  <section id="what">
+    <h2 class="section-title"><span class="num">3</span>What Data We Collect & Why</h2>
+
+    <h3>Account Information</h3>
+    <p>When you register, we collect:</p>
+    <ul>
+      <li><strong>Full name</strong> — to personalise your experience</li>
+      <li><strong>Email address</strong> — for account authentication, password resets, and service communications</li>
+      <li><strong>Password</strong> — stored as a one-way bcrypt hash (we cannot read your password)</li>
+      <li><strong>Date of birth</strong> — to apply age-appropriate safety guidelines in medical analysis</li>
+      <li><strong>Biological sex</strong> — to provide sex-specific diagnostic context (optional)</li>
+      <li><strong>Country & city</strong> — for regional disease pattern analysis and aggregate statistics</li>
+      <li><strong>Occupation</strong> — optional, for contextual reporting</li>
+      <li><strong>Phone number</strong> — optional, not shared with third parties</li>
+    </ul>
+
+    <h3>Health Profile (Optional)</h3>
+    <p>If you choose to complete your health profile, we may also collect:</p>
+    <ul>
+      <li>Blood type, height, weight</li>
+      <li>Known medical conditions</li>
+      <li>Current medications</li>
+      <li>Known allergies</li>
+      <li>Smoking status and alcohol use</li>
+      <li>Family medical history</li>
+    </ul>
+    <div class="highlight-box">
+      <p><strong>ℹ️ This health data is used exclusively</strong> to provide you with more contextually accurate diagnostic suggestions. It is never used for advertising, profiling for commercial purposes, or shared with any third party without your explicit consent.</p>
+    </div>
+
+    <h3>Diagnostic Session Data</h3>
+    <p>Each time you run an analysis, we record:</p>
+    <ul>
+      <li>Subject type (human, insect, plant, animal)</li>
+      <li>Your symptom description or text input</li>
+      <li>Severity rating and duration</li>
+      <li>Body region (for human analyses)</li>
+      <li>Uploaded media (images/videos) — stored securely on Cloudinary</li>
+      <li>The AI-generated analysis report</li>
+      <li>Confidence score, severity assessment, and emergency flags</li>
+      <li>Processing timestamp</li>
+    </ul>
+
+    <h3>Technical & Device Data</h3>
+    <p>We automatically collect limited technical information:</p>
+    <ul>
+      <li>IP address (used for security and geographic analysis only, not for tracking)</li>
+      <li>Device type and operating system</li>
+      <li>App version</li>
+      <li>Session timestamps</li>
+    </ul>
+
+    <h3>Consent Records</h3>
+    <p>We record your consent choices (terms acceptance, data use consent, camera consent) along with the date and IP address at the time of consent. This is required for regulatory compliance.</p>
+  </section>
+
+  <!-- Section 4 -->
+  <section id="images">
+    <h2 class="section-title"><span class="num">4</span>How We Handle Your Images & Photos</h2>
+
+    <div class="highlight-box green">
+      <p><strong>🛡️ Core Commitment on Images:</strong> All images submitted to AIDD are used exclusively for generating your diagnostic report. We do not sell, license, or commercially exploit your images. All images are stored with AES-256 encryption.</p>
+    </div>
+
+    <h3>What Images Are Used For</h3>
+    <ul>
+      <li><strong>Primary purpose:</strong> Sent to our AI vision engine (GPT-4o) for visual analysis to generate your report</li>
+      <li><strong>Storage:</strong> Stored securely on Cloudinary servers under your account so you can access your diagnosis history</li>
+      <li><strong>Research (only with your explicit consent):</strong> Anonymized images may be used to improve AIDD's diagnostic accuracy — only if you ticked the research consent checkbox at registration</li>
+    </ul>
+
+    <h3>Content Standards — No Nudity Policy</h3>
+    <div class="highlight-box red">
+      <p><strong>🚫 Strictly Prohibited Content:</strong> AIDD is a medical educational tool. Uploading sexually explicit content, nudity for non-medical purposes, content that sexualizes minors in any form, or any content intended to harm is strictly prohibited and grounds for immediate account termination and report to relevant authorities.</p>
+    </div>
+    <p>AIDD is designed for legitimate medical, educational, and scientific purposes only. Acceptable image content includes:</p>
+    <ul>
+      <li>Skin conditions, rashes, wounds (covered body parts only, except clinically relevant areas)</li>
+      <li>Eye conditions, oral health concerns</li>
+      <li>Insect specimens for identification</li>
+      <li>Plant leaves, stems, roots showing disease</li>
+      <li>Pet and animal health concerns</li>
+    </ul>
+    <p>Our AI system is configured to flag and reject inappropriate content. Repeated violations will result in permanent account suspension.</p>
+
+    <h3>Anonymization of Research Images</h3>
+    <p>If you consent to research use, your images are processed through an anonymization pipeline before being used in any research or model improvement context. This process removes or obscures any identifying facial features, personal items, or location data embedded in image metadata (EXIF data is stripped upon upload).</p>
+  </section>
+
+  <!-- Section 5 -->
+  <section id="camera">
+    <h2 class="section-title"><span class="num">5</span>Camera & Media Library Access</h2>
+
+    <h3>Camera Permission</h3>
+    <p>AIDD requests access to your device camera for the sole purpose of capturing images or videos for medical analysis. We do not access your camera in the background, do not record without your knowledge, and do not transmit any camera feed without an explicit capture action by you.</p>
+
+    <h3>Photo Library Permission</h3>
+    <p>AIDD requests access to your photo library to allow you to select existing images for analysis. We access only the specific images you select — we do not scan, index, or upload your entire photo library.</p>
+
+    <h3>Microphone Permission</h3>
+    <p>Microphone access is requested only when recording video for analysis. Audio from videos is not analyzed, stored, or transmitted unless required for your specific diagnostic session.</p>
+
+    <h3>Face ID / Biometric Authentication</h3>
+    <p>AIDD uses your device's built-in Face ID or Touch ID for optional login convenience. Biometric data is processed entirely on your device by Apple's Secure Enclave — AIDD never receives, stores, or transmits your biometric data. We only receive a pass/fail authentication result from your device.</p>
+
+    <h3>How to Revoke Permissions</h3>
+    <p>You can revoke any permission at any time through your device settings:</p>
+    <p><strong>iOS:</strong> Settings → Privacy & Security → [Camera / Photos / Face ID]</p>
+    <p>Revoking permissions will not delete your existing data but will prevent certain app features from functioning.</p>
+  </section>
+
+  <!-- Section 6 -->
+  <section id="ai">
+    <h2 class="section-title"><span class="num">6</span>How Our AI Processes Your Information</h2>
+
+    <h3>Our AI Technology Stack</h3>
+    <p>AIDD uses a multi-engine AI pipeline to generate diagnostic reports:</p>
+
+    <table>
+      <tr>
+        <th>Engine</th>
+        <th>Provider</th>
+        <th>Purpose</th>
+        <th>Data Sent</th>
+      </tr>
+      <tr>
+        <td>GPT-4o Vision</td>
+        <td>OpenAI</td>
+        <td>Visual image analysis</td>
+        <td>Image URL only (no personal data)</td>
+      </tr>
+      <tr>
+        <td>PubMed API</td>
+        <td>US National Library of Medicine</td>
+        <td>Medical literature search</td>
+        <td>Anonymized symptom keywords</td>
+      </tr>
+      <tr>
+        <td>Kindwise insect.id</td>
+        <td>Kindwise</td>
+        <td>Insect species identification</td>
+        <td>Insect image (base64, no personal data)</td>
+      </tr>
+      <tr>
+        <td>Kindwise plant.id</td>
+        <td>Kindwise</td>
+        <td>Plant disease identification</td>
+        <td>Plant image (base64, no personal data)</td>
+      </tr>
+      <tr>
+        <td>Pinecone Vector DB</td>
+        <td>Pinecone</td>
+        <td>Medical knowledge retrieval</td>
+        <td>Anonymized symptom embeddings</td>
+      </tr>
+    </table>
+
+    <h3>What AI Does NOT Do</h3>
+    <ul>
+      <li>Our AI does not make definitive medical diagnoses</li>
+      <li>Our AI does not replace a licensed healthcare professional</li>
+      <li>Our AI does not have access to your full personal profile — only anonymized symptom data is sent to AI engines</li>
+      <li>Your name, email, and account details are never sent to any AI engine</li>
+    </ul>
+
+    <h3>AI Safety Guardrails</h3>
+    <p>AIDD implements multiple safety layers on every analysis:</p>
+    <ul>
+      <li><strong>Emergency detection:</strong> If our AI identifies symptoms matching emergency conditions (chest pain, stroke symptoms, severe bleeding, etc.), the report immediately escalates with emergency services contact information</li>
+      <li><strong>Confidence capping:</strong> AI confidence scores are capped based on input quality — photo-only analyses are capped at 70% confidence maximum</li>
+      <li><strong>Mandatory disclaimer:</strong> Every report includes a mandatory medical disclaimer regardless of severity</li>
+      <li><strong>Pediatric safeguard:</strong> For users under 18, all reports recommend immediate in-person medical evaluation</li>
+    </ul>
+  </section>
+
+  <!-- Section 7 -->
+  <section id="medical">
+    <h2 class="section-title"><span class="num">7</span>Medical Disclaimer & Educational Use</h2>
+
+    <div class="highlight-box red">
+      <p><strong>⚕️ IMPORTANT — READ CAREFULLY:</strong> AIDD is a clinical decision support tool for informational and educational purposes only. It does NOT constitute a medical diagnosis, medical advice, or a replacement for professional healthcare. AIDD analyses are not intended to diagnose, treat, cure, or prevent any disease or health condition.</p>
+    </div>
+
+    <h3>What AIDD Is</h3>
+    <ul>
+      <li>An educational AI-powered reference tool</li>
+      <li>A clinical decision support system</li>
+      <li>A platform for learning about potential health conditions</li>
+      <li>A tool to help users prepare informed questions for their healthcare provider</li>
+      <li>A scientific identification tool for insects, plants, and animals</li>
+    </ul>
+
+    <h3>What AIDD Is Not</h3>
+    <ul>
+      <li>A medical device regulated by the FDA, CE, or equivalent authority</li>
+      <li>A replacement for professional medical examination</li>
+      <li>A prescription or treatment platform</li>
+      <li>An emergency medical service</li>
+    </ul>
+
+    <h3>In Case of Medical Emergency</h3>
+    <div class="highlight-box red">
+      <p><strong>🚨 If you are experiencing a medical emergency, stop using this app and call your local emergency services immediately:</strong><br>
+      USA/Canada: 911 &nbsp;|&nbsp; UK: 999 &nbsp;|&nbsp; EU: 112 &nbsp;|&nbsp; Kuwait: 112 &nbsp;|&nbsp; Australia: 000 &nbsp;|&nbsp; All others: your local emergency number</p>
+    </div>
+
+    <h3>Regulatory Status</h3>
+    <p>AIDD is not currently registered as a medical device with the FDA (United States), MHRA (United Kingdom), or any other regulatory authority. It operates as an educational software application. Users in regulated jurisdictions should be aware of this status.</p>
+
+    <h3>Liability Limitation</h3>
+    <p>AIDD and its operators accept no liability for medical decisions made based on information provided by our application. Always consult a qualified, licensed healthcare professional before making any medical decisions. The information provided by AIDD is offered in good faith but without warranty of accuracy, completeness, or fitness for a particular purpose.</p>
+  </section>
+
+  <!-- Section 8 -->
+  <section id="storage">
+    <h2 class="section-title"><span class="num">8</span>Data Storage & Security</h2>
+
+    <h3>Where Your Data Is Stored</h3>
+    <table>
+      <tr>
+        <th>Data Type</th>
+        <th>Storage Provider</th>
+        <th>Location</th>
+        <th>Encryption</th>
+      </tr>
+      <tr>
+        <td>Account & health data</td>
+        <td>Supabase (PostgreSQL)</td>
+        <td>AWS ap-northeast-1 (Japan)</td>
+        <td>AES-256 at rest, TLS 1.3 in transit</td>
+      </tr>
+      <tr>
+        <td>Images & videos</td>
+        <td>Cloudinary</td>
+        <td>Distributed global CDN</td>
+        <td>AES-256 at rest, HTTPS in transit</td>
+      </tr>
+      <tr>
+        <td>Medical knowledge vectors</td>
+        <td>Pinecone</td>
+        <td>AWS us-east-1</td>
+        <td>Encrypted at rest and in transit</td>
+      </tr>
+      <tr>
+        <td>App backend</td>
+        <td>Railway</td>
+        <td>US West</td>
+        <td>TLS 1.3, HTTPS enforced</td>
+      </tr>
+    </table>
+
+    <h3>Security Measures</h3>
+    <ul>
+      <li><strong>Encryption in transit:</strong> All data transmitted between your device and our servers uses TLS 1.3</li>
+      <li><strong>Encryption at rest:</strong> All stored data is encrypted using AES-256 industry-standard encryption</li>
+      <li><strong>Password security:</strong> Passwords are hashed using bcrypt with salt (12 rounds) — we cannot read your password</li>
+      <li><strong>Authentication:</strong> JWT tokens with 30-day expiry; biometric authentication via device Secure Enclave</li>
+      <li><strong>Access control:</strong> Role-based access; staff access to user data is strictly limited and logged</li>
+      <li><strong>Audit logging:</strong> All access to user data is logged with timestamps and IP addresses</li>
+      <li><strong>EXIF stripping:</strong> Location metadata is removed from all uploaded images upon receipt</li>
+      <li><strong>No third-party analytics:</strong> We do not use Google Analytics, Facebook Pixel, or any commercial tracking tools</li>
+    </ul>
+
+    <h3>Data Breach Notification</h3>
+    <p>In the unlikely event of a data breach affecting your personal data, we will notify you and relevant regulatory authorities within 72 hours of becoming aware of the breach, as required by GDPR Article 33. Notification will be sent to your registered email address.</p>
+  </section>
+
+  <!-- Section 9 -->
+  <section id="sharing">
+    <h2 class="section-title"><span class="num">9</span>Who We Share Data With</h2>
+
+    <div class="highlight-box green">
+      <p><strong>✅ We do not sell your personal data. Ever.</strong> We do not share your personally identifiable information with advertisers, data brokers, or commercial partners for marketing purposes.</p>
+    </div>
+
+    <h3>Service Providers (Data Processors)</h3>
+    <p>We share limited, necessary data with trusted service providers who process it strictly on our behalf:</p>
+
+    <table>
+      <tr>
+        <th>Provider</th>
+        <th>Purpose</th>
+        <th>Data Shared</th>
+        <th>Privacy Policy</th>
+      </tr>
+      <tr>
+        <td>Supabase</td>
+        <td>Database hosting</td>
+        <td>All account and session data (encrypted)</td>
+        <td>supabase.com/privacy</td>
+      </tr>
+      <tr>
+        <td>Cloudinary</td>
+        <td>Media storage and delivery</td>
+        <td>Uploaded images and videos</td>
+        <td>cloudinary.com/privacy</td>
+      </tr>
+      <tr>
+        <td>OpenAI</td>
+        <td>AI vision analysis</td>
+        <td>Image URLs only (no personal identifiers)</td>
+        <td>openai.com/privacy</td>
+      </tr>
+      <tr>
+        <td>Railway</td>
+        <td>Application hosting</td>
+        <td>Application logs (IP addresses, timestamps)</td>
+        <td>railway.app/privacy</td>
+      </tr>
+      <tr>
+        <td>Resend</td>
+        <td>Transactional email</td>
+        <td>Email address only (for password resets)</td>
+        <td>resend.com/privacy</td>
+      </tr>
+      <tr>
+        <td>Kindwise</td>
+        <td>Species identification</td>
+        <td>Anonymized insect/plant images</td>
+        <td>kindwise.com/privacy</td>
+      </tr>
+    </table>
+
+    <h3>Research & Public Health (Anonymized Only)</h3>
+    <p>With your explicit consent, <strong>fully anonymized and aggregated</strong> data (never individual data) may be shared with:</p>
+    <ul>
+      <li>Academic research institutions for public health research</li>
+      <li>Public health organizations (such as WHO, national health ministries)</li>
+      <li>Investors and partners in the form of aggregated statistics (e.g., "X% of users in Kuwait reported skin conditions")</li>
+    </ul>
+    <p>This anonymized data cannot be traced back to any individual user.</p>
+
+    <h3>Legal Requirements</h3>
+    <p>We may disclose your data when legally required to do so — for example, in response to a valid court order, law enforcement request, or to protect the safety of our users or the public. We will notify you of such requests where legally permitted to do so.</p>
+  </section>
+
+  <!-- Section 10 -->
+  <section id="retention">
+    <h2 class="section-title"><span class="num">10</span>How Long We Keep Your Data</h2>
+
+    <table>
+      <tr>
+        <th>Data Type</th>
+        <th>Retention Period</th>
+        <th>Reason</th>
+      </tr>
+      <tr>
+        <td>Account information</td>
+        <td>Until account deletion + 30 days</td>
+        <td>Service operation</td>
+      </tr>
+      <tr>
+        <td>Diagnostic session data</td>
+        <td>3 years from creation</td>
+        <td>History access and pattern analysis</td>
+      </tr>
+      <tr>
+        <td>Uploaded images</td>
+        <td>3 years or upon account deletion</td>
+        <td>Diagnosis history</td>
+      </tr>
+      <tr>
+        <td>Audit logs</td>
+        <td>6 years</td>
+        <td>Security and legal compliance</td>
+      </tr>
+      <tr>
+        <td>Email communications</td>
+        <td>2 years</td>
+        <td>Support reference</td>
+      </tr>
+      <tr>
+        <td>Anonymized research data</td>
+        <td>Indefinitely</td>
+        <td>Cannot be traced to individuals</td>
+      </tr>
+    </table>
+
+    <p>When you request account deletion, all personally identifiable data is deleted within 30 days. Anonymized aggregate data that cannot be linked to you may be retained for research purposes.</p>
+  </section>
+
+  <!-- Section 11 -->
+  <section id="rights">
+    <h2 class="section-title"><span class="num">11</span>Your Rights & Choices</h2>
+
+    <p>Depending on your location, you have the following rights regarding your personal data. We honor these rights for all users worldwide, regardless of jurisdiction.</p>
+
+    <div class="rights-grid">
+      <div class="right-card">
+        <div class="icon">👁️</div>
+        <h4>Right to Access</h4>
+        <p>Request a copy of all personal data we hold about you.</p>
+      </div>
+      <div class="right-card">
+        <div class="icon">✏️</div>
+        <h4>Right to Rectification</h4>
+        <p>Correct any inaccurate or incomplete personal data.</p>
+      </div>
+      <div class="right-card">
+        <div class="icon">🗑️</div>
+        <h4>Right to Erasure</h4>
+        <p>Request deletion of your account and all associated personal data ("Right to be Forgotten").</p>
+      </div>
+      <div class="right-card">
+        <div class="icon">⏸️</div>
+        <h4>Right to Restrict Processing</h4>
+        <p>Ask us to limit how we use your data while a dispute is resolved.</p>
+      </div>
+      <div class="right-card">
+        <div class="icon">📦</div>
+        <h4>Right to Data Portability</h4>
+        <p>Receive your data in a machine-readable format to transfer to another service.</p>
+      </div>
+      <div class="right-card">
+        <div class="icon">🚫</div>
+        <h4>Right to Object</h4>
+        <p>Object to processing of your data for research or direct communications.</p>
+      </div>
+      <div class="right-card">
+        <div class="icon">🔄</div>
+        <h4>Withdraw Consent</h4>
+        <p>Withdraw research consent at any time via Profile → Data & Consent settings.</p>
+      </div>
+      <div class="right-card">
+        <div class="icon">⚖️</div>
+        <h4>Right to Complain</h4>
+        <p>Lodge a complaint with your local data protection authority (e.g., ICO in UK, CNIL in France).</p>
+      </div>
+    </div>
+
+    <h3>How to Exercise Your Rights</h3>
+    <p>You can exercise most rights directly within the AIDD app:</p>
+    <ul>
+      <li><strong>Account deletion:</strong> Profile → Request Account Deletion</li>
+      <li><strong>Consent withdrawal:</strong> Profile → Data & Consent → Update preferences</li>
+      <li><strong>Data export:</strong> Email <a href="mailto:privacy@embur.world" style="color:#00D4FF;">privacy@embur.world</a> with subject "Data Export Request"</li>
+      <li><strong>All other requests:</strong> Email <a href="mailto:privacy@embur.world" style="color:#00D4FF;">privacy@embur.world</a> — we respond within 30 days</li>
+    </ul>
+  </section>
+
+  <!-- Section 12 -->
+  <section id="children">
+    <h2 class="section-title"><span class="num">12</span>Children's Privacy (Under 18)</h2>
+
+    <div class="highlight-box gold">
+      <p><strong>👨‍👩‍👧 Family Safe:</strong> AIDD is designed to be safe for families. Our content moderation, emergency detection systems, and medical disclaimers are specifically calibrated to protect younger users.</p>
+    </div>
+
+    <h3>COPPA Compliance (USA — Under 13)</h3>
+    <p>In compliance with the Children's Online Privacy Protection Act (COPPA), we do not knowingly collect personal information from children under 13 in the United States without verifiable parental consent. If a parent or guardian believes their child under 13 has registered without consent, contact us immediately at <a href="mailto:privacy@embur.world" style="color:#00D4FF;">privacy@embur.world</a>.</p>
+
+    <h3>GDPR-K Compliance (EU/UK — Under 16)</h3>
+    <p>In compliance with GDPR Article 8 and UK GDPR provisions, users under the age of digital consent (16 in most EU/UK jurisdictions, with some countries setting 13) require parental or guardian consent before processing their personal data.</p>
+
+    <h3>Enhanced Safety for Minors</h3>
+    <p>For users identified as under 18, AIDD applies additional protections:</p>
+    <ul>
+      <li>All diagnostic reports automatically recommend in-person professional evaluation</li>
+      <li>Emergency alerts are applied with lower thresholds</li>
+      <li>Data retention is minimized to the shortest operational period</li>
+      <li>Marketing communications are not sent to users under 18</li>
+      <li>Research consent requires explicit parental acknowledgment</li>
+    </ul>
+
+    <h3>No Content Harmful to Minors</h3>
+    <p>AIDD strictly prohibits any content that could harm, exploit, or sexualize minors. Any content of this nature will be immediately removed, the account permanently banned, and the matter referred to appropriate law enforcement authorities. We have zero tolerance for any such content.</p>
+  </section>
+
+  <!-- Section 13 -->
+  <section id="international">
+    <h2 class="section-title"><span class="num">13</span>International Data Transfers</h2>
+
+    <p>AIDD is a global service used by people in many countries. As a result, your personal data may be transferred to and processed in countries other than your country of residence, including the United States, Japan, and the European Union.</p>
+
+    <h3>Safeguards for International Transfers</h3>
+    <ul>
+      <li><strong>GDPR (EU/UK users):</strong> Transfers outside the EEA are protected through Standard Contractual Clauses (SCCs) and adequacy decisions</li>
+      <li><strong>Kuwait PDPL:</strong> We comply with Kuwait's Personal Data Protection Law and its provisions on cross-border data transfers</li>
+      <li><strong>All transfers:</strong> Encrypted in transit using TLS 1.3 regardless of destination</li>
+    </ul>
+
+    <h3>Regulatory Frameworks We Align With</h3>
+    <ul>
+      <li>🇪🇺 GDPR — General Data Protection Regulation (European Union)</li>
+      <li>🇬🇧 UK GDPR — United Kingdom General Data Protection Regulation</li>
+      <li>🇺🇸 HIPAA — Health Insurance Portability and Accountability Act (aligned principles)</li>
+      <li>🇺🇸 COPPA — Children's Online Privacy Protection Act</li>
+      <li>🇰🇼 PDPL — Kuwait Personal Data Protection Law</li>
+      <li>🌐 APPI — Act on Protection of Personal Information (Japan)</li>
+    </ul>
+  </section>
+
+  <!-- Section 14 -->
+  <section id="cookies">
+    <h2 class="section-title"><span class="num">14</span>Cookies & Tracking</h2>
+
+    <div class="highlight-box green">
+      <p><strong>✅ No Advertising Cookies:</strong> AIDD does not use advertising cookies, tracking pixels, or any third-party analytics tools. We do not track your behavior for advertising purposes.</p>
+    </div>
+
+    <h3>Essential Technical Tokens</h3>
+    <p>Our mobile app uses secure local storage (not browser cookies) to store:</p>
+    <ul>
+      <li><strong>JWT authentication token</strong> — keeps you logged in securely (stored in device Secure Store, encrypted)</li>
+      <li><strong>User preferences</strong> — language and display settings</li>
+    </ul>
+    <p>These are essential for app functionality and cannot be disabled without affecting your ability to use the app. They contain no tracking or advertising data.</p>
+
+    <h3>No Third-Party Trackers</h3>
+    <p>AIDD does not include SDKs from Facebook, Google Analytics, TikTok, or any other advertising or analytics network. We do not build behavioral profiles for commercial purposes.</p>
+  </section>
+
+  <!-- Section 15 -->
+  <section id="changes">
+    <h2 class="section-title"><span class="num">15</span>Changes to This Policy</h2>
+
+    <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. When we make material changes, we will:</p>
+    <ul>
+      <li>Update the "Last Updated" date at the top of this document</li>
+      <li>Send an email notification to your registered email address</li>
+      <li>Display a prominent notice within the AIDD app</li>
+      <li>For significant changes, request renewed consent where required by law</li>
+    </ul>
+    <p>Your continued use of AIDD after the effective date of an updated policy constitutes your acceptance of the changes. If you do not agree with the changes, you may delete your account at any time.</p>
+    <p>Previous versions of this Privacy Policy are available upon request by emailing <a href="mailto:privacy@embur.world" style="color:#00D4FF;">privacy@embur.world</a>.</p>
+  </section>
+
+  <!-- Section 16 -->
+  <section id="contact">
+    <h2 class="section-title"><span class="num">16</span>Contact & Data Protection Officer</h2>
+
+    <p>For any questions, concerns, requests, or complaints regarding this Privacy Policy or your personal data, please contact us:</p>
+
+    <div class="contact-box">
+      <h3>📧 Privacy & Data Protection</h3>
+      <p style="margin-bottom:16px;">
+        <strong style="color:#E8F4FD;">AIDD — Artificial Intelligence Disease Diagnose</strong><br>
+        Email: <a href="mailto:privacy@embur.world">privacy@embur.world</a><br>
+        Support: <a href="mailto:support@embur.world">support@embur.world</a><br>
+        Website: <a href="https://embur.world">embur.world</a><br>
+        Response time: Within 30 days (typically within 5 business days)
+      </p>
+      <p style="font-size:12px;color:#3A6080;">
+        If you are located in the European Union and wish to lodge a formal complaint,<br>
+        you may contact your local Data Protection Authority (DPA).
+      </p>
+    </div>
+
+    <div class="highlight-box green" style="margin-top:24px;">
+      <p><strong>🌍 Our Final Word:</strong> AIDD exists for one reason — to make high-quality health intelligence accessible to every person on Earth, free of charge, forever. We take the trust you place in us by sharing your health information seriously. Every decision we make about your data is guided by one question: <em>Is this genuinely in the best interest of our users?</em> Thank you for being part of the AIDD mission to heal the world.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="footer-logo">AIDD</div>
+  <p style="margin-bottom:8px;">Artificial Intelligence Disease Diagnose &nbsp;|&nbsp; Heal the World — Free, Forever 🌍</p>
+  <p>Privacy Policy v2.0 &nbsp;·&nbsp; Effective April 11, 2026 &nbsp;·&nbsp; <a href="mailto:privacy@embur.world">privacy@embur.world</a></p>
+  <p style="margin-top:12px;font-size:11px;">GDPR · HIPAA Aligned · COPPA · Kuwait PDPL · AES-256 Encrypted · TLS 1.3</p>
+</footer>
+
+</body>
+</html>
