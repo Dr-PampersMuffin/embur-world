@@ -153,6 +153,18 @@ header p{
   font-family:'DM Sans',sans-serif;
   transition:border-color 0.2s,box-shadow 0.2s;
   width:100%;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
+  box-sizing:border-box;
+}
+.form-group select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2300D4FF' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 16px center;
+  background-color:#020B18;
+  padding-right:44px;
+  cursor:pointer;
 }
 .form-group input::placeholder,
 .form-group textarea::placeholder{color:#3A6080}
@@ -308,15 +320,19 @@ footer{
 }
 .success-msg.show{display:flex}
 
-@media(max-width:640px){
+@media(max-width:768px){
   .container{padding:40px 20px}
-  .form-card{padding:24px}
+  .form-card{padding:24px 20px}
   .form-row{grid-template-columns:1fr}
+  .form-footer{flex-direction:column;align-items:stretch}
+  .submit-btn{justify-content:center;width:100%}
   header{padding:40px 20px 36px}
   .back-bar{padding:14px 20px}
   footer{flex-direction:column;text-align:center}
   .footer-links{justify-content:center}
   .emergency{padding:14px 20px}
+  .contact-grid{grid-template-columns:1fr 1fr}
+  .response-banner{gap:10px}
 }
 </style>
 </head>
@@ -347,7 +363,7 @@ footer{
   <!-- Response Time -->
   <div class="response-banner">
     <div class="response-dot"></div>
-    <p><strong>Support is active.</strong> We typically respond within <strong>24–48 hours</strong>. For urgent privacy or data requests, email <a href="mailto:privacy@embur.world" style="color:#00D4FF">privacy@embur.world</a> directly.</p>
+    <p><strong>Support is active.</strong> We typically respond within <strong>24–48 hours</strong>. For urgent privacy or data requests, email <a href="/cdn-cgi/l/email-protection#5a2a28332c3b39231a3f37382f28742d3528363e" style="color:#00D4FF"><span class="__cf_email__" data-cfemail="1666647f6077756f56737b746364386179647a72">[email&#160;protected]</span></a> directly.</p>
   </div>
 
   <!-- Contact Form -->
@@ -434,17 +450,17 @@ footer{
   <div class="section-title">Other ways to reach us</div>
 
   <div class="contact-grid">
-    <a href="mailto:support@embur.world" class="contact-card">
+    <a href="/cdn-cgi/l/email-protection#691a1c1919061b1d290c040b1c1b471e061b050d" class="contact-card">
       <span class="contact-card-icon">📧</span>
       <h3>General Support</h3>
       <p>App issues, account help, technical questions</p>
-      <div class="contact-addr">support@embur.world</div>
+      <div class="contact-addr"><span class="__cf_email__" data-cfemail="53202623233c212713363e3126217d243c213f37">[email&#160;protected]</span></div>
     </a>
-    <a href="mailto:privacy@embur.world" class="contact-card">
+    <a href="/cdn-cgi/l/email-protection#cebebca7b8afadb78eaba3acbbbce0b9a1bca2aa" class="contact-card">
       <span class="contact-card-icon">🔒</span>
       <h3>Privacy & Data</h3>
       <p>GDPR requests, data deletion, consent changes</p>
-      <div class="contact-addr">privacy@embur.world</div>
+      <div class="contact-addr"><span class="__cf_email__" data-cfemail="78080a110e191b01381d151a0d0a560f170a141c">[email&#160;protected]</span></div>
     </a>
     <a href="aidd-privacy.html" class="contact-card">
       <span class="contact-card-icon">📋</span>
@@ -452,11 +468,11 @@ footer{
       <p>Full policy — GDPR, HIPAA, COPPA, Kuwait PDPL</p>
       <div class="contact-addr" style="color:#7BA7C4">Read full policy →</div>
     </a>
-    <a href="mailto:support@embur.world?subject=AIDD%20Partnership" class="contact-card">
+    <a href="/cdn-cgi/l/email-protection#493a3c3939263b3d092c242b3c3b673e263b252d763a3c2b232c2a3d7408000d0d6c7b7919283b3d272c3b3a212039" class="contact-card">
       <span class="contact-card-icon">🤝</span>
       <h3>Partnerships</h3>
       <p>Research institutions, media, and healthcare partners</p>
-      <div class="contact-addr">support@embur.world</div>
+      <div class="contact-addr"><span class="__cf_email__" data-cfemail="c5b6b0b5b5aab7b185a0a8a7b0b7ebb2aab7a9a1">[email&#160;protected]</span></div>
     </a>
   </div>
 
@@ -495,7 +511,7 @@ footer{
         <span class="faq-q-text">Can children use AIDD?</span>
         <span class="faq-chevron"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
       </button>
-      <div class="faq-a"><p>AIDD is designed to be family-safe. Children under 13 (in COPPA regions) or under 16 (EU/UK) require verifiable parental consent before use. For minors, all analyses automatically recommend in-person professional evaluation, emergency alerts have lower thresholds, and data retention is minimized. Parents or guardians must register accounts on behalf of children under the applicable age of digital consent in their jurisdiction. For concerns about a minor's use of AIDD, contact <a href="mailto:privacy@embur.world">privacy@embur.world</a>.</p></div>
+      <div class="faq-a"><p>AIDD is designed to be family-safe. Children under 13 (in COPPA regions) or under 16 (EU/UK) require verifiable parental consent before use. For minors, all analyses automatically recommend in-person professional evaluation, emergency alerts have lower thresholds, and data retention is minimized. Parents or guardians must register accounts on behalf of children under the applicable age of digital consent in their jurisdiction. For concerns about a minor's use of AIDD, contact <a href="/cdn-cgi/l/email-protection#3e4e4c57485f5d477e5b535c4b4c1049514c525a"><span class="__cf_email__" data-cfemail="28585a415e494b51684d454a5d5a065f475a444c">[email&#160;protected]</span></a>.</p></div>
     </div>
 
     <div class="faq-item">
@@ -527,7 +543,7 @@ footer{
         <span class="faq-q-text">I can't log in / I forgot my password. What do I do?</span>
         <span class="faq-chevron"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
       </button>
-      <div class="faq-a"><p>On the login screen, tap <strong>Forgot Password?</strong> and enter your registered email address. A 6-digit reset code will be sent to your inbox within a few minutes — check your spam folder if you don't see it. Enter the code along with your new password. Codes expire after 15 minutes. If you no longer have access to your registered email, contact us at <a href="mailto:support@embur.world">support@embur.world</a> with your full name and we will assist you.</p></div>
+      <div class="faq-a"><p>On the login screen, tap <strong>Forgot Password?</strong> and enter your registered email address. A 6-digit reset code will be sent to your inbox within a few minutes — check your spam folder if you don't see it. Enter the code along with your new password. Codes expire after 15 minutes. If you no longer have access to your registered email, contact us at <a href="/cdn-cgi/l/email-protection#e2919792928d9096a2878f809790cc958d908e86"><span class="__cf_email__" data-cfemail="1c6f696c6c736e685c79717e696e326b736e7078">[email&#160;protected]</span></a> with your full name and we will assist you.</p></div>
     </div>
 
     <div class="faq-item">
@@ -551,7 +567,7 @@ footer{
         <span class="faq-q-text">How do I delete my account and all my data?</span>
         <span class="faq-chevron"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
       </button>
-      <div class="faq-a"><p>In the app, go to <strong>Profile → Request Account Deletion</strong>. All personally identifiable data (name, email, health profile, diagnosis history, images) will be permanently deleted within 30 days, in compliance with GDPR's Right to Erasure. Anonymized aggregate data that cannot be linked back to you may be retained for research purposes. You can also email <a href="mailto:privacy@embur.world">privacy@embur.world</a> with the subject "Account Deletion Request."</p></div>
+      <div class="faq-a"><p>In the app, go to <strong>Profile → Request Account Deletion</strong>. All personally identifiable data (name, email, health profile, diagnosis history, images) will be permanently deleted within 30 days, in compliance with GDPR's Right to Erasure. Anonymized aggregate data that cannot be linked back to you may be retained for research purposes. You can also email <a href="/cdn-cgi/l/email-protection#f484869d8295978db49199968186da839b869890"><span class="__cf_email__" data-cfemail="8dfdffe4fbeceef4cde8e0eff8ffa3fae2ffe1e9">[email&#160;protected]</span></a> with the subject "Account Deletion Request."</p></div>
     </div>
 
     <div class="faq-item">
@@ -559,7 +575,7 @@ footer{
         <span class="faq-q-text">My analysis seems wrong or inaccurate. What should I do?</span>
         <span class="faq-chevron"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
       </button>
-      <div class="faq-a"><p>First, remember that AIDD is educational only — always consult a healthcare professional for any medical concern regardless of the result. For better results, try uploading a clearer, closer, well-lit photo and add more detail to your symptom description. AI confidence increases significantly with better input quality. If you believe the analysis contained an error or something harmful, please report it to <a href="mailto:support@embur.world">support@embur.world</a> with your session details so we can investigate and improve.</p></div>
+      <div class="faq-a"><p>First, remember that AIDD is educational only — always consult a healthcare professional for any medical concern regardless of the result. For better results, try uploading a clearer, closer, well-lit photo and add more detail to your symptom description. AI confidence increases significantly with better input quality. If you believe the analysis contained an error or something harmful, please report it to <a href="/cdn-cgi/l/email-protection#7b080e0b0b14090f3b1e16190e09550c1409171f"><span class="__cf_email__" data-cfemail="4d3e383d3d223f390d28202f383f633a223f2129">[email&#160;protected]</span></a> with your session details so we can investigate and improve.</p></div>
     </div>
 
     <div class="faq-item">
@@ -575,39 +591,4 @@ footer{
         <span class="faq-q-text">Can I use AIDD for my pet, farm animals, or wildlife?</span>
         <span class="faq-chevron"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
       </button>
-      <div class="faq-a"><p>Yes. The Animal subject covers domestic pets (cats, dogs, birds, rabbits, reptiles), farm animals (horses, cows, goats, sheep), and wild animals. Select the Animal subject, choose the animal type, and upload a clear photo. AIDD uses The Cat API and Dog API for official breed registry photos, iNaturalist for verified species observations, and PubMed veterinary literature for health condition assessment. For serious animal health concerns, always consult a licensed veterinarian.</p></div>
-    </div>
-
-  </div>
-
-</div><!-- end container -->
-
-<!-- Footer -->
-<footer>
-  <div class="footer-logo">AIDD</div>
-  <div class="footer-links">
-    <a href="index.html#aidd">Home</a>
-    <a href="aidd-privacy.html">Privacy Policy</a>
-    <a href="mailto:support@embur.world">Email Support</a>
-    <a href="mailto:privacy@embur.world">Data Requests</a>
-    <a href="index.html">Embur</a>
-  </div>
-  <div class="footer-copy">© 2026 Embur Inc. · AIDD Project · Free Forever 🌍</div>
-</footer>
-
-<script>
-function toggleFaq(btn){
-  const item = btn.closest('.faq-item');
-  const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(el=>el.classList.remove('open'));
-  if(!isOpen) item.classList.add('open');
-}
-
-// Show success message if redirected back after form submit
-if(window.location.search.includes('sent=true')){
-  document.getElementById('success-msg').classList.add('show');
-  history.replaceState(null,'',window.location.pathname);
-}
-</script>
-</body>
-</html>
+      <div class="faq-a"><p>Yes. The Animal subject covers domestic pets (cats, dogs, birds, rabbits, reptiles), farm animals (horses, cows, goats, sheep), and wild animals. Select the Animal subject, choose the animal type, and upload a clear photo. AIDD uses The Cat API and Dog API for official breed registry photos, iNaturalist for verified species observations, and PubMed veterinary literature for health condition assess
