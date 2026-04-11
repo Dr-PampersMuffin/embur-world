@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Support — AIDD | Artificial Intelligence Disease Diagnose</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:#020B18;
+  color:#E8F4FD;
+  font-family:'DM Sans',sans-serif;
+  line-height:1.7;
+  min-height:100vh;
+}
+
+/* ── BACK BAR ── */
+.back-bar{
+  background:rgba(2,11,24,0.95);
+  border-bottom:1px solid #00D4FF15;
+  padding:14px 32px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:sticky;
+  top:0;z-index:100;
+  backdrop-filter:blur(16px);
+}
+.back-bar-logo{
+  font-family:'Syne',sans-serif;
+  font-size:16px;font-weight:900;
+  color:#00D4FF;letter-spacing:5px;
+  text-shadow:0 0 12px #00D4FF50;
+}
+.back-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(0,212,255,0.08);
+  border:1px solid rgba(0,212,255,0.3);
+  color:#00D4FF;padding:9px 20px;border-radius:100px;
+  font-size:13px;font-weight:700;text-decoration:none;
+  transition:all 0.25s;
+}
+.back-btn:hover{background:rgba(0,212,255,0.16);border-color:#00D4FF80;transform:translateX(-3px)}
+
+/* ── HEADER ── */
+header{
+  background:#071428;
+  border-bottom:1px solid #0D2040;
+  padding:52px 40px 48px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+header::before{
+  content:'';position:absolute;
+  top:-80px;left:50%;transform:translateX(-50%);
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,212,255,0.07) 0%,transparent 70%);
+  pointer-events:none;
+}
+.header-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(0,212,255,0.08);
+  border:1px solid rgba(0,212,255,0.2);
+  padding:6px 16px;border-radius:100px;
+  font-size:11px;font-weight:700;
+  color:#00D4FF;letter-spacing:2px;text-transform:uppercase;
+  font-family:'Space Mono',monospace;
+  margin-bottom:20px;
+}
+header h1{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(32px,5vw,56px);
+  font-weight:900;letter-spacing:-2px;
+  color:#fff;margin-bottom:12px;
+}
+header h1 span{color:#00D4FF;text-shadow:0 0 30px #00D4FF50}
+header p{
+  font-size:16px;color:#7BA7C4;
+  max-width:560px;margin:0 auto;
+  font-weight:300;
+}
+
+/* ── EMERGENCY BANNER ── */
+.emergency{
+  background:rgba(255,0,60,0.06);
+  border-top:1px solid rgba(255,0,60,0.2);
+  border-bottom:1px solid rgba(255,0,60,0.2);
+  padding:16px 40px;
+  display:flex;align-items:center;justify-content:center;
+  gap:12px;text-align:center;
+  flex-wrap:wrap;
+}
+.emergency-icon{font-size:20px}
+.emergency p{
+  font-size:13px;color:#FF6B6B;font-weight:600;
+  margin:0;
+}
+.emergency strong{color:#FF003C}
+
+/* ── CONTAINER ── */
+.container{max-width:960px;margin:0 auto;padding:60px 32px}
+
+/* ── SECTION TITLES ── */
+.section-label{
+  font-family:'Space Mono',monospace;
+  font-size:11px;font-weight:700;
+  color:#00D4FF;letter-spacing:3px;
+  text-transform:uppercase;margin-bottom:12px;
+}
+.section-title{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(24px,3.5vw,36px);
+  font-weight:800;letter-spacing:-1.5px;
+  color:#fff;margin-bottom:32px;
+}
+
+/* ── CONTACT FORM ── */
+.form-card{
+  background:#071428;
+  border:1px solid #0D2040;
+  border-radius:20px;
+  padding:40px;
+  margin-bottom:56px;
+  position:relative;
+  overflow:hidden;
+}
+.form-card::before{
+  content:'';position:absolute;
+  top:-40px;right:-40px;
+  width:200px;height:200px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,212,255,0.06) 0%,transparent 70%);
+}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
+.form-group{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.form-group label{
+  font-size:11px;font-weight:700;
+  color:#7BA7C4;text-transform:uppercase;letter-spacing:1.5px;
+  font-family:'Space Mono',monospace;
+}
+.form-group input,
+.form-group select,
+.form-group textarea{
+  background:#020B18;
+  border:1.5px solid #0D2040;
+  border-radius:12px;
+  color:#E8F4FD;
+  font-size:14px;
+  padding:13px 16px;
+  outline:none;
+  font-family:'DM Sans',sans-serif;
+  transition:border-color 0.2s,box-shadow 0.2s;
+  width:100%;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder{color:#3A6080}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+  border-color:#00D4FF40;
+  box-shadow:0 0 0 3px rgba(0,212,255,0.08);
+}
+.form-group select option{background:#071428;color:#E8F4FD}
+.form-group textarea{min-height:140px;resize:vertical;line-height:1.6}
+
+.form-footer{
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:16px;
+  margin-top:8px;
+}
+.form-note{font-size:12px;color:#3A6080}
+
+.submit-btn{
+  background:#00D4FF;color:#000;
+  border:none;padding:14px 36px;
+  border-radius:100px;font-size:15px;
+  font-weight:800;cursor:pointer;
+  font-family:'Syne',sans-serif;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:all 0.25s;
+}
+.submit-btn:hover{background:#26E5FF;transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,212,255,0.3)}
+.submit-btn svg{width:16px;height:16px}
+
+/* ── CONTACT CARDS ── */
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;
+  margin-bottom:56px;
+}
+.contact-card{
+  background:#071428;
+  border:1px solid #0D2040;
+  border-radius:16px;
+  padding:24px;
+  text-align:center;
+  transition:all 0.3s;
+  text-decoration:none;
+  display:block;
+}
+.contact-card:hover{
+  border-color:#00D4FF30;
+  transform:translateY(-4px);
+  box-shadow:0 16px 32px rgba(0,212,255,0.06);
+}
+.contact-card-icon{font-size:28px;margin-bottom:12px;display:block}
+.contact-card h3{
+  font-family:'Syne',sans-serif;
+  font-size:14px;font-weight:800;
+  color:#fff;margin-bottom:6px;
+}
+.contact-card p{font-size:12px;color:#7BA7C4;line-height:1.5}
+.contact-card .contact-addr{
+  font-size:12px;color:#00D4FF;
+  margin-top:8px;font-weight:600;
+  word-break:break-all;
+}
+
+/* ── FAQ ── */
+.faq-list{display:flex;flex-direction:column;gap:12px;margin-bottom:56px}
+.faq-item{
+  background:#071428;
+  border:1px solid #0D2040;
+  border-radius:14px;
+  overflow:hidden;
+  transition:border-color 0.2s;
+}
+.faq-item.open{border-color:#00D4FF20}
+.faq-q{
+  width:100%;background:none;border:none;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 24px;
+  text-align:left;cursor:pointer;gap:16px;
+}
+.faq-q-text{
+  font-family:'Syne',sans-serif;
+  font-size:15px;font-weight:700;color:#E8F4FD;
+}
+.faq-chevron{
+  width:22px;height:22px;border-radius:50%;
+  background:rgba(0,212,255,0.1);
+  border:1px solid rgba(0,212,255,0.2);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;transition:transform 0.3s,background 0.2s;
+}
+.faq-chevron svg{width:12px;height:12px;stroke:#00D4FF}
+.faq-item.open .faq-chevron{transform:rotate(180deg);background:rgba(0,212,255,0.2)}
+.faq-a{
+  max-height:0;overflow:hidden;
+  transition:max-height 0.4s ease;
+  padding:0 24px;
+}
+.faq-item.open .faq-a{max-height:400px;padding-bottom:20px}
+.faq-a p{font-size:14px;color:#7BA7C4;line-height:1.8}
+.faq-a a{color:#00D4FF;text-decoration:none}
+
+/* ── RESPONSE TIME BANNER ── */
+.response-banner{
+  background:rgba(57,255,20,0.04);
+  border:1px solid rgba(57,255,20,0.15);
+  border-radius:14px;
+  padding:20px 28px;
+  display:flex;align-items:center;gap:16px;
+  margin-bottom:56px;
+  flex-wrap:wrap;
+}
+.response-dot{
+  width:10px;height:10px;border-radius:50%;
+  background:#39FF14;flex-shrink:0;
+  box-shadow:0 0 8px #39FF1480;
+  animation:rpulse 2s infinite;
+}
+@keyframes rpulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.response-banner p{font-size:13px;color:#7BA7C4;margin:0}
+.response-banner strong{color:#E8F4FD}
+
+/* ── FOOTER ── */
+footer{
+  border-top:1px solid rgba(0,212,255,0.1);
+  padding:36px 40px;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:16px;
+}
+.footer-logo{
+  font-family:'Syne',sans-serif;
+  font-size:18px;font-weight:900;
+  color:#00D4FF;letter-spacing:6px;
+  text-shadow:0 0 12px #00D4FF40;
+}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.footer-links a{color:#3A6080;font-size:12px;text-decoration:none;transition:color 0.2s}
+.footer-links a:hover{color:#00D4FF}
+.footer-copy{color:#1A3A5C;font-size:11px}
+
+/* ── SUCCESS MSG ── */
+.success-msg{
+  display:none;
+  background:rgba(57,255,20,0.06);
+  border:1px solid rgba(57,255,20,0.2);
+  border-radius:12px;
+  padding:18px 24px;
+  margin-top:20px;
+  font-size:14px;color:#39FF14;
+  align-items:center;gap:10px;
+}
+.success-msg.show{display:flex}
+
+@media(max-width:640px){
+  .container{padding:40px 20px}
+  .form-card{padding:24px}
+  .form-row{grid-template-columns:1fr}
+  header{padding:40px 20px 36px}
+  .back-bar{padding:14px 20px}
+  footer{flex-direction:column;text-align:center}
+  .footer-links{justify-content:center}
+  .emergency{padding:14px 20px}
+}
+</style>
+</head>
+<body>
+
+<!-- Back Bar -->
+<div class="back-bar">
+  <div class="back-bar-logo">AIDD</div>
+  <a href="index.html#aidd" class="back-btn">← Back to AIDD</a>
+</div>
+
+<!-- Header -->
+<header>
+  <div class="header-tag">// Support Center</div>
+  <h1>How can we <span>help you?</span></h1>
+  <p>AIDD is free, forever. So is our support. We're here for every question — medical, technical, or privacy-related.</p>
+</header>
+
+<!-- Emergency Banner -->
+<div class="emergency">
+  <span class="emergency-icon">🚨</span>
+  <p><strong>Medical Emergency?</strong> Do NOT wait for support. Call emergency services immediately — 911 (USA) · 999 (UK) · 112 (EU/Kuwait) · 000 (AUS). AIDD is not an emergency service.</p>
+</div>
+
+<div class="container">
+
+  <!-- Response Time -->
+  <div class="response-banner">
+    <div class="response-dot"></div>
+    <p><strong>Support is active.</strong> We typically respond within <strong>24–48 hours</strong>. For urgent privacy or data requests, email <a href="mailto:privacy@embur.world" style="color:#00D4FF">privacy@embur.world</a> directly.</p>
+  </div>
+
+  <!-- Contact Form -->
+  <div class="section-label">// Send a Message</div>
+  <div class="section-title">Get in touch</div>
+
+  <div class="form-card">
+    <form id="support-form" action="https://formsubmit.co/pampersmuffin@gmail.com" method="POST">
+      <!-- FormSubmit config -->
+      <input type="hidden" name="_subject" value="AIDD Support Request">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="aidd-support.html?sent=true">
+      <input type="text" name="_honey" style="display:none">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" name="name" placeholder="John Smith" required>
+        </div>
+        <div class="form-group">
+          <label>Your Email</label>
+          <input type="email" name="email" placeholder="your@email.com" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Subject</label>
+        <select name="subject" required>
+          <option value="" disabled selected>Select a topic...</option>
+          <option value="Technical Issue">📱 Technical Issue / App Bug</option>
+          <option value="Account Help">👤 Account Help (Login, Password, Registration)</option>
+          <option value="Analysis Question">🔬 Question About My Analysis Result</option>
+          <option value="Privacy / Data Request">🔒 Privacy / Data Request (GDPR, Deletion)</option>
+          <option value="Medical Disclaimer">⚕️ Medical Disclaimer / AI Accuracy</option>
+          <option value="Camera / Upload Issue">📸 Camera or Image Upload Issue</option>
+          <option value="Face ID / Biometrics">🔐 Face ID / Touch ID Issue</option>
+          <option value="Content Report">🚨 Report Inappropriate Content</option>
+          <option value="Feedback / Feature Request">💡 Feedback or Feature Request</option>
+          <option value="Partnership / Media">🤝 Partnership or Media Inquiry</option>
+          <option value="Other">❓ Other</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Device</label>
+          <select name="device">
+            <option value="">Select device...</option>
+            <option>iPhone (iOS)</option>
+            <option>Android</option>
+            <option>Web Browser</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>App Version (optional)</label>
+          <input type="text" name="app_version" placeholder="e.g. 1.0.0">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Message</label>
+        <textarea name="message" placeholder="Please describe your issue or question in as much detail as possible. The more you tell us, the faster we can help you." required></textarea>
+      </div>
+
+      <div class="form-footer">
+        <p class="form-note">🔒 Your message is sent securely. We never share your details with third parties.</p>
+        <button type="submit" class="submit-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+          Send Message
+        </button>
+      </div>
+
+    </form>
+
+    <div class="success-msg" id="success-msg">
+      ✅ Message sent! We'll get back to you within 24–48 hours.
+    </div>
+  </div>
+
+  <!-- Contact Cards -->
+  <div class="section-label">// Direct Contact</div>
+  <div class="section-title">Other ways to reach us</div>
+
+  <div class="contact-grid">
+    <a href="mailto:support@embur.world" class="contact-card">
+      <span class="contact-card-icon">📧</span>
+      <h3>General Support</h3>
+      <p>App issues, account help, technical questions</p>
+      <div class="contact-addr">support@embur.world</div>
+    </a>
+    <a href="mailto:privacy@embur.world" class="contact-card">
+      <span class="contact-card-icon">🔒</span>
+      <h3>Privacy & Data</h3>
+      <p>GDPR requests, data deletion, consent changes</p>
+      <div class="contact-addr">privacy@embur.world</div>
+    </a>
+    <a href="aidd-privacy.html" class="contact-card">
+      <span class="contact-card-icon">📋</span>
+      <h3>Privacy Policy</h3>
+      <p>Full policy — GDPR, HIPAA, COPPA, Kuwait PDPL</p>
+      <div class="contact-addr" style="color:#7BA7C4">Read full policy →</div>
+    </a>
+    <a href="mailto:support@embur.world?subject=AIDD%20Partnership" class="contact-card">
+      <span class="contact-card-icon">🤝</span>
+      <h3>Partnerships</h3>
+      <p>Research institutions, media, and healthcare partners</p>
+      <div class="contact-addr">support@embur.world</div>
+    </a>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section-label">// Frequently Asked Questions</div>
+  <div class="section-title">Quick answers</div>
+
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Is AIDD really free? Will it ever charge me?</span>
+        <span class="faq-chevron"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
+      </button>
+      <div class="faq-a"><p>Yes — AIDD is 100% free, forever. No subscriptions, no hidden fees, no freemium upsells. Our mission is to make AI-powered health intelligence accessible to every person on Earth at no cost. This is a fundamental promise we will never break. AIDD is funded and developed as a public health initiative by Embur Inc.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Is AIDD a real medical diagnosis? Can I rely on it?</span>
+        <span class="faq-chevron"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
+      </button>
+      <div class="faq-a"><p>AIDD is a clinical decision support tool for <strong>educational and informational purposes only</strong>. It does NOT provide a medical diagnosis and is NOT a replacement for a licensed healthcare professional. AIDD analyses are powered by peer-reviewed medical literature and AI vision, but they cannot examine you physically, order tests, or take responsibility for medical decisions. Always consult a qualified doctor before making any health decision. AIDD is best used to prepare informed questions for your healthcare provider.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Is my health data and photos safe?</span>
+        <span class="faq-chevron"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
+      </button>
+      <div class="faq-a"><p>Yes. All data is encrypted with AES-256 at rest and TLS 1.3 in transit. Your images are stored on Cloudinary's secure servers. EXIF location data is stripped from every photo upon upload. Your name and email are never sent to any AI engine — only anonymized symptom data is processed. We never sell your data. We comply with GDPR, HIPAA (aligned), COPPA, and Kuwait's PDPL. Read our full <a href="aidd-privacy.html">Privacy Policy</a> for complete details.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Can children use AIDD?</span>
+        <span class="faq-chevron"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
+      </button>
+      <div class="faq-a"><p>AIDD is designed to be family-safe. Children under 13 (in COPPA regions) or under 16 (EU/UK) require verifiable parental consent before use. For minors, all analyses automatically recommend in-person professional evaluation, emergency alerts have lower thresholds, and data retention is minimized. Parents or guardians must register accounts on behalf of children under the applicable age of digital consent in their jurisdiction. For concerns about a minor's use of AIDD, contact <a href="mailto:privacy@embur.world">privacy@embur.world</a>.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">What subjects can AIDD analyze?</span>
+        <span class="faq-chevron"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
+      </button>
+      <div class="faq-a"><p>AIDD covers four kingdoms of life: <strong>🧬 Human</strong> — skin conditions, eye conditions, symptoms, disease identification using PubMed, WHO ICD-11, DermNet NZ, and more. <strong>🐜 Insect</strong> — species identification, danger level, venom status, disease vector assessment using Kindwise insect.id (14,000+ species). <strong>🌿 Plant</strong> — plant health, disease diagnosis, treatment protocols using Kindwise plant.id (400+ diseases). <strong>🐾 Animal</strong> — breed identification, health conditions, veterinary guidance using The Cat API, Dog API, and PubMed veterinary literature.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">How accurate is the AI analysis?</span>
+        <span class="faq-chevron"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
+      </button>
+      <div class="faq-a"><p>AIDD uses GPT-4o vision (one of the world's most advanced vision AI models) cross-referenced against 37 million PubMed articles and specialized databases. Every report includes a confidence score — photo-only analyses are capped at 70% confidence maximum by design. Accuracy improves significantly when you provide clear close-up photos alongside a detailed symptom description. AIDD is continuously improving. That said, no AI system is 100% accurate for medical assessment — always verify with a professional.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Why did I receive an emergency alert?</span>
+        <span class="faq-chevron"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
+      </button>
+      <div class="faq-a"><p>AIDD's safety engine automatically scans every analysis for patterns matching 40+ emergency conditions including chest pain, stroke symptoms, severe allergic reactions, sepsis indicators, and more. If detected, it immediately escalates the report with a prominent emergency alert and local emergency numbers. If you believe the alert was triggered incorrectly, please still take it seriously and consult a medical professional to rule out a serious condition. Your safety is our priority above all else.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">I can't log in / I forgot my password. What do I do?</span>
+        <span class="faq-chevron"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
+      </button>
+      <div class="faq-a"><p>On the login screen, tap <strong>Forgot Password?</strong> and enter your registered email address. A 6-digit reset code will be sent to your inbox within a few minutes — check your spam folder if you don't see it. Enter the code along with your new password. Codes expire after 15 minutes. If you no longer have access to your registered email, contact us at <a href="mailto:support@embur.world">support@embur.world</a> with your full name and we will assist you.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">How does Face ID / Touch ID login work?</span>
+        <span class="faq-chevron"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
+      </button>
+      <div class="faq-a"><p>AIDD uses your device's built-in biometric authentication (Face ID on newer iPhones, Touch ID on older models). Your actual biometric data (your face or fingerprint) is processed entirely on your device by Apple's Secure Enclave — AIDD never receives, stores, or transmits your biometric information. We only receive a pass/fail result from your device. To enable biometric login, log in once with your email and password and tick "Remember me." Biometric login will then be available on subsequent sessions.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">What kinds of photos can I upload? Is nudity allowed?</span>
+        <span class="faq-chevron"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
+      </button>
+      <div class="faq-a"><p>AIDD is a <strong>strictly educational medical tool</strong>. Acceptable photos include skin conditions and rashes (covered body areas), eye conditions, wounds, insect specimens, plant leaves and stems, and animals. Sexually explicit content, gratuitous nudity, or any content sexualizing minors is strictly prohibited and grounds for immediate permanent account ban and referral to law enforcement. Our AI system is configured to detect and reject inappropriate content. For clinically relevant areas (dermatology), maintain modesty while capturing the affected area clearly.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">How do I delete my account and all my data?</span>
+        <span class="faq-chevron"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
+      </button>
+      <div class="faq-a"><p>In the app, go to <strong>Profile → Request Account Deletion</strong>. All personally identifiable data (name, email, health profile, diagnosis history, images) will be permanently deleted within 30 days, in compliance with GDPR's Right to Erasure. Anonymized aggregate data that cannot be linked back to you may be retained for research purposes. You can also email <a href="mailto:privacy@embur.world">privacy@embur.world</a> with the subject "Account Deletion Request."</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">My analysis seems wrong or inaccurate. What should I do?</span>
+        <span class="faq-chevron"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
+      </button>
+      <div class="faq-a"><p>First, remember that AIDD is educational only — always consult a healthcare professional for any medical concern regardless of the result. For better results, try uploading a clearer, closer, well-lit photo and add more detail to your symptom description. AI confidence increases significantly with better input quality. If you believe the analysis contained an error or something harmful, please report it to <a href="mailto:support@embur.world">support@embur.world</a> with your session details so we can investigate and improve.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Does AIDD work offline?</span>
+        <span class="faq-chevron"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
+      </button>
+      <div class="faq-a"><p>No. AIDD requires an internet connection to function. The analysis pipeline connects to our AI servers, medical databases (PubMed, WHO ICD-11, Kindwise, etc.), and image storage in real time. This is what allows us to search 37 million articles and run GPT-4o vision analysis for every query. Your past analyses are stored and accessible in the History tab when you're online.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Can I use AIDD for my pet, farm animals, or wildlife?</span>
+        <span class="faq-chevron"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
+      </button>
+      <div class="faq-a"><p>Yes. The Animal subject covers domestic pets (cats, dogs, birds, rabbits, reptiles), farm animals (horses, cows, goats, sheep), and wild animals. Select the Animal subject, choose the animal type, and upload a clear photo. AIDD uses The Cat API and Dog API for official breed registry photos, iNaturalist for verified species observations, and PubMed veterinary literature for health condition assessment. For serious animal health concerns, always consult a licensed veterinarian.</p></div>
+    </div>
+
+  </div>
+
+</div><!-- end container -->
+
+<!-- Footer -->
+<footer>
+  <div class="footer-logo">AIDD</div>
+  <div class="footer-links">
+    <a href="index.html#aidd">Home</a>
+    <a href="aidd-privacy.html">Privacy Policy</a>
+    <a href="mailto:support@embur.world">Email Support</a>
+    <a href="mailto:privacy@embur.world">Data Requests</a>
+    <a href="index.html">Embur</a>
+  </div>
+  <div class="footer-copy">© 2026 Embur Inc. · AIDD Project · Free Forever 🌍</div>
+</footer>
+
+<script>
+function toggleFaq(btn){
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el=>el.classList.remove('open'));
+  if(!isOpen) item.classList.add('open');
+}
+
+// Show success message if redirected back after form submit
+if(window.location.search.includes('sent=true')){
+  document.getElementById('success-msg').classList.add('show');
+  history.replaceState(null,'',window.location.pathname);
+}
+</script>
+</body>
+</html>

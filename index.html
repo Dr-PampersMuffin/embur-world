@@ -706,7 +706,8 @@ body.flipped .flip-indicator{
   <div class="aidd-nav-links">
     <a href="#aidd-features">Features</a>
     <a href="aidd-privacy.html">Privacy</a>
-    <a href="mailto:support@embur.world">Support</a>
+    <a href="aidd-support.html">Support</a>
+    <a href="/cdn-cgi/l/email-protection#50232520203f222410353d3225227e273f223c34">Support</a>
   </div>
   <div class="aidd-nav-right">
     <button class="btn-flip-to-embur" onclick="flip()">← Embur</button>
@@ -947,9 +948,9 @@ body.flipped .flip-indicator{
         <div class="aidd-footer-logo">AIDD</div>
         <div class="aidd-footer-links">
           <a href="aidd-privacy.html">Privacy Policy</a>
-          <a href="mailto:support@embur.world">Support</a>
-          <a href="mailto:privacy@embur.world">Data Requests</a>
-          <a href="mailto:privacy@embur.world">Contact</a>
+          <a href="/cdn-cgi/l/email-protection#265553565649545266434b445354085149544a42">Support</a>
+          <a href="/cdn-cgi/l/email-protection#58282a312e393b21183d353a2d2a762f372a343c">Data Requests</a>
+          <a href="/cdn-cgi/l/email-protection#daaaa8b3acbbb9a39abfb7b8afa8f4adb5a8b6be">Contact</a>
           <a href="#" onclick="flip();return false;" style="color:#1DB89A80;">← Back to Embur</a>
         </div>
         <div class="aidd-footer-copy">© 2026 Embur Inc. · AIDD Project · All rights reserved.</div>
@@ -968,7 +969,7 @@ body.flipped .flip-indicator{
   <span id="flip-label">Switch to AIDD</span>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* ══════════════════════════════════
    EMBUR CANVAS
 ══════════════════════════════════ */
@@ -1059,6 +1060,14 @@ drawAidd();
 let isFlipped = false;
 let isFlipping = false;
 
+// Auto-flip to AIDD if #aidd hash in URL
+if(window.location.hash === '#aidd'){
+  document.body.classList.add('flipped');
+  isFlipped = true;
+  document.getElementById('flip-label').textContent = 'Switch to Embur';
+  history.replaceState(null,'',window.location.pathname);
+}
+
 function flip(){
   if(isFlipping) return;
   isFlipping = true;
@@ -1093,15 +1102,4 @@ document.querySelectorAll('.feature-card,.ai-tool').forEach(el=>{
   el.style.opacity='0';
   el.style.transform='translateY(20px)';
   el.style.transition='opacity .6s ease, transform .6s ease';
-  observer.observe(el);
-});
-
-document.querySelectorAll('.aidd-card').forEach((el,i)=>{
-  el.style.opacity='0';
-  el.style.transform='translateY(24px)';
-  el.style.transition=`opacity .6s ${i*0.08}s ease, transform .6s ${i*0.08}s ease`;
-  observer.observe(el);
-});
-</script>
-</body>
-</html>
+  observer.obs
