@@ -707,7 +707,6 @@ body.flipped .flip-indicator{
     <a href="#aidd-features">Features</a>
     <a href="aidd-privacy.html">Privacy</a>
     <a href="aidd-support.html">Support</a>
-    <a href="/cdn-cgi/l/email-protection#6a191f1a1a05181e2a0f07081f18441d0518060e">Support</a>
   </div>
   <div class="aidd-nav-right">
     <button class="btn-flip-to-embur" onclick="flip()">← Embur</button>
@@ -948,9 +947,9 @@ body.flipped .flip-indicator{
         <div class="aidd-footer-logo">AIDD</div>
         <div class="aidd-footer-links">
           <a href="aidd-privacy.html">Privacy Policy</a>
-          <a href="/cdn-cgi/l/email-protection#32414742425d404672575f5047401c455d405e56">Support</a>
-          <a href="/cdn-cgi/l/email-protection#18686a716e797b61587d757a6d6a366f776a747c">Data Requests</a>
-          <a href="/cdn-cgi/l/email-protection#d7a7a5bea1b6b4ae97b2bab5a2a5f9a0b8a5bbb3">Contact</a>
+          <a href="aidd-support.html">Support</a>
+          <a href="aidd-support.html">Data Requests</a>
+          <a href="aidd-support.html">Contact</a>
           <a href="#" onclick="flip();return false;" style="color:#1DB89A80;">← Back to Embur</a>
         </div>
         <div class="aidd-footer-copy">© 2026 Embur Inc. · AIDD Project · All rights reserved.</div>
@@ -1061,11 +1060,12 @@ let isFlipped = false;
 let isFlipping = false;
 
 // Return from AIDD sub-pages (privacy, support)
-if(localStorage.getItem('aidd_world') === 'aidd'){
+if(localStorage.getItem('aidd_world') === 'aidd' || new URLSearchParams(window.location.search).get('w') === 'aidd'){
   document.body.classList.add('flipped');
   isFlipped = true;
   document.getElementById('flip-label').textContent = 'Switch to Embur';
   localStorage.removeItem('aidd_world');
+  history.replaceState(null,'',window.location.pathname);
 }
 
 function flip(){
