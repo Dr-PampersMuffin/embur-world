@@ -1102,4 +1102,15 @@ document.querySelectorAll('.feature-card,.ai-tool').forEach(el=>{
   el.style.opacity='0';
   el.style.transform='translateY(20px)';
   el.style.transition='opacity .6s ease, transform .6s ease';
-  observer.obs
+  observer.observe(el);
+});
+
+document.querySelectorAll('.aidd-card').forEach((el,i)=>{
+  el.style.opacity='0';
+  el.style.transform='translateY(24px)';
+  el.style.transition=`opacity .6s ${i*0.08}s ease, transform .6s ${i*0.08}s ease`;
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
