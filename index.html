@@ -8,7 +8,7 @@
 <meta property="og:description" content="The platform that ends the era of switching apps.">
 <title>Embur — Create. Connect. Earn.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 
@@ -633,95 +633,31 @@ body.flipped .aidd-nav{opacity:1;pointer-events:all}
 /* ═══════════════════════════════════════════
    FLIP BUTTON FLOATING INDICATOR
 ═══════════════════════════════════════════ */
-/* ═══════════════════════════════════════════
-   UNIVERSE SELECTOR — three-world navigator
-═══════════════════════════════════════════ */
-.universe-selector {
-  position: fixed;
-  bottom: 32px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 999;
-  display: flex;
-  align-items: center;
-  gap: 0;
-  background: rgba(8,8,6,0.82);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 100px;
-  border: 0.5px solid rgba(255,255,255,0.08);
-  padding: 6px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
-  transition: opacity 0.3s;
+.flip-indicator{
+  position:fixed;
+  bottom:32px;right:32px;
+  z-index:999;
+  display:flex;align-items:center;gap:10px;
+  background:rgba(0,212,255,0.12);
+  border:1px solid rgba(0,212,255,0.3);
+  border-radius:100px;
+  padding:12px 22px;
+  font-size:12px;font-weight:700;
+  color:#00D4FF;letter-spacing:1px;
+  cursor:pointer;
+  transition:all 0.3s;
+  font-family:'Syne',sans-serif;
+  backdrop-filter:blur(10px);
+  opacity:1;
 }
-.uni-world {
-  display: flex; align-items: center; gap: 7px;
-  padding: 9px 18px;
-  border-radius: 100px;
-  font-size: 12px; font-weight: 700;
-  font-family: 'Syne', sans-serif;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  border: none;
-  background: transparent;
-  transition: background 0.25s, color 0.25s, box-shadow 0.25s;
-  white-space: nowrap;
+body.flipped .flip-indicator{
+  background:rgba(29,184,154,0.12);
+  border-color:rgba(29,184,154,0.3);
+  color:#1DB89A;
 }
-.uni-world:hover { filter: brightness(1.15); }
-
-/* Embur node — teal, active by default */
-.uni-embur {
-  color: var(--teal-b);
-  background: rgba(29,184,154,0.12);
-  box-shadow: inset 0 0 0 1px rgba(29,184,154,0.25);
-  cursor: default;
-}
-.uni-embur-dot {
-  width: 7px; height: 7px; border-radius: 50%;
-  background: var(--teal-b);
-  animation: pulse 2s infinite;
-}
-
-/* Aglossal node — bone/cream */
-.uni-aglossal { color: #C5BDB0; }
-.uni-aglossal:hover { background: rgba(242,237,228,0.07); }
-.uni-aglossal img {
-  width: 16px; height: 16px;
-  object-fit: cover; border-radius: 3px;
-}
-
-/* AIDD node — cyan */
-.uni-aidd { color: #00D4FF; }
-.uni-aidd:hover { background: rgba(0,212,255,0.08); }
-.uni-aidd-dot {
-  width: 7px; height: 7px; border-radius: 50%;
-  background: #00D4FF;
-  animation: aiddPulse 2s infinite;
-}
-
-/* Dividers between nodes */
-.uni-sep {
-  width: 0.5px; height: 20px;
-  background: rgba(255,255,255,0.08);
-  flex-shrink: 0;
-  margin: 0 2px;
-}
-
-/* Active states — highlight the active world, dim others */
-body.flipped .uni-embur    { background:transparent; box-shadow:none; color:#5A8880; cursor:pointer; }
-body.flipped .uni-aidd     { background:rgba(0,212,255,0.12); box-shadow:inset 0 0 0 1px rgba(0,212,255,0.25); cursor:default; }
-body.flipped .uni-aglossal { color:#6E6860; }
-
-body.flipped-aglossal .uni-embur    { background:transparent; box-shadow:none; color:#5A8880; cursor:pointer; }
-body.flipped-aglossal .uni-aglossal { background:rgba(242,237,228,0.10); box-shadow:inset 0 0 0 1px rgba(242,237,228,0.18); color:var(--ag-bone); cursor:default; }
-body.flipped-aglossal .uni-aidd     { color:#3A6080; }
-
-@media(max-width:768px){
-  .universe-selector { bottom:20px; padding:4px; }
-  .uni-world { padding:8px 13px; font-size:11px; gap:6px; }
-  .uni-world span { display:none; }
-  .uni-world img { width:14px; height:14px; }
-}
+.flip-indicator:hover{transform:scale(1.05);filter:brightness(1.2)}
+.flip-indicator svg{width:16px;height:16px;transition:transform 0.6s}
+.flip-indicator:hover svg{transform:rotate(180deg)}
 
 /* ═══════════════════════════════════════════
    RESPONSIVE
@@ -736,399 +672,8 @@ body.flipped-aglossal .uni-aidd     { color:#3A6080; }
   .embur-footer,.aidd-footer{flex-direction:column;text-align:center}
   .footer-links,.aidd-footer-links{justify-content:center}
   .aidd-stats,.stats{gap:32px}
-
+  .flip-indicator{bottom:20px;right:20px;padding:10px 16px;font-size:11px}
 }
-
-/* ═══════════════════════════════════════════
-   AGLOSSAL WORLD — bone/dark, left flip
-═══════════════════════════════════════════ */
-:root {
-  --ag-ink:     #080706;
-  --ag-raised:  #131110;
-  --ag-border:  #252220;
-  --ag-bone:    #F2EDE4;
-  --ag-soft:    #C5BDB0;
-  --ag-faint:   #6E6860;
-  --ag-violet:  #8B7EC8;
-  --ag-vglow:   rgba(139,126,200,0.10);
-  --ag-burg:    #7A3248;
-  --ag-sage:    #546E60;
-}
-
-/* Aglossal world sits behind Embur on the left */
-.world-aglossal {
-  transform: rotateY(-180deg);
-  background: var(--ag-ink);
-  z-index: 1;
-}
-
-/* When flipped-aglossal: aglossal comes forward, embur goes back-right */
-body.flipped-aglossal .world-embur  { transform: rotateY(180deg);  z-index: 1; }
-body.flipped-aglossal .world-aglossal { transform: rotateY(0deg);  z-index: 2; }
-
-/* Canvases */
-#aglossal-canvas {
-  position:fixed; top:0; left:0; width:100%; height:100%;
-  pointer-events:none; z-index:0; opacity:0; transition:opacity 0.6s;
-}
-body.flipped-aglossal #aglossal-canvas { opacity:1; }
-body.flipped-aglossal #bg-canvas      { opacity:0; }
-body.flipped-aglossal #aidd-canvas    { opacity:0; }
-
-/* Hide AIDD/Embur navs when Aglossal is active */
-body.flipped-aglossal .embur-nav    { opacity:0; pointer-events:none; }
-body.flipped-aglossal .aidd-nav     { opacity:0; pointer-events:none; }
-
-/* ── Aglossal Nav ── */
-.aglossal-nav {
-  position:fixed; top:0; left:0; right:0; z-index:100;
-  padding:18px 40px;
-  display:flex; align-items:center; justify-content:space-between; gap:20px;
-  background:rgba(8,7,6,0.88);
-  backdrop-filter:blur(20px);
-  border-bottom:0.5px solid var(--ag-border);
-  opacity:0; pointer-events:none;
-  transition:opacity 0.4s 0.5s;
-}
-body.flipped-aglossal .aglossal-nav { opacity:1; pointer-events:all; }
-
-.aglossal-nav-brand {
-  display:flex; align-items:center; gap:10px; text-decoration:none;
-}
-.aglossal-nav-icon {
-  width:28px; height:28px; object-fit:cover; border-radius:5px;
-}
-.aglossal-nav-name {
-  font-family:'Lora',serif; font-size:18px; font-weight:500;
-  color:var(--ag-bone); letter-spacing:-0.3px;
-}
-.aglossal-nav-star { font-size:9px; color:var(--ag-faint); }
-.aglossal-nav-links { display:flex; gap:28px; }
-.aglossal-nav-links a {
-  font-size:13px; color:var(--ag-faint); text-decoration:none; transition:color 0.2s;
-}
-.aglossal-nav-links a:hover { color:var(--ag-soft); }
-.aglossal-nav-right { display:flex; align-items:center; gap:12px; }
-
-/* Aglossal "back to Embur" button — mirrors AIDD's btn-flip-to-embur exactly */
-.btn-flip-to-embur-ag {
-  display:flex; align-items:center; gap:8px;
-  background:linear-gradient(135deg,#1DB89A20,#0A1F1C);
-  border:1px solid #1DB89A50;
-  color:#1DB89A;
-  padding:10px 20px; border-radius:100px;
-  font-size:13px; font-weight:700;
-  cursor:pointer; transition:all 0.3s;
-  font-family:'Syne',sans-serif;
-}
-.btn-flip-to-embur-ag:hover {
-  background:linear-gradient(135deg,#1DB89A30,#0D2A25);
-  border-color:#1DB89A90;
-  box-shadow:0 0 20px #1DB89A30;
-  transform:scale(1.04);
-}
-
-.aglossal-dl-btn {
-  background:var(--ag-bone); color:var(--ag-ink);
-  padding:10px 22px; border-radius:100px;
-  font-size:13px; font-weight:800;
-  text-decoration:none; transition:opacity 0.2s;
-  font-family:'Syne',sans-serif;
-}
-.aglossal-dl-btn:hover { opacity:0.85; }
-
-/* ── Embur nav: Aglossal button — IDENTICAL to AIDD button styling, bone theme ── */
-.btn-flip-to-aglossal {
-  display:flex; align-items:center; gap:8px;
-  background:linear-gradient(135deg,rgba(242,237,228,0.10),#0F0E0C);
-  border:1px solid rgba(242,237,228,0.25);
-  color:var(--ag-soft);
-  padding:10px 20px; border-radius:100px;
-  font-size:13px; font-weight:700;
-  letter-spacing:0.5px;
-  cursor:pointer; transition:all 0.3s;
-  font-family:'Syne',sans-serif;
-}
-.btn-flip-to-aglossal:hover {
-  background:linear-gradient(135deg,rgba(242,237,228,0.18),#0A0908);
-  border-color:rgba(242,237,228,0.5);
-  box-shadow:0 0 20px rgba(242,237,228,0.08);
-  transform:scale(1.04);
-}
-.ag-flip-dot {
-  width:8px; height:8px; border-radius:50%;
-  background:var(--ag-soft);
-  animation:agPulse 2s infinite;
-}
-.ag-flip-icon {
-  width:20px; height:20px; object-fit:cover; border-radius:4px;
-}
-@keyframes agPulse {
-  0%,100%{box-shadow:0 0 0 0 rgba(242,237,228,0.4)}
-  70%{box-shadow:0 0 0 6px transparent}
-}
-
-/* ── Aglossal world interior ── */
-.ag-world-inner {
-  background:var(--ag-ink); min-height:100vh;
-  position:relative; overflow:hidden;
-  font-family:'DM Sans',sans-serif;
-  color:var(--ag-bone);
-}
-.ag-grain {
-  position:fixed; inset:0;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  opacity:0.022; pointer-events:none; z-index:0;
-}
-
-/* Hero */
-.ag-hero {
-  position:relative; z-index:1;
-  min-height:100vh;
-  display:flex; flex-direction:column;
-  justify-content:center;
-  padding:140px 52px 100px;
-  overflow:hidden;
-}
-.ag-hero-glow {
-  position:absolute; right:0; top:10%; width:55%; height:80%;
-  background:radial-gradient(ellipse at 70% 40%,rgba(242,237,228,0.016) 0%,transparent 65%);
-  pointer-events:none;
-}
-.ag-eyebrow {
-  display:flex; align-items:center; gap:12px;
-  font-size:10px; font-weight:500;
-  letter-spacing:0.16em; text-transform:uppercase;
-  color:var(--ag-faint); margin-bottom:32px;
-}
-.ag-eyebrow-line { width:28px; height:0.5px; background:var(--ag-border); }
-
-/* Splash wordmark */
-.ag-hero-wordmark {
-  display:block;
-  height:clamp(56px,9vw,120px);
-  width:auto;
-  object-fit:contain;
-  object-position:left center;
-  margin-bottom:32px;
-}
-.ag-hero-sub {
-  font-size:16px; color:var(--ag-faint);
-  max-width:460px; line-height:1.9; margin-bottom:48px;
-}
-.ag-hero-btns { display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
-.ag-btn-primary {
-  display:inline-flex; align-items:center;
-  background:var(--ag-bone); color:var(--ag-ink);
-  font-family:'DM Sans',sans-serif; font-size:14px; font-weight:500;
-  padding:13px 28px; border-radius:7px;
-  text-decoration:none; transition:opacity 0.2s,transform 0.2s;
-}
-.ag-btn-primary:hover { opacity:0.86; transform:translateY(-1px); }
-.ag-btn-ghost {
-  font-size:13px; color:var(--ag-faint); text-decoration:none;
-  padding:13px 0; border-bottom:0.5px solid var(--ag-border);
-  transition:color 0.2s,border-color 0.2s;
-}
-.ag-btn-ghost:hover { color:var(--ag-soft); border-color:var(--ag-faint); }
-
-/* Section label with line */
-.ag-sec-label {
-  display:flex; align-items:center; gap:12px;
-  font-size:10px; font-weight:500;
-  letter-spacing:0.16em; text-transform:uppercase;
-  color:var(--ag-faint); margin-bottom:20px;
-}
-.ag-sec-line { width:28px; height:0.5px; background:var(--ag-border); flex-shrink:0; }
-
-/* Sections */
-.ag-section { position:relative; z-index:1; padding:100px 52px; }
-.ag-section-dark {
-  background:#0C0B09;
-  border-top:0.5px solid var(--ag-border);
-  border-bottom:0.5px solid var(--ag-border);
-}
-.ag-max { max-width:1140px; margin:0 auto; }
-.ag-h2 {
-  font-family:'Lora',serif;
-  font-size:clamp(26px,3.5vw,46px);
-  font-weight:500; letter-spacing:-1px;
-  color:var(--ag-bone); line-height:1.18;
-}
-
-/* Problem grid */
-.ag-prob-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
-.ag-p { font-size:14px; color:var(--ag-faint); line-height:1.9; margin-top:18px; }
-
-/* Deleted message cards with strikethrough */
-.ag-del-stack { display:flex; flex-direction:column; gap:10px; }
-.ag-del-card {
-  background:var(--ag-raised); border:0.5px solid var(--ag-border);
-  border-radius:10px; padding:18px 22px;
-  position:relative; overflow:hidden; transition:border-color 0.3s;
-}
-.ag-del-card:hover { border-color:#302C28; }
-.ag-del-card::after {
-  content:''; position:absolute;
-  top:0; right:0; bottom:0; width:28%;
-  background:linear-gradient(to right,transparent,var(--ag-raised));
-  pointer-events:none;
-}
-.ag-del-text {
-  font-family:'Lora',serif; font-size:14px; font-style:italic;
-  color:var(--ag-soft); opacity:0.5;
-  text-decoration:line-through;
-  text-decoration-color:rgba(110,104,96,0.4);
-  text-decoration-thickness:0.5px; line-height:1.6;
-}
-.ag-del-meta {
-  font-size:10px; letter-spacing:0.08em; text-transform:uppercase;
-  color:var(--ag-faint); margin-top:7px; opacity:0.45;
-}
-
-/* Features */
-.ag-feat-intro {
-  font-family:'Lora',serif;
-  font-size:clamp(20px,2.8vw,36px);
-  font-weight:500; letter-spacing:-0.8px;
-  color:var(--ag-bone); max-width:660px;
-  line-height:1.25; margin-bottom:64px;
-}
-.ag-feat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
-.ag-feat-card {
-  background:var(--ag-raised); border:0.5px solid var(--ag-border);
-  padding:36px 32px; transition:background 0.3s;
-}
-.ag-feat-card:hover { background:#161412; }
-.ag-feat-card:first-child { border-radius:14px 0 0 14px; }
-.ag-feat-card:last-child  { border-radius:0 14px 14px 0; }
-.ag-feat-num { font-family:'Lora',serif; font-size:44px; color:var(--ag-border); line-height:1; margin-bottom:20px; }
-.ag-feat-title { font-family:'Lora',serif; font-size:17px; font-weight:500; color:var(--ag-bone); margin-bottom:10px; }
-.ag-feat-body { font-size:13px; color:var(--ag-faint); line-height:1.8; }
-
-/* Release */
-.ag-r-list { display:flex; flex-direction:column; gap:2px; }
-.ag-r-item {
-  display:grid; grid-template-columns:190px 1fr 120px;
-  border:0.5px solid var(--ag-border);
-  background:var(--ag-raised); overflow:hidden; transition:background 0.3s;
-}
-.ag-r-item:first-child { border-radius:12px 12px 0 0; }
-.ag-r-item:last-child  { border-radius:0 0 12px 12px; }
-.ag-r-item:hover { background:#161412; }
-.ag-r-name { padding:24px 28px; border-right:0.5px solid var(--ag-border); display:flex; align-items:center; }
-.ag-r-name-t { font-family:'Lora',serif; font-size:15px; font-weight:500; color:var(--ag-bone); }
-.ag-r-desc { padding:24px 28px; font-size:13px; color:var(--ag-faint); line-height:1.75; display:flex; align-items:center; border-right:0.5px solid var(--ag-border); }
-.ag-r-tag  { padding:24px 28px; display:flex; align-items:center; }
-.ag-badge { font-size:10px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; padding:4px 10px; border-radius:20px; }
-.ag-badge-free { background:rgba(84,110,96,0.10); color:var(--ag-sage); border:0.5px solid var(--ag-sage); }
-.ag-badge-prem { background:var(--ag-vglow); color:var(--ag-violet); border:0.5px solid var(--ag-violet); }
-
-/* Portrait */
-.ag-portrait-q {
-  font-family:'Lora',serif;
-  font-size:clamp(18px,2.5vw,28px);
-  font-style:italic; color:var(--ag-soft);
-  line-height:1.65; margin-bottom:40px;
-  max-width:720px; margin-left:auto; margin-right:auto;
-  padding:0 20px; position:relative;
-}
-.ag-portrait-q::before {
-  content:'"'; position:absolute;
-  top:-16px; left:-4px;
-  font-size:64px; color:var(--ag-border);
-  font-family:'Lora',serif; line-height:1;
-}
-.ag-portrait-card {
-  background:var(--ag-raised); border:0.5px solid var(--ag-violet);
-  border-radius:14px; padding:36px; text-align:left;
-  max-width:720px; margin:48px auto 0;
-  position:relative; overflow:hidden;
-}
-.ag-portrait-card::before {
-  content:''; position:absolute; inset:0;
-  background:radial-gradient(ellipse at top left,rgba(139,126,200,0.06),transparent 60%);
-  pointer-events:none;
-}
-.ag-portrait-label {
-  font-size:10px; font-weight:500; letter-spacing:0.14em;
-  text-transform:uppercase; color:var(--ag-violet); margin-bottom:18px;
-}
-.ag-portrait-text {
-  font-family:'Lora',serif; font-size:15px; font-style:italic;
-  color:var(--ag-faint); line-height:1.85;
-}
-
-/* Privacy */
-.ag-priv-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; }
-.ag-priv-p { font-size:14px; color:var(--ag-faint); line-height:1.85; margin-top:14px; }
-.ag-facts { display:flex; flex-direction:column; gap:2px; margin-top:18px; }
-.ag-fact { display:flex; align-items:flex-start; gap:12px; padding:12px 16px; background:var(--ag-raised); border:0.5px solid var(--ag-border); border-radius:8px; font-size:13px; color:var(--ag-faint); line-height:1.5; }
-.ag-dot { width:5px; height:5px; border-radius:50%; background:var(--ag-sage); flex-shrink:0; margin-top:5px; }
-.ag-never-box { background:var(--ag-raised); border:0.5px solid var(--ag-border); border-radius:14px; padding:32px; }
-.ag-never-title { font-size:10px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:var(--ag-faint); margin-bottom:18px; }
-.ag-never-list { display:flex; flex-direction:column; gap:11px; }
-.ag-never-row { display:flex; align-items:center; gap:12px; font-size:13px; color:var(--ag-faint); }
-.ag-never-x { width:18px; height:18px; border-radius:50%; background:rgba(122,50,72,0.1); border:0.5px solid var(--ag-burg); display:flex; align-items:center; justify-content:center; font-size:9px; color:var(--ag-burg); flex-shrink:0; }
-
-/* Download */
-.ag-dl-inner { max-width:580px; margin:0 auto; text-align:center; }
-.ag-dl-star { font-size:20px; color:#8A8680; display:block; margin-bottom:24px; }
-.ag-dl-h { font-family:'Lora',serif; font-size:clamp(30px,4.5vw,58px); font-weight:500; letter-spacing:-1.5px; line-height:1.08; color:var(--ag-bone); margin-bottom:20px; }
-.ag-dl-sub { font-size:15px; color:var(--ag-faint); line-height:1.8; margin-bottom:40px; }
-.ag-as-btn { display:inline-block; background:var(--ag-bone); color:var(--ag-ink); font-family:'DM Sans',sans-serif; font-weight:500; font-size:14px; padding:14px 32px; border-radius:10px; text-decoration:none; transition:opacity 0.2s; }
-.ag-as-btn:hover { opacity:0.85; }
-.ag-legal { font-size:11px; color:var(--ag-faint); margin-top:20px; opacity:0.55; }
-.ag-legal a { color:inherit; text-decoration:underline; }
-
-/* Footer */
-.ag-footer {
-  position:relative; z-index:1; padding:36px 52px;
-  border-top:0.5px solid var(--ag-border);
-  display:flex; align-items:center; justify-content:space-between;
-  flex-wrap:wrap; gap:16px;
-}
-.ag-footer-brand { font-family:'Lora',serif; font-size:15px; color:var(--ag-faint); display:flex; align-items:center; gap:8px; }
-.ag-footer-links { display:flex; gap:20px; list-style:none; flex-wrap:wrap; }
-.ag-footer-links a { font-size:12px; color:var(--ag-faint); text-decoration:none; transition:color 0.2s; }
-.ag-footer-links a:hover { color:var(--ag-soft); }
-.ag-footer-legal { width:100%; font-size:11px; color:var(--ag-border); }
-
-/* Fixed bottom-left A in Aglossal world */
-.ag-fixed-back {
-  position:fixed; bottom:32px; left:32px; z-index:999;
-  opacity:0; pointer-events:none; transition:opacity 0.4s 0.6s;
-  cursor:pointer; text-decoration:none;
-}
-body.flipped-aglossal .ag-fixed-back { opacity:1; pointer-events:all; }
-.ag-fixed-back:hover { transform:scale(1.06); }
-.ag-fixed-back img { width:60px; height:60px; object-fit:cover; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.6); display:block; }
-.ag-fixed-back span { display:block; font-size:9px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--ag-faint); text-align:center; margin-top:5px; font-family:'DM Sans',sans-serif; }
-
-/* Aglossal scroll reveal */
-.agr { opacity:0; transform:translateY(24px); transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1),transform 0.7s cubic-bezier(0.16,1,0.3,1); }
-.agr.agrin { opacity:1; transform:none; }
-.agr[data-d="1"]{transition-delay:80ms}
-.agr[data-d="2"]{transition-delay:160ms}
-.agr[data-d="3"]{transition-delay:240ms}
-.agr[data-d="4"]{transition-delay:320ms}
-
-@media(max-width:768px){
-  .aglossal-nav{padding:16px 20px;}
-  .aglossal-nav-links{display:none;}
-  .ag-hero,.ag-section{padding-left:24px;padding-right:24px;}
-  .ag-hero{padding-top:110px;}
-  .ag-prob-grid{grid-template-columns:1fr;gap:48px;}
-  .ag-feat-grid{grid-template-columns:1fr;}
-  .ag-feat-card{border-radius:12px!important;}
-  .ag-r-item{grid-template-columns:1fr;}
-  .ag-r-name,.ag-r-desc{border-right:none;border-bottom:0.5px solid var(--ag-border);}
-  .ag-priv-grid{grid-template-columns:1fr;gap:48px;}
-  .ag-footer{padding:28px 24px;flex-direction:column;}
-  .ag-fixed-back{bottom:20px;left:20px;}
-  .ag-fixed-back img{width:44px;height:44px;}
-}
-
 </style>
 </head>
 <body>
@@ -1136,15 +681,10 @@ body.flipped-aglossal .ag-fixed-back { opacity:1; pointer-events:all; }
 <!-- Canvases -->
 <canvas id="bg-canvas"></canvas>
 <canvas id="aidd-canvas"></canvas>
-<canvas id="aglossal-canvas"></canvas>
 
 <!-- ═══ EMBUR NAV ═══ -->
 <nav class="embur-nav">
-  <button class="btn-flip-to-aglossal" onclick="flipToAglossal()">
-      <img src="/aglossal/icon.png" class="ag-flip-icon" alt="A">
-      Aglossal World
-    </button>
-    <div class="nav-logo">EMBUR <span>•</span></div>
+  <div class="nav-logo">EMBUR <span>•</span></div>
   <div class="nav-links">
     <a href="#features">Features</a>
     <a href="#ai">AI Studio</a>
@@ -1157,24 +697,6 @@ body.flipped-aglossal .ag-fixed-back { opacity:1; pointer-events:all; }
       AIDD APP
     </button>
     <a href="credits.html" class="nav-cta">Get Credits</a>
-  </div>
-</nav>
-
-<!-- ═══ AGLOSSAL NAV ═══ -->
-<nav class="aglossal-nav">
-  <button class="btn-flip-to-embur-ag" onclick="flipBackFromAglossal()">← Embur</button>
-  <a href="#" class="aglossal-nav-brand">
-    <img src="/aglossal/icon.png" class="aglossal-nav-icon" alt="A">
-    <span class="aglossal-nav-name">Aglossal</span>
-    <span class="aglossal-nav-star">✦</span>
-  </a>
-  <div class="aglossal-nav-links">
-    <a href="#">Features</a>
-    <a href="/aglossal/privacy">Privacy</a>
-    <a href="/aglossal/terms">Terms</a>
-  </div>
-  <div class="aglossal-nav-right">
-    <a href="https://apps.apple.com/app/aglossal" class="aglossal-dl-btn">Download</a>
   </div>
 </nav>
 
@@ -1436,284 +958,17 @@ body.flipped-aglossal .ag-fixed-back { opacity:1; pointer-events:all; }
     </div>
   </div><!-- end world-aidd -->
 
-
-  <!-- ══ WORLD 3: AGLOSSAL — flips in from left ══ -->
-  <div class="world world-aglossal">
-    <div class="ag-world-inner">
-      <div class="ag-grain"></div>
-
-      <!-- HERO -->
-      <section class="ag-hero">
-        <div class="ag-hero-glow"></div>
-        <p class="ag-eyebrow">
-          <span class="ag-eyebrow-line"></span>
-          For the voice you swallow. <span style="font-size:9px;color:#6E6860;">✦</span>
-        </p>
-        <img src="/aglossal/splash-icon.png" class="ag-hero-wordmark" alt="Aglossal">
-        <p class="ag-hero-sub">
-          The messages you typed and erased. The voice memo you recorded at 2am and threw away. The thing you almost said that would have changed everything.
-        </p>
-        <div class="ag-hero-btns">
-          <a href="https://apps.apple.com/app/aglossal" class="ag-btn-primary">Download for iOS</a>
-          <a href="/aglossal" class="ag-btn-ghost">Full site →</a>
-        </div>
-      </section>
-
-      <!-- PROBLEM -->
-      <section class="ag-section ag-section-dark">
-        <div class="ag-max">
-          <div class="ag-prob-grid">
-            <div>
-              <p class="ag-sec-label agr"><span class="ag-sec-line"></span>The problem</p>
-              <h2 class="ag-h2 agr" data-d="1">Every app was built for what you share.</h2>
-              <p class="ag-p agr" data-d="2">
-                Aglossal is the first one built for what you don't.<br><br>
-                Humans perform. On every platform, in every relationship — we curate a version of ourselves. The true self leaks only in moments we immediately delete, retract, or swallow.<br><br>
-                No technology has ever tried to hold those moments. Until now.
-              </p>
-            </div>
-            <div class="ag-del-stack">
-              <div class="ag-del-card agr" data-d="1">
-                <p class="ag-del-text">I have been carrying this since the day we fought and I need you to know I never stopped</p>
-                <p class="ag-del-meta">Deleted · 11:47pm · never sent</p>
-              </div>
-              <div class="ag-del-card agr" data-d="2">
-                <p class="ag-del-text">I don't think I should stay in this job anymore</p>
-                <p class="ag-del-meta">Deleted · 3 drafts · abandoned</p>
-              </div>
-              <div class="ag-del-card agr" data-d="3">
-                <p class="ag-del-text">I love you and I think I have for a long time</p>
-                <p class="ag-del-meta">Deleted · voice memo discarded</p>
-              </div>
-              <div class="ag-del-card agr" data-d="4" style="opacity:0.3;pointer-events:none">
-                <p class="ag-del-text" style="text-decoration:none;opacity:1;color:#6E6860;">Everything you never said now lives here.</p>
-                <p class="ag-del-meta">Aglossal ✦</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- FEATURES -->
-      <section class="ag-section">
-        <div class="ag-max">
-          <p class="ag-sec-label agr"><span class="ag-sec-line"></span>How it works</p>
-          <p class="ag-feat-intro agr" data-d="1">A private room for the version of you that only exists in what you almost said.</p>
-          <div class="ag-feat-grid">
-            <div class="ag-feat-card agr" data-d="1">
-              <div class="ag-feat-num">01</div>
-              <h3 class="ag-feat-title">The Draft Studio</h3>
-              <p class="ag-feat-body">A full-screen space to write what you've never been able to say. No word count. No send button. Every version you write and delete is held.</p>
-            </div>
-            <div class="ag-feat-card agr" data-d="2">
-              <div class="ag-feat-num">02</div>
-              <h3 class="ag-feat-title">The Vault</h3>
-              <p class="ag-feat-body">Every entry ever written — organized by emotion, by person, by time. Protected by Face ID. Encrypted on your device. Seen by no one but you.</p>
-            </div>
-            <div class="ag-feat-card agr" data-d="3">
-              <div class="ag-feat-num">03</div>
-              <h3 class="ag-feat-title">Voice Memos</h3>
-              <p class="ag-feat-body">Record the thing you can't write. Even if you abandon it — it's held. The abandoned voice memo is sometimes the most honest entry.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- RELEASE TYPES -->
-      <section class="ag-section ag-section-dark">
-        <div class="ag-max">
-          <p class="ag-sec-label agr"><span class="ag-sec-line"></span>Release — when you're ready</p>
-          <h2 class="ag-h2 agr" data-d="1" style="max-width:580px;margin-bottom:48px;">Four ways to finally let go.</h2>
-          <div class="ag-r-list">
-            <div class="ag-r-item agr" data-d="1">
-              <div class="ag-r-name"><span class="ag-r-name-t">Into the Void</span></div>
-              <div class="ag-r-desc">Say it once into nothing. Said. Done. Still yours. The relief of having finally spoken it — to the universe, to no one.</div>
-              <div class="ag-r-tag"><span class="ag-badge ag-badge-free">Free</span></div>
-            </div>
-            <div class="ag-r-item agr" data-d="2">
-              <div class="ag-r-name"><span class="ag-r-name-t">Anonymous Pulse</span></div>
-              <div class="ag-r-desc">They receive only a feeling. Not your words. Not your name. One way. No reply.</div>
-              <div class="ag-r-tag"><span class="ag-badge ag-badge-prem">Premium</span></div>
-            </div>
-            <div class="ag-r-item agr" data-d="3">
-              <div class="ag-r-name"><span class="ag-r-name-t">Direct Delivery</span></div>
-              <div class="ag-r-desc">Finally send it. A 10-minute window to change your mind. After that — it arrives.</div>
-              <div class="ag-r-tag"><span class="ag-badge ag-badge-prem">Premium</span></div>
-            </div>
-            <div class="ag-r-item agr" data-d="4">
-              <div class="ag-r-name"><span class="ag-r-name-t">Time Capsule</span></div>
-              <div class="ag-r-desc">Seal it for the future. To yourself. To someone. To a date that matters.</div>
-              <div class="ag-r-tag"><span class="ag-badge ag-badge-prem">Premium</span></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SHADOW PORTRAIT -->
-      <section class="ag-section" style="text-align:center;">
-        <div class="ag-max">
-          <p class="ag-sec-label agr" style="justify-content:center;"><span class="ag-sec-line"></span>Shadow Portrait</p>
-          <blockquote class="ag-portrait-q agr" data-d="1">
-            The AI reads the patterns of what you suppress — not your words, but the weight of them — and writes you a portrait. Not a diagnosis. A mirror.
-          </blockquote>
-          <div class="ag-portrait-card agr" data-d="2">
-            <p class="ag-portrait-label">Example Shadow Portrait</p>
-            <p class="ag-portrait-text">
-              You carry more than most people know how to carry. The patterns in what you hold back — the weight of them, the frequency, the way some feelings return again and again — speak to someone who feels everything deeply and trusts the world with very little of it.<br><br>
-              There is a particular kind of pain that lives in your unsaid things. Not the sharp kind, but the persistent kind — the kind that shapes how you move through rooms, through conversations, through silences.<br><br>
-              That voice deserves to be heard. Beginning with you.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- PRIVACY -->
-      <section class="ag-section ag-section-dark">
-        <div class="ag-max">
-          <div class="ag-priv-grid">
-            <div>
-              <p class="ag-sec-label agr"><span class="ag-sec-line"></span>Privacy</p>
-              <h2 class="ag-h2 agr" data-d="1">Built on one principle: what you write here is yours.</h2>
-              <p class="ag-priv-p agr" data-d="2">All vault data is stored locally on your device with AES-256 encryption, protected by Face ID or Touch ID. No content is ever uploaded without your explicit permission.</p>
-              <div class="ag-facts">
-                <div class="ag-fact agr" data-d="1"><div class="ag-dot"></div>AES-256 encryption on all vault entries</div>
-                <div class="ag-fact agr" data-d="2"><div class="ag-dot"></div>Face ID / Touch ID required to open vault</div>
-                <div class="ag-fact agr" data-d="3"><div class="ag-dot"></div>Crisis detection runs entirely on-device</div>
-                <div class="ag-fact agr" data-d="4"><div class="ag-dot"></div>No advertising. No analytics. No tracking.</div>
-              </div>
-            </div>
-            <div class="ag-never-box agr" data-d="2">
-              <p class="ag-never-title">Aglossal will never</p>
-              <div class="ag-never-list">
-                <div class="ag-never-row"><div class="ag-never-x">✕</div>Sell your data</div>
-                <div class="ag-never-row"><div class="ag-never-x">✕</div>Share your content with anyone</div>
-                <div class="ag-never-row"><div class="ag-never-x">✕</div>Upload your words without permission</div>
-                <div class="ag-never-row"><div class="ag-never-x">✕</div>Show you a feed or follower count</div>
-                <div class="ag-never-row"><div class="ag-never-x">✕</div>Use your data for advertising</div>
-                <div class="ag-never-row"><div class="ag-never-x">✕</div>Train AI on your vault content</div>
-                <div class="ag-never-row"><div class="ag-never-x">✕</div>Collect your location or contacts</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- DOWNLOAD -->
-      <section class="ag-section">
-        <div class="ag-dl-inner">
-          <span class="ag-dl-star agr">✦</span>
-          <h2 class="ag-dl-h agr" data-d="1">Everyone who has ever hit delete on something true.</h2>
-          <p class="ag-dl-sub agr" data-d="2">Aglossal is for them. For you.<br>For the version of you that deserved to say it.</p>
-          <div class="agr" data-d="3">
-            <a href="https://apps.apple.com/app/aglossal" class="ag-as-btn">Download on the App Store</a>
-          </div>
-          <p class="ag-legal agr" data-d="4">
-            iOS 17+ · Free · 17+ only ·
-            <a href="/aglossal/privacy">Privacy</a> ·
-            <a href="/aglossal/terms">Terms</a>
-          </p>
-        </div>
-      </section>
-
-      <!-- FOOTER -->
-      <footer class="ag-footer">
-        <div class="ag-footer-brand">Aglossal <span style="font-size:9px;color:#6E6860;">✦</span></div>
-        <ul class="ag-footer-links">
-          <li><a href="/aglossal">Full site</a></li>
-          <li><a href="/aglossal/privacy">Privacy</a></li>
-          <li><a href="/aglossal/terms">Terms</a></li>
-          <li><a href="mailto:support@embur.world">support@embur.world</a></li>
-          <li><a href="#" onclick="flipBackFromAglossal();return false;" style="color:rgba(29,184,154,0.6);">← Back to Embur</a></li>
-        </ul>
-        <p class="ag-footer-legal">© 2026 Embur World. · Not a medical or therapeutic service.</p>
-      </footer>
-
-    </div><!-- end ag-world-inner -->
-  </div><!-- end world-aglossal -->
-
 </div><!-- end universe -->
 
-<!-- Aglossal fixed bottom-left A — back to Embur -->
-<a class="ag-fixed-back" onclick="flipBackFromAglossal();return false;" href="#" title="Back to Embur">
-  <img src="/aglossal/icon.png" alt="Back to Embur">
-  <span>← Embur</span>
-</a>
-
-<!-- Universe Selector — three-world navigator -->
-<div class="universe-selector">
-  <button class="uni-world uni-aglossal" onclick="flipToAglossal()" title="Aglossal">
-    <img src="/aglossal/icon.png" alt="A">
-    <span>Aglossal</span>
-  </button>
-  <div class="uni-sep"></div>
-  <div class="uni-world uni-embur" title="Embur">
-    <div class="uni-embur-dot"></div>
-    <span>Embur</span>
-  </div>
-  <div class="uni-sep"></div>
-  <button class="uni-world uni-aidd" onclick="flip()" title="AIDD">
-    <div class="uni-aidd-dot"></div>
-    <span>AIDD</span>
-  </button>
+<!-- Floating Flip Indicator -->
+<div class="flip-indicator" onclick="flip()">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M7 16V4m0 0L3 8m4-4l4 4M17 8v12m0 0l4-4m-4 4l-4-4"/>
+  </svg>
+  <span id="flip-label">Switch to AIDD</span>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
-/* ══════════════════════════════════
-   AGLOSSAL DUST CANVAS
-══════════════════════════════════ */
-const aglossalCanvas = document.getElementById('aglossal-canvas');
-const agctx = aglossalCanvas.getContext('2d');
-let dustP = [];
-let AGW, AGH;
-function resizeAG(){
-  AGW = aglossalCanvas.width = window.innerWidth;
-  AGH = aglossalCanvas.height = window.innerHeight;
-}
-resizeAG();
-window.addEventListener('resize', resizeAG);
-for(let i=0;i<55;i++){
-  dustP.push({
-    x:Math.random()*window.innerWidth,
-    y:Math.random()*window.innerHeight,
-    r:Math.random()*1.1+0.2,
-    a:Math.random()*0.16+0.04,
-    vx:(Math.random()-.5)*0.11,
-    vy:(Math.random()-.5)*0.07-0.035,
-    c:Math.random()<0.65?'#F2EDE4':'#C5BDB0',
-  });
-}
-function drawAG(){
-  agctx.clearRect(0,0,AGW,AGH);
-  dustP.forEach(p=>{
-    agctx.beginPath();
-    agctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    agctx.fillStyle=p.c+Math.floor(p.a*255).toString(16).padStart(2,'0');
-    agctx.fill();
-    p.x+=p.vx; p.y+=p.vy;
-    if(p.x<-2)p.x=AGW+2; if(p.x>AGW+2)p.x=-2;
-    if(p.y<-2)p.y=AGH+2; if(p.y>AGH+2)p.y=-2;
-  });
-  requestAnimationFrame(drawAG);
-}
-drawAG();
-
-/* ══════════════════════════════════
-   SCROLL REVEAL — AGLOSSAL
-══════════════════════════════════ */
-const agRevObs = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){ e.target.classList.add('agrin'); agRevObs.unobserve(e.target); }
-  });
-},{threshold:0.08, rootMargin:'0px 0px -24px 0px'});
-document.querySelectorAll('.agr').forEach(el=>agRevObs.observe(el));
-
-function triggerAglossalReveal(){
-  document.querySelectorAll('.agr:not(.agrin)').forEach(el=>{
-    if(el.getBoundingClientRect().top < window.innerHeight*0.9) el.classList.add('agrin');
-  });
-}
-
-</script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* ══════════════════════════════════
    EMBUR CANVAS
 ══════════════════════════════════ */
@@ -1801,57 +1056,34 @@ drawAidd();
 /* ══════════════════════════════════
    FLIP LOGIC
 ══════════════════════════════════ */
-let isFlipped   = false;  // AIDD world (flips right)
-let isAglossal  = false;  // Aglossal world (flips left)
-let isFlipping  = false;
+let isFlipped = false;
+let isFlipping = false;
 
-// Return from AIDD sub-pages
+// Return from AIDD sub-pages (privacy, support)
 if(localStorage.getItem('aidd_world') === 'aidd' || new URLSearchParams(window.location.search).get('w') === 'aidd'){
   document.body.classList.add('flipped');
   isFlipped = true;
-  // world state managed by CSS classes on body
+  document.getElementById('flip-label').textContent = 'Switch to Embur';
   localStorage.removeItem('aidd_world');
   history.replaceState(null,'',window.location.pathname);
 }
 
-// ── AIDD flip (right) ──
 function flip(){
   if(isFlipping) return;
-  if(isAglossal){ flipBackFromAglossal(); return; }
   isFlipping = true;
   document.body.classList.add('flipping');
+
   isFlipped = !isFlipped;
   document.body.classList.toggle('flipped', isFlipped);
-  // world state managed by CSS classes on body
-  window.scrollTo({top:0, behavior:'instant'});
-  setTimeout(()=>{ document.body.classList.remove('flipping'); isFlipping=false; }, 1200);
-}
+  document.getElementById('flip-label').textContent = isFlipped ? 'Switch to Embur' : 'Switch to AIDD';
 
-// ── Aglossal flip (left) ──
-function flipToAglossal(){
-  if(isFlipping) return;
-  if(isFlipped){ flip(); setTimeout(flipToAglossal,1300); return; }
-  isFlipping = true;
-  document.body.classList.add('flipping');
-  isAglossal = true;
-  document.body.classList.add('flipped-aglossal');
+  // Scroll to top on flip
   window.scrollTo({top:0, behavior:'instant'});
+
   setTimeout(()=>{
     document.body.classList.remove('flipping');
     isFlipping = false;
-    triggerAglossalReveal();
   }, 1200);
-}
-
-// ── Back to Embur from Aglossal ──
-function flipBackFromAglossal(){
-  if(isFlipping) return;
-  isFlipping = true;
-  document.body.classList.add('flipping');
-  isAglossal = false;
-  document.body.classList.remove('flipped-aglossal');
-  window.scrollTo({top:0, behavior:'instant'});
-  setTimeout(()=>{ document.body.classList.remove('flipping'); isFlipping=false; }, 1200);
 }
 
 /* ══════════════════════════════════
@@ -1879,62 +1111,6 @@ document.querySelectorAll('.aidd-card').forEach((el,i)=>{
   el.style.transition=`opacity .6s ${i*0.08}s ease, transform .6s ${i*0.08}s ease`;
   observer.observe(el);
 });
-
-/* ══════════════════════════════════
-   AGLOSSAL DUST CANVAS
-══════════════════════════════════ */
-const aglossalCanvas = document.getElementById('aglossal-canvas');
-const agctx = aglossalCanvas.getContext('2d');
-let dustP = [];
-let AGW, AGH;
-function resizeAG(){
-  AGW = aglossalCanvas.width = window.innerWidth;
-  AGH = aglossalCanvas.height = window.innerHeight;
-}
-resizeAG();
-window.addEventListener('resize', resizeAG);
-for(let i=0;i<55;i++){
-  dustP.push({
-    x:Math.random()*window.innerWidth,
-    y:Math.random()*window.innerHeight,
-    r:Math.random()*1.1+0.2,
-    a:Math.random()*0.16+0.04,
-    vx:(Math.random()-.5)*0.11,
-    vy:(Math.random()-.5)*0.07-0.035,
-    c:Math.random()<0.65?'#F2EDE4':'#C5BDB0',
-  });
-}
-function drawAG(){
-  agctx.clearRect(0,0,AGW,AGH);
-  dustP.forEach(p=>{
-    agctx.beginPath();
-    agctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    agctx.fillStyle=p.c+Math.floor(p.a*255).toString(16).padStart(2,'0');
-    agctx.fill();
-    p.x+=p.vx; p.y+=p.vy;
-    if(p.x<-2)p.x=AGW+2; if(p.x>AGW+2)p.x=-2;
-    if(p.y<-2)p.y=AGH+2; if(p.y>AGH+2)p.y=-2;
-  });
-  requestAnimationFrame(drawAG);
-}
-drawAG();
-
-/* ══════════════════════════════════
-   SCROLL REVEAL — AGLOSSAL
-══════════════════════════════════ */
-const agRevObs = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){ e.target.classList.add('agrin'); agRevObs.unobserve(e.target); }
-  });
-},{threshold:0.08, rootMargin:'0px 0px -24px 0px'});
-document.querySelectorAll('.agr').forEach(el=>agRevObs.observe(el));
-
-function triggerAglossalReveal(){
-  document.querySelectorAll('.agr:not(.agrin)').forEach(el=>{
-    if(el.getBoundingClientRect().top < window.innerHeight*0.9) el.classList.add('agrin');
-  });
-}
-
 </script>
 </body>
 </html>
