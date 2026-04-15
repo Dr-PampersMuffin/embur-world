@@ -54,18 +54,6 @@
       z-index: 999;
     }
 
-    /* ── Smoky wordmark image ── */
-    .hero-wordmark-img {
-      display: block;
-      height: clamp(58px, 9vw, 120px);
-      width: auto;
-      object-fit: contain;
-      object-position: left center;
-      margin-bottom: 32px;
-      opacity: 0;
-      animation: riseIn 1s cubic-bezier(0.16,1,0.3,1) forwards 0.25s;
-    }
-
     /* ── Brand star (matches the ✦ in the assets) ── */
     .brand-star {
       display: inline-block;
@@ -694,44 +682,6 @@
     }
 
     /* ── Mobile ── */
-    /* ── Fixed bottom-left A — back to Embur ── */
-    .ag-fixed-a {
-      position: fixed;
-      bottom: 36px;
-      left: 36px;
-      z-index: 999;
-      cursor: pointer;
-      text-decoration: none;
-      display: block;
-      transition: transform 0.3s, opacity 0.3s;
-    }
-    .ag-fixed-a:hover {
-      transform: scale(1.06);
-      opacity: 0.88;
-    }
-    .ag-fixed-a img {
-      width: 64px;
-      height: 64px;
-      object-fit: cover;
-      border-radius: 14px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.6);
-      display: block;
-    }
-    .ag-fixed-a-label {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 9px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--bone-faint);
-      text-align: center;
-      margin-top: 6px;
-    }
-    @media (max-width: 800px) {
-      .ag-fixed-a { bottom: 20px; left: 20px; }
-      .ag-fixed-a img { width: 48px; height: 48px; border-radius: 10px; }
-    }
-
     @media (max-width: 800px) {
       nav { padding: 16px 24px; }
       .nav-links { display: none; }
@@ -777,11 +727,11 @@
     For the voice you swallow.
     <span class="brand-star">✦</span>
   </p>
-  <img
-    src="/aglossal/splash-icon.png"
-    alt="Aglossal"
-    class="hero-wordmark-img"
-  >
+  <h1 class="hero-title">
+    The real you has been living<br>
+    in <em>deleted drafts</em><br>
+    your whole life.
+  </h1>
   <p class="hero-sub">
     The messages you typed and erased. The voice memo you recorded at 2am and threw away. The thing you almost said that would have changed everything.
   </p>
@@ -992,12 +942,5 @@
 
   document.querySelectorAll('.r').forEach(el => observer.observe(el));
 </script>
-
-<!-- Fixed bottom-left A — back to Embur -->
-<a href="https://embur.world" class="ag-fixed-a" title="Back to Embur">
-  <img src="/aglossal/icon.png" alt="Back to Embur">
-  <div class="ag-fixed-a-label">← Embur</div>
-</a>
-
 </body>
 </html>
