@@ -12,10 +12,10 @@
 :root{--ink:#080706;--raised:#131110;--border:#252220;--bone:#F2EDE4;--soft:#C5BDB0;--faint:#6E6860;--violet:#8B7EC8;--sage:#546E60;--burg:#7A3248;--star:#9A9690}
 body{background:var(--ink);color:var(--bone);font-family:'DM Sans',sans-serif;line-height:1.7;min-height:100vh}
 body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:0.026;pointer-events:none;z-index:0}
-nav{position:fixed;top:0;left:0;right:0;z-index:10;padding:20px 52px;display:flex;align-items:center;justify-content:space-between;background:rgba(8,7,6,0.88);backdrop-filter:blur(16px);border-bottom:0.5px solid var(--border)}
+nav{position:fixed;top:0;left:0;right:0;z-index:10;padding:20px 52px;display:flex;align-items:center;justify-content:space-between;background:rgba(8,7,6,0.92);backdrop-filter:blur(16px);border-bottom:0.5px solid var(--border)}
 .nav-brand{font-family:'Lora',serif;font-size:19px;font-weight:500;color:var(--bone);display:flex;align-items:center;gap:8px;text-decoration:none}
 .nav-star{font-size:11px;color:var(--star)}
-.nav-back{font-size:13px;color:var(--faint);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color .2s}
+.nav-back{font-size:13px;color:var(--faint);text-decoration:none;transition:color .2s}
 .nav-back:hover{color:var(--soft)}
 .wrap{max-width:780px;margin:0 auto;padding:120px 40px 80px;position:relative;z-index:1}
 .page-title{font-family:'Lora',serif;font-size:clamp(36px,5vw,60px);font-weight:500;color:var(--bone);letter-spacing:-2px;line-height:1.05;margin-bottom:12px}
@@ -41,8 +41,8 @@ footer{text-align:center;padding:40px 52px;border-top:0.5px solid var(--border);
 <body>
 <nav>
   <a href="https://embur.world" class="nav-back">← embur.world</a>
-  <a href="/aglossal" class="nav-brand">Aglossal <span class="nav-star">✦</span></a>
-  <a href="/aglossal/terms" class="nav-back">Terms →</a>
+  <a href="https://embur.world" class="nav-brand">Aglossal <span class="nav-star">✦</span></a>
+  <a href="/aglossal-terms.html" class="nav-back">Terms →</a>
 </nav>
 
 <div class="wrap">
@@ -59,7 +59,7 @@ If you are in crisis or experiencing a mental health emergency, please contact e
 
   <div class="section">
     <h2 class="section-title">Data stored on your device</h2>
-    <p class="section-body">All vault entries — text and voice recordings — are stored locally on your device using AES-256 encryption. This data never leaves your device except when you explicitly choose to use a release feature.
+    <p class="section-body">All vault entries — text and voice recordings — are stored locally on your device using AES-256 encryption. This data never leaves your device except when you explicitly choose to use a release feature (Anonymous Pulse, Direct Delivery, or Time Capsule).
 
 Your vault is protected by Face ID, Touch ID, or your device passcode via Apple's LocalAuthentication framework. We do not store, access, or transmit your biometric data. Biometric authentication is handled entirely by your device's operating system.</p>
   </div>
@@ -70,35 +70,35 @@ Your vault is protected by Face ID, Touch ID, or your device passcode via Apple'
 
 Account: Your email address and encrypted password (if registered with email), used solely for authentication. Sign in with Apple provides authentication without sharing your personal email.
 
-Release features: When you send an Anonymous Pulse, Direct Delivery, or Time Capsule, we store the minimum required — recipient contact, emotional category or content, and scheduled date. Raw vault text sent via Direct Delivery is purged from our servers within 24 hours of delivery.
+Release features: When you send an Anonymous Pulse, Direct Delivery, or Time Capsule, we store the minimum required to fulfill delivery — recipient contact, emotional category or content, and scheduled date. Raw vault text sent via Direct Delivery is purged from our servers within 24 hours of delivery.
 
-Voice audio: If you send a voice memo via Direct Delivery, the audio file is temporarily hosted on Cloudinary to generate a playable link. The file is not indexed or searchable.
+Voice audio (Direct Delivery only): If you send a voice memo via Direct Delivery, the audio file is temporarily uploaded to Cloudinary (our secure media hosting provider) to generate a playable link for the recipient. The file is accessible via a private, unguessable URL and is not indexed or searchable.
 
-Shadow Portrait: To generate your portrait, anonymized behavioral metadata is sent to Anthropic's Claude AI — entry count, emotion distribution, revision frequency, and time patterns only. Your actual words are never sent.</p>
+Shadow Portrait: To generate your portrait, anonymized behavioral metadata is sent to Anthropic's Claude AI — entry count, emotion distribution, revision frequency, and time-of-day patterns only. Your actual words are never sent.</p>
   </div>
 
   <div class="section">
     <h2 class="section-title">Device permissions we request</h2>
-    <p class="section-body">Microphone: Required to record voice memos. Audio is stored locally. It is only uploaded when you explicitly send a voice memo via Direct Delivery. We do not access your microphone at any other time.
+    <p class="section-body">Microphone: Required to record voice memos in the Draft Studio. Audio is stored locally on your device. It is only uploaded when you explicitly send a voice memo via Direct Delivery. We do not access your microphone at any other time.
 
-Face ID / Touch ID: Used to protect your vault. Your biometric data never leaves your device and is never accessible to us.
+Face ID / Touch ID: Used to protect access to your vault. We use Apple's LocalAuthentication framework. Your biometric data never leaves your device and is never accessible to us.
 
-Notifications: Used for daily check-in reminders and Time Capsule delivery alerts. Local notifications only — no marketing. Disable at any time in Settings.
+Notifications: Used to send daily check-in reminders and Time Capsule delivery alerts. These are local notifications scheduled on your device. We do not send marketing notifications. You can disable notifications at any time in your device Settings.
 
-All permissions are optional.</p>
+All permissions are optional. You can skip biometric and notification setup during onboarding or disable them later in Settings.</p>
   </div>
 
   <div class="section">
-    <h2 class="section-title">Third-party services</h2>
-    <p class="section-body">Anthropic (anthropic.com) — Powers Shadow Portrait. Receives anonymized behavioral metadata only. No raw text.
+    <h2 class="section-title">Third-party services we use</h2>
+    <p class="section-body">Anthropic (anthropic.com) — Powers the Shadow Portrait feature. Receives anonymized behavioral metadata only. No raw text. Privacy policy: anthropic.com/privacy
 
-Resend (resend.com) — Email delivery for release features and password resets. Receives recipient email and message content only when you trigger a release.
+Resend (resend.com) — Email delivery service for Anonymous Pulse, Direct Delivery, Time Capsule, and password reset emails. Receives recipient email addresses and message content only when you explicitly trigger a release. Privacy policy: resend.com/legal/privacy-policy
 
-Cloudinary (cloudinary.com) — Secure media hosting for voice audio sent via Direct Delivery. Private access only.
+Cloudinary (cloudinary.com) — Secure media hosting for voice audio sent via Direct Delivery. Audio files are stored with private access controls. Privacy policy: cloudinary.com/privacy
 
-Railway (railway.app) — Backend server hosting. Processes API requests and stores account and release data.
+Railway (railway.app) — Backend server hosting. Processes API requests and stores account and release data. Privacy policy: railway.app/legal/privacy
 
-None of these providers are authorized to use your data for advertising or profiling.</p>
+None of these providers are authorized to use your data for advertising, profiling, or any purpose beyond service delivery.</p>
   </div>
 
   <div class="section">
@@ -112,18 +112,46 @@ None of these providers are authorized to use your data for advertising or profi
       <div class="never-row"><div class="never-x">✕</div>Collect your location, contacts, or browsing history</div>
       <div class="never-row"><div class="never-x">✕</div>Use your data to train AI models</div>
       <div class="never-row"><div class="never-x">✕</div>Send marketing emails</div>
+      <div class="never-row"><div class="never-x">✕</div>Retain Direct Delivery content beyond 24 hours post-delivery</div>
       <div class="never-row"><div class="never-x">✕</div>Store your biometric data — that stays on your device</div>
       <div class="never-row"><div class="never-x">✕</div>Access your microphone except during an active voice recording</div>
     </div>
   </div>
 
   <div class="section">
+    <h2 class="section-title">Anonymous Pulse</h2>
+    <p class="section-body">Anonymous Pulse sends a single emotional word to a recipient via email. Your identity, name, email address, and the content of your vault entry are never included or revealed. The recipient receives only the emotional signal with no way to identify you. This feature may not be used to send threatening, harassing, or abusive content.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Direct Delivery</h2>
+    <p class="section-body">Direct Delivery sends your chosen entry content to a recipient's email. You have a 10-minute cancellation window after sending. After this window, the message is delivered and cannot be recalled. Content is purged from our servers within 24 hours of delivery. You are solely responsible for the content you send.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Time Capsule</h2>
+    <p class="section-body">Time Capsule seals your entry for future delivery on a date you choose. Content is stored encrypted on our servers until the delivery date. If you delete your account before the delivery date, the capsule is also deleted and will not be sent. Content is purged within 24 hours of delivery.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Shadow Portrait and AI</h2>
+    <p class="section-body">Shadow Portrait generates a personal reflection using Claude (Anthropic's AI). We send anonymized behavioral metadata — not your words — to Anthropic's API. This includes: total entry count, emotion tag distribution, revision frequency, and time-of-day writing patterns. No raw text from your vault ever leaves your device for this feature. The generated portrait is displayed only to you and not stored on our servers.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Crisis detection</h2>
+    <p class="section-body">Aglossal includes on-device crisis keyword detection that runs entirely within the app. No text content is sent to any server during crisis detection. If concerning keywords are detected, you are shown local mental health and crisis resources.
+
+No alerts are sent to any third party, including Aglossal, when crisis keywords are detected. The system surfaces resources — it does not monitor, record, or report. In a life-threatening emergency, always contact emergency services directly.</p>
+  </div>
+
+  <div class="section">
     <h2 class="section-title">In-app purchases and subscriptions</h2>
     <p class="section-body">Aglossal offers optional Premium subscriptions through Apple's App Store in-app purchase system. We do not collect or store your payment information — all billing is handled by Apple.
 
-Subscriptions automatically renew unless cancelled at least 24 hours before renewal. To manage or cancel: iPhone Settings → Apple ID → Subscriptions.
+Subscriptions automatically renew at the end of each billing period unless cancelled at least 24 hours before renewal. To manage or cancel: iPhone Settings → Apple ID → Subscriptions.
 
-Refunds must be requested from Apple at reportaproblem.apple.com.
+Refunds must be requested from Apple at reportaproblem.apple.com. We do not process refunds directly.
 
 Current prices (may vary by region):
 · Monthly Premium: $4.99/month
@@ -131,10 +159,23 @@ Current prices (may vary by region):
   </div>
 
   <div class="section">
-    <h2 class="section-title">Crisis detection</h2>
-    <p class="section-body">Aglossal includes on-device crisis keyword detection that runs entirely within the app. No text content is sent to any server during crisis detection. If concerning keywords are detected, you are shown local mental health and crisis resources.
+    <h2 class="section-title">Data retention</h2>
+    <p class="section-body">Vault entries: Stored locally on your device. Deleted when you delete the entry or your account.
+Account data: Retained while your account exists. Deleted immediately upon account deletion.
+Release metadata: Retained for 90 days for operational integrity, then automatically purged.
+Direct Delivery content: Purged within 24 hours of delivery.
+Time Capsule content: Retained until delivery date, purged within 24 hours of delivery.
+Shadow Portrait calls: Anonymized metadata only, not retained after the API response.</p>
+  </div>
 
-No alerts are sent to any third party, including Aglossal. In a life-threatening emergency, always contact emergency services directly.</p>
+  <div class="section">
+    <h2 class="section-title">Security</h2>
+    <p class="section-body">Vault data: AES-256 encrypted on-device, protected by Face ID, Touch ID, or device passcode.
+Server communications: All API calls use TLS 1.2 or higher.
+Passwords: Hashed using bcrypt. Never stored in plain text.
+Authentication tokens: JWT with 90-day expiry, invalidated on sign out and account deletion.
+
+In the event of a data breach affecting your information, we will notify you within the timeframes required by applicable law.</p>
   </div>
 
   <div class="section">
@@ -146,26 +187,39 @@ No alerts are sent to any third party, including Aglossal. In a life-threatening
 · Export your vault data (Settings → Export my data)
 · Withdraw consent at any time by deleting your account
 
-GDPR (EU/UK): Additional rights including data portability and the right to lodge a complaint with your supervisory authority.
+GDPR (EU/UK): Additional rights including data portability and the right to lodge a complaint with your local supervisory authority.
+
 CCPA (California): Right to know what personal information is collected and to opt out of sale (we do not sell your data).
-PDPL (Kuwait): We comply with Kuwait's Personal Data Protection Law.
+
+PDPL (Kuwait): We comply with Kuwait's Personal Data Protection Law requirements.
 
 To exercise any of these rights: privacy@embur.world</p>
   </div>
 
   <div class="section">
     <h2 class="section-title">Children and age restrictions</h2>
-    <p class="section-body">Aglossal is rated 17+ and is intended for users aged 17 and older. We do not knowingly collect personal data from anyone under 17. If you believe a minor has created an account, contact us immediately at privacy@embur.world.</p>
+    <p class="section-body">Aglossal is rated 17+ on the App Store and is intended for users aged 17 and older. We do not knowingly collect personal data from anyone under 17. If we become aware that a user is under 17, we will delete their account and all associated data immediately.
+
+If you believe a minor has created an account, contact us immediately at privacy@embur.world.</p>
   </div>
 
   <div class="section">
-    <h2 class="section-title">Security</h2>
-    <p class="section-body">Vault data: AES-256 encrypted on-device, protected by Face ID, Touch ID, or device passcode.
-Server communications: All API calls use TLS 1.2 or higher.
-Passwords: Hashed using bcrypt. Never stored in plain text.
-Tokens: JWT with 90-day expiry, invalidated on sign out and account deletion.
+    <h2 class="section-title">Mental health and safety</h2>
+    <p class="section-body">Aglossal is a personal reflection tool, not a clinical service. It has not been evaluated by any medical or psychological regulatory authority.
 
-In the event of a data breach affecting your information, we will notify you within the timeframes required by applicable law.</p>
+The crisis detection feature is an automated keyword-matching system — it is not a substitute for professional crisis assessment and does not contact emergency services on your behalf.
+
+If you or someone you know is in immediate danger, call your local emergency number. Do not rely solely on this app for crisis support.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">International data transfers</h2>
+    <p class="section-body">Our servers are hosted via Railway on infrastructure that may be located in the United States. If you are located in the EU, UK, Kuwait, or another jurisdiction with data transfer restrictions, your data may be transferred to and processed in the United States. We implement appropriate safeguards as required by applicable law.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Changes to this policy</h2>
+    <p class="section-body">We will notify you in-app before any material changes to this Privacy Policy. Continued use after the effective date constitutes acceptance. The "Last updated" date at the top reflects the most recent revision.</p>
   </div>
 
   <div class="section">
@@ -183,10 +237,10 @@ Last updated: April 2026</p>
 
 <footer>
   <div class="footer-links">
-    <a href="/aglossal">← Aglossal</a>
-    <a href="/aglossal/terms">Terms of Service</a>
-    <a href="/aglossal/support">Support</a>
-    <a href="https://embur.world">Embur World</a>
+    <a href="https://embur.world">← embur.world</a>
+    <a href="/aglossal-terms.html">Terms of Service</a>
+    <a href="/aglossal-support.html">Support</a>
+    <a href="mailto:privacy@embur.world">privacy@embur.world</a>
   </div>
   <p class="footer-copy">© 2026 Embur World. All rights reserved. · Not a medical or therapeutic service.</p>
 </footer>

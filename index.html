@@ -366,7 +366,7 @@ body.flipped .aidd-nav{opacity:1;pointer-events:all}
 }
 .cta-sub{font-size:18px;color:var(--mu);margin-bottom:48px;line-height:1.6}
 .embur-footer{
-  position:relative;z-index:1;padding:40px;
+  position:relative;z-index:1;padding:40px 40px 90px;
   border-top:0.5px solid rgba(29,184,154,0.1);
   display:flex;align-items:center;justify-content:space-between;
   flex-wrap:wrap;gap:20px;
@@ -622,7 +622,7 @@ body.flipped .aidd-nav{opacity:1;pointer-events:all}
 /* AIDD Footer */
 .aidd-footer{
   position:relative;z-index:1;
-  padding:40px;
+  padding:40px 40px 90px;
   border-top:1px solid rgba(0,212,255,0.1);
   display:flex;align-items:center;justify-content:space-between;
   flex-wrap:wrap;gap:20px;
@@ -844,14 +844,10 @@ body.flipped-ag .uni-em { color:#5A8880; }
 /* ── Aglossal world interior ── */
 .ag-world {
   background:var(--ag-ink); min-height:100vh;
-  position:relative; overflow:hidden;
+  position:relative;
   color:var(--ag-bone); font-family:'DM Sans',sans-serif;
 }
-.ag-world::before {
-  content:''; position:absolute; inset:0;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  opacity:0.026; pointer-events:none; z-index:0;
-}
+
 
 /* ── Aglossal content — V2 styles scoped ── */
 .ag-world .ag-brand-star { display:inline-block; color:var(--ag-star); font-size:12px; }
@@ -953,7 +949,7 @@ body.flipped-ag .uni-em { color:#5A8880; }
 .ag-world .ag-download-legal a { color:inherit; text-decoration:underline; text-underline-offset:2px; }
 
 /* Footer */
-.ag-world .ag-footer { padding:36px 52px; border-top:0.5px solid var(--ag-border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+.ag-world .ag-footer { padding:36px 52px 90px; border-top:0.5px solid var(--ag-border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
 .ag-world .ag-footer-brand { font-family:'Lora',serif; font-size:15px; color:var(--ag-faint); display:flex; align-items:center; gap:8px; }
 .ag-world .ag-footer-links { display:flex; gap:22px; list-style:none; flex-wrap:wrap; }
 .ag-world .ag-footer-links a { font-size:12px; color:var(--ag-faint); text-decoration:none; transition:color 0.2s; }
@@ -1477,7 +1473,8 @@ body.flipped-ag .uni-em { color:#5A8880; }
           <p class="ag-download-legal ag-r" data-d="4">
             iOS 17+ · Free to download · 17+ only ·
             <a href="/aglossal-privacy.html">Privacy</a> ·
-            <a href="/aglossal-support.html">Terms</a>
+            <a href="/aglossal-terms.html">Terms</a> ·
+            <a href="/aglossal-support.html">Support</a>
           </p>
         </div>
       </section>
@@ -1490,9 +1487,9 @@ body.flipped-ag .uni-em { color:#5A8880; }
           by <a href="https://embur.world" style="color:inherit;text-decoration:none;margin-left:4px">Embur World</a>
         </div>
         <ul class="ag-footer-links">
-          <li><a href="aglossal-privacy.html">Privacy Policy</a></li>
-          <li><a href="aglossalsupport.html">Terms of Service</a></li>
-          <li><a href="mailto:support@embur.world">support@embur.world</a></li>
+          <li><a href="/aglossal-privacy.html">Privacy Policy</a></li>
+          <li><a href="/aglossal-terms.html">Terms of Service</a></li>
+          <li><a href="/aglossal-support.html">Support</a></li>
           <li><a href="#" onclick="flipBackFromAglossal();return false;" style="color:rgba(29,184,154,0.6)">← Back to Embur</a></li>
         </ul>
         <p class="ag-footer-legal">© 2026 Embur World. All rights reserved. · Not a medical or therapeutic service.</p>
