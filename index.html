@@ -74,6 +74,17 @@ body.flipped .world-aidd{
   transform:rotateY(0deg);
   z-index:2;
 }
+body.flipped-ag .world-embur{
+  transform:rotateY(180deg);
+  z-index:1;
+}
+body.flipped-ag .world-aglossal{
+  transform:rotateY(0deg);
+  z-index:2;
+}
+body.flipped-ag .world-aidd{
+  z-index:0;
+}
 
 /* During flip — body height locks */
 body.flipping{overflow:hidden}
@@ -693,9 +704,7 @@ body.flipped .aidd-nav{opacity:1;pointer-events:all}
   z-index: 1;
   will-change: transform;
 }
-body.flipped-ag .world-embur   { transform: rotateY(180deg);  z-index: 1; }
-body.flipped-ag .world-aglossal { transform: rotateY(0deg);   z-index: 2; }
-body.flipped-ag .world-aidd   { z-index: 0; }
+
 
 /* Aglossal canvas */
 #ag-canvas {
@@ -1467,8 +1476,8 @@ body.flipped-ag .uni-em { color:#5A8880; }
           </div>
           <p class="ag-download-legal ag-r" data-d="4">
             iOS 17+ · Free to download · 17+ only ·
-            <a href="aglossal-privacy.html">Privacy</a> ·
-            <a href="aglossal/aglossal-support.html">Terms</a>
+            <a href="/aglossal-privacy.html">Privacy</a> ·
+            <a href="/aglossal-support.html">Terms</a>
           </p>
         </div>
       </section>
