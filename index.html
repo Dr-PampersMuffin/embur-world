@@ -387,8 +387,6 @@ body.flipped .aidd-nav{opacity:1;pointer-events:all}
   position:relative;
   overflow:hidden;
 }
-
-/* AIDD HERO */
 .aidd-hero{
   position:relative;z-index:1;
   min-height:100vh;
@@ -397,7 +395,6 @@ body.flipped .aidd-nav{opacity:1;pointer-events:all}
   text-align:center;
   padding:130px 24px 80px;
 }
-
 .aidd-badge{
   display:inline-flex;align-items:center;gap:10px;
   background:rgba(0,212,255,0.08);
@@ -412,7 +409,6 @@ body.flipped .aidd-nav{opacity:1;pointer-events:all}
   background:#00D4FF;
   animation:aiddPulse 2s infinite;
 }
-
 .aidd-hero-title{
   font-family:'Syne',sans-serif;
   font-size:clamp(48px,9vw,108px);
@@ -434,7 +430,6 @@ body.flipped .aidd-nav{opacity:1;pointer-events:all}
   margin-top:4px;
   text-shadow:0 0 30px rgba(57,255,20,0.4);
 }
-
 .aidd-hero-sub{
   font-size:clamp(15px,2vw,19px);
   color:#7BA7C4;
@@ -449,8 +444,6 @@ body.flipped .aidd-nav{opacity:1;pointer-events:all}
   font-weight:700;letter-spacing:3px;text-transform:uppercase;
   margin-bottom:52px;
 }
-
-/* Subject pills */
 .aidd-subjects{
   display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
   margin-bottom:48px;
@@ -470,7 +463,6 @@ body.flipped .aidd-nav{opacity:1;pointer-events:all}
 .pill-insect{color:#FF6B35;border-color:#FF6B3540;background:#FF6B350D}
 .pill-plant{color:#39FF14;border-color:#39FF1440;background:#39FF140D}
 .pill-animal{color:#FFD700;border-color:#FFD70040;background:#FFD7000D}
-
 .aidd-hero-btns{
   display:flex;gap:14px;justify-content:center;flex-wrap:wrap;
   margin-bottom:80px;
@@ -494,8 +486,6 @@ body.flipped .aidd-nav{opacity:1;pointer-events:all}
   transition:all 0.25s;
 }
 .aidd-btn-ghost:hover{border-color:#00D4FF;color:#00D4FF;transform:translateY(-3px)}
-
-/* Stats */
 .aidd-stats{
   display:flex;gap:56px;justify-content:center;flex-wrap:wrap;
 }
@@ -507,8 +497,6 @@ body.flipped .aidd-nav{opacity:1;pointer-events:all}
   text-shadow:0 0 20px rgba(0,212,255,0.4);
 }
 .aidd-stat-label{font-size:11px;color:#3A6080;margin-top:2px;text-transform:uppercase;letter-spacing:1px}
-
-/* AIDD Features */
 .aidd-section{
   position:relative;z-index:1;
   padding:100px 40px;
@@ -527,7 +515,6 @@ body.flipped .aidd-nav{opacity:1;pointer-events:all}
   letter-spacing:-2px;line-height:1.05;
   margin-bottom:56px;
 }
-
 .aidd-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
 .aidd-card{
   background:rgba(7,20,40,0.8);
@@ -559,8 +546,6 @@ body.flipped .aidd-nav{opacity:1;pointer-events:all}
   margin-bottom:10px;
 }
 .aidd-card-desc{font-size:13px;color:#7BA7C4;line-height:1.7}
-
-/* Separator band */
 .aidd-band{
   position:relative;z-index:1;
   padding:80px 40px;
@@ -596,8 +581,6 @@ body.flipped .aidd-nav{opacity:1;pointer-events:all}
   color:#7BA7C4;letter-spacing:1px;
   font-family:'Space Mono',monospace;
 }
-
-/* AIDD CTA */
 .aidd-cta{
   position:relative;z-index:1;
   padding:120px 40px;text-align:center;
@@ -618,11 +601,8 @@ body.flipped .aidd-nav{opacity:1;pointer-events:all}
   font-size:17px;color:#7BA7C4;
   margin-bottom:52px;line-height:1.7;
 }
-
-/* AIDD Footer */
 .aidd-footer{
-  position:relative;z-index:1;
-  padding:40px 40px 90px;
+  position:relative;z-index:1;padding:40px 40px 90px;
   border-top:1px solid rgba(0,212,255,0.1);
   display:flex;align-items:center;justify-content:space-between;
   flex-wrap:wrap;gap:20px;
@@ -642,46 +622,7 @@ body.flipped .aidd-nav{opacity:1;pointer-events:all}
 .aidd-footer-copy{color:#1A3A5C;font-size:11px}
 
 /* ═══════════════════════════════════════════
-   FLIP BUTTON FLOATING INDICATOR
-═══════════════════════════════════════════ */
-  position:fixed;
-  bottom:32px;right:32px;
-  z-index:999;
-  display:flex;align-items:center;gap:10px;
-  background:rgba(0,212,255,0.12);
-  border:1px solid rgba(0,212,255,0.3);
-  border-radius:100px;
-  padding:12px 22px;
-  font-size:12px;font-weight:700;
-  color:#00D4FF;letter-spacing:1px;
-  cursor:pointer;
-  transition:all 0.3s;
-  font-family:'Syne',sans-serif;
-  backdrop-filter:blur(10px);
-  opacity:1;
-}
-  background:rgba(29,184,154,0.12);
-  border-color:rgba(29,184,154,0.3);
-  color:#1DB89A;
-}
-
-/* ═══════════════════════════════════════════
-   RESPONSIVE
-═══════════════════════════════════════════ */
-@media(max-width:768px){
-  .embur-nav,.aidd-nav{padding:16px 20px}
-  .nav-links,.aidd-nav-links{display:none}
-  .embur-section,.aidd-section{padding:60px 20px}
-  .aidd-band{padding:60px 20px}
-  .aidd-band-inner{flex-direction:column}
-  .aidd-cta,.cta-section{padding:80px 20px}
-  .embur-footer,.aidd-footer{flex-direction:column;text-align:center}
-  .footer-links,.aidd-footer-links{justify-content:center}
-  .aidd-stats,.stats{gap:32px}
-}
-
-/* ═══════════════════════════════════════════
-   AGLOSSAL WORLD — bone/ink serif aesthetic
+   AGLOSSAL WORLD
 ═══════════════════════════════════════════ */
 :root {
   --ag-ink:      #080706;
@@ -697,7 +638,6 @@ body.flipped .aidd-nav{opacity:1;pointer-events:all}
   --ag-star:     #9A9690;
 }
 
-/* World positioning */
 .world-aglossal {
   transform: rotateY(-180deg);
   background: var(--ag-ink);
@@ -705,8 +645,6 @@ body.flipped .aidd-nav{opacity:1;pointer-events:all}
   will-change: transform;
 }
 
-
-/* Aglossal canvas */
 #ag-canvas {
   position:fixed; top:0; left:0; width:100%; height:100%;
   pointer-events:none; z-index:0; opacity:0; transition:opacity 0.6s;
@@ -715,11 +653,9 @@ body.flipped-ag #ag-canvas   { opacity: 1; }
 body.flipped-ag #bg-canvas   { opacity: 0; }
 body.flipped-ag #aidd-canvas { opacity: 0; }
 
-/* Hide other navs when Aglossal active */
 body.flipped-ag .embur-nav  { opacity:0; pointer-events:none; }
 body.flipped-ag .aidd-nav   { opacity:0; pointer-events:none; }
 
-/* Aglossal nav */
 .ag-nav {
   position:fixed; top:0; left:0; right:0; z-index:100;
   padding:22px 52px;
@@ -772,7 +708,6 @@ body.flipped-ag .ag-nav { opacity:1; pointer-events:all; }
   border-color:#1DB89A90; box-shadow:0 0 20px #1DB89A30;
 }
 
-/* Embur nav Aglossal button */
 .btn-flip-to-ag {
   display:flex; align-items:center; gap:8px;
   background:linear-gradient(135deg,rgba(242,237,228,0.10),#0F0E0C);
@@ -797,7 +732,6 @@ body.flipped-ag .ag-nav { opacity:1; pointer-events:all; }
   70%{box-shadow:0 0 0 6px transparent}
 }
 
-/* ── Universe Selector ── */
 .universe-selector {
   position:fixed; bottom:30px; left:50%; transform:translateX(-50%);
   z-index:999; display:flex; align-items:center; gap:0;
@@ -819,20 +753,16 @@ body.flipped-ag .ag-nav { opacity:1; pointer-events:all; }
 .uni-sep { width:0.5px; height:18px; background:rgba(255,255,255,0.07); flex-shrink:0; margin:0 2px; }
 .uni-dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
 
-/* Embur node — teal */
 .uni-em { color:#5A8880; cursor:default; }
 .em-dot { background:var(--teal-b); animation:pulse 2s infinite; }
 body.flipped    .uni-em { color:#5A8880; cursor:pointer; }
 body.flipped-ag .uni-em { color:#5A8880; cursor:pointer; }
-/* Active state */
 .uni-em.active-world { background:rgba(29,184,154,0.12); color:var(--teal-b); box-shadow:inset 0 0 0 1px rgba(29,184,154,0.25); }
 
-/* AIDD node — cyan */
 .uni-ai { color:#3A6080; }
 .ai-dot { background:#00D4FF; animation:aiddPulse 2s infinite; }
 body.flipped .uni-ai { background:rgba(0,212,255,0.12); color:#00D4FF; box-shadow:inset 0 0 0 1px rgba(0,212,255,0.25); cursor:default; }
 
-/* Aglossal node — bone */
 .uni-ag { color:rgba(197,189,176,0.5); }
 .ag-dot { background:var(--ag-soft); }
 body.flipped-ag .uni-ag { background:rgba(242,237,228,0.10); color:var(--ag-soft); box-shadow:inset 0 0 0 1px rgba(242,237,228,0.18); cursor:default; }
@@ -847,9 +777,6 @@ body.flipped-ag .uni-em { color:#5A8880; }
   position:relative;
   color:var(--ag-bone); font-family:'DM Sans',sans-serif;
 }
-
-
-/* ── Aglossal content — V2 styles scoped ── */
 .ag-world .ag-brand-star { display:inline-block; color:var(--ag-star); font-size:12px; }
 .ag-world .ag-hero { min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:140px 52px 100px; position:relative; overflow:hidden; }
 .ag-world .ag-hero-glow { position:absolute; right:5%; top:15%; width:55%; height:75%; background:radial-gradient(ellipse at 60% 40%,rgba(242,237,228,0.025) 0%,rgba(139,126,200,0.018) 30%,transparent 70%); pointer-events:none; }
@@ -868,8 +795,6 @@ body.flipped-ag .uni-em { color:#5A8880; }
 .ag-world .ag-scroll-label { font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ag-faint); writing-mode:vertical-rl; }
 .ag-world .ag-section-label { font-size:10px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--ag-faint); display:flex; align-items:center; gap:12px; margin-bottom:24px; }
 .ag-world .ag-section-label::after { content:''; flex:1; max-width:40px; height:0.5px; background:var(--ag-border); }
-
-/* Problem */
 .ag-world .ag-problem { padding:128px 52px; background:#0F0E0C; border-top:0.5px solid var(--ag-border); border-bottom:0.5px solid var(--ag-border); }
 .ag-world .ag-problem-grid { max-width:1160px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:100px; align-items:center; }
 .ag-world .ag-problem-h { font-family:'Lora',serif; font-size:clamp(30px,3.8vw,52px); font-weight:500; line-height:1.18; letter-spacing:-1px; color:var(--ag-bone); margin-bottom:28px; }
@@ -880,8 +805,6 @@ body.flipped-ag .uni-em { color:#5A8880; }
 .ag-world .ag-d-msg-text { font-family:'Lora',serif; font-size:14px; font-style:italic; color:var(--ag-soft); opacity:0.55; text-decoration:line-through; text-decoration-color:rgba(110,104,96,0.4); text-decoration-thickness:0.5px; line-height:1.6; }
 .ag-world .ag-d-msg-meta { font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:var(--ag-faint); margin-top:8px; opacity:0.5; }
 .ag-world .ag-d-msg::after { content:''; position:absolute; top:0; right:0; bottom:0; width:30%; background:linear-gradient(to right,transparent,var(--ag-raised)); pointer-events:none; }
-
-/* Features */
 .ag-world .ag-features { padding:128px 52px; }
 .ag-world .ag-features-inner { max-width:1160px; margin:0 auto; }
 .ag-world .ag-features-h { font-family:'Lora',serif; font-size:clamp(28px,3.5vw,46px); font-weight:500; letter-spacing:-1px; line-height:1.2; color:var(--ag-bone); max-width:700px; margin-bottom:80px; }
@@ -893,8 +816,6 @@ body.flipped-ag .uni-em { color:#5A8880; }
 .ag-world .ag-f-num { font-family:'Lora',serif; font-size:52px; color:var(--ag-border); line-height:1; margin-bottom:24px; }
 .ag-world .ag-f-title { font-family:'Lora',serif; font-size:19px; font-weight:500; color:var(--ag-bone); margin-bottom:14px; }
 .ag-world .ag-f-body { font-size:14px; color:var(--ag-faint); line-height:1.8; }
-
-/* Release */
 .ag-world .ag-release { padding:128px 52px; background:#0F0E0C; border-top:0.5px solid var(--ag-border); border-bottom:0.5px solid var(--ag-border); }
 .ag-world .ag-release-inner { max-width:1160px; margin:0 auto; }
 .ag-world .ag-release-h { font-family:'Lora',serif; font-size:clamp(28px,3.5vw,46px); font-weight:500; letter-spacing:-1px; color:var(--ag-bone); max-width:640px; margin-bottom:64px; }
@@ -910,8 +831,6 @@ body.flipped-ag .uni-em { color:#5A8880; }
 .ag-world .ag-badge { font-size:10px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; padding:4px 10px; border-radius:20px; }
 .ag-world .ag-badge-free { background:rgba(84,110,96,0.12); color:var(--ag-sage); border:0.5px solid var(--ag-sage); }
 .ag-world .ag-badge-prem { background:var(--ag-vglow); color:var(--ag-violet); border:0.5px solid var(--ag-violet); }
-
-/* Portrait */
 .ag-world .ag-portrait { padding:128px 52px; text-align:center; }
 .ag-world .ag-portrait-inner { max-width:760px; margin:0 auto; }
 .ag-world .ag-portrait-q { font-family:'Lora',serif; font-size:clamp(20px,2.8vw,32px); font-style:italic; color:var(--ag-soft); line-height:1.65; margin-bottom:48px; position:relative; padding:0 24px; }
@@ -921,8 +840,6 @@ body.flipped-ag .uni-em { color:#5A8880; }
 .ag-world .ag-portrait-label { font-size:10px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:var(--ag-violet); margin-bottom:22px; display:flex; align-items:center; gap:8px; }
 .ag-world .ag-portrait-label::after { content:''; flex:1; height:0.5px; background:rgba(139,126,200,0.2); }
 .ag-world .ag-portrait-text { font-family:'Lora',serif; font-size:16px; font-style:italic; color:var(--ag-faint); line-height:1.85; }
-
-/* Privacy */
 .ag-world .ag-privacy { padding:128px 52px; background:#0F0E0C; border-top:0.5px solid var(--ag-border); border-bottom:0.5px solid var(--ag-border); }
 .ag-world .ag-privacy-inner { max-width:1160px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:100px; }
 .ag-world .ag-privacy-h { font-family:'Lora',serif; font-size:clamp(28px,3.5vw,44px); font-weight:500; letter-spacing:-1px; color:var(--ag-bone); line-height:1.18; margin-bottom:28px; }
@@ -935,8 +852,6 @@ body.flipped-ag .uni-em { color:#5A8880; }
 .ag-world .ag-never-list { display:flex; flex-direction:column; gap:12px; }
 .ag-world .ag-never-row { display:flex; align-items:center; gap:13px; font-size:14px; color:var(--ag-faint); }
 .ag-world .ag-never-x { width:20px; height:20px; border-radius:50%; background:rgba(122,50,72,0.1); border:0.5px solid var(--ag-burg); display:flex; align-items:center; justify-content:center; font-size:9px; color:var(--ag-burg); flex-shrink:0; }
-
-/* Download */
 .ag-world .ag-download { padding:160px 52px; text-align:center; }
 .ag-world .ag-download-inner { max-width:620px; margin:0 auto; }
 .ag-world .ag-download-star { font-size:22px; color:var(--ag-star); margin-bottom:32px; display:block; }
@@ -947,16 +862,12 @@ body.flipped-ag .uni-em { color:#5A8880; }
 .ag-world .ag-as-btn:hover { opacity:0.86; }
 .ag-world .ag-download-legal { font-size:11px; color:var(--ag-faint); margin-top:24px; opacity:0.6; }
 .ag-world .ag-download-legal a { color:inherit; text-decoration:underline; text-underline-offset:2px; }
-
-/* Footer */
 .ag-world .ag-footer { padding:36px 52px 90px; border-top:0.5px solid var(--ag-border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
 .ag-world .ag-footer-brand { font-family:'Lora',serif; font-size:15px; color:var(--ag-faint); display:flex; align-items:center; gap:8px; }
 .ag-world .ag-footer-links { display:flex; gap:22px; list-style:none; flex-wrap:wrap; }
 .ag-world .ag-footer-links a { font-size:12px; color:var(--ag-faint); text-decoration:none; transition:color 0.2s; }
 .ag-world .ag-footer-links a:hover { color:var(--ag-soft); }
 .ag-world .ag-footer-legal { width:100%; font-size:11px; color:var(--ag-border); }
-
-/* Aglossal scroll reveal */
 .ag-r { opacity:0; transform:translateY(28px); transition:opacity 0.75s cubic-bezier(0.16,1,0.3,1), transform 0.75s cubic-bezier(0.16,1,0.3,1); }
 .ag-r.ag-in { opacity:1; transform:none; }
 .ag-r[data-d="1"]{transition-delay:80ms}
@@ -964,8 +875,132 @@ body.flipped-ag .uni-em { color:#5A8880; }
 .ag-r[data-d="3"]{transition-delay:240ms}
 .ag-r[data-d="4"]{transition-delay:320ms}
 
-/* Mobile aglossal */
-@media(max-width:800px){
+@media(max-width:768px){
+  .embur-nav,.aidd-nav{padding:16px 20px}
+  .nav-links,.aidd-nav-links{display:none}
+  .embur-section,.aidd-section{padding:60px 20px}
+  .aidd-band{padding:60px 20px}
+  .aidd-band-inner{flex-direction:column}
+  .aidd-cta,.cta-section{padding:80px 20px}
+  .embur-footer,.aidd-footer{flex-direction:column;text-align:center}
+  .footer-links,.aidd-footer-links{justify-content:center}
+  .aidd-stats,.stats{gap:32px}
+}
+
+/* ═══════════════════════════════════════════
+   SNAPCHATWO WORLD — ADDED
+═══════════════════════════════════════════ */
+#snap-canvas{
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  pointer-events:none;z-index:0;opacity:0;transition:opacity 0.6s;
+}
+body.flipped-snap #snap-canvas{opacity:1}
+body.flipped-snap #bg-canvas{opacity:0}
+body.flipped-snap #aidd-canvas{opacity:0}
+body.flipped-snap #ag-canvas{opacity:0}
+
+.world-snap{
+  transform:rotateX(-180deg);
+  background:#E8001D;
+  z-index:1;
+  will-change:transform;
+}
+body.flipped-snap .world-embur{transform:rotateX(180deg);z-index:1}
+body.flipped-snap .world-snap{transform:rotateX(0deg);z-index:2}
+body.flipped-snap .world-aidd{z-index:0}
+body.flipped-snap .world-aglossal{z-index:0}
+body.flipped-snap .embur-nav{opacity:0;pointer-events:none}
+body.flipped-snap .aidd-nav{opacity:0;pointer-events:none}
+body.flipped-snap .ag-nav{opacity:0;pointer-events:none}
+
+.snap-nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:20px 40px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(190,0,12,0.9);
+  backdrop-filter:blur(24px);
+  border-bottom:1px solid rgba(255,215,0,0.25);
+  opacity:0;pointer-events:none;
+  transition:opacity 0.4s 0.5s;
+}
+body.flipped-snap .snap-nav{opacity:1;pointer-events:all}
+.snap-nav-logo{font-family:'Syne',sans-serif;font-size:22px;font-weight:900;color:#FFD700}
+.snap-nav-links{display:flex;gap:28px;align-items:center}
+.snap-nav-links a{color:rgba(255,255,255,0.65);font-size:13px;font-weight:500;text-decoration:none;transition:color .2s}
+.snap-nav-links a:hover{color:#FFD700}
+.snap-nav-right{display:flex;align-items:center;gap:12px}
+.btn-back-snap{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:10px 20px;border-radius:100px;font-size:13px;font-weight:700;cursor:pointer;transition:all 0.3s;font-family:'Syne',sans-serif}
+.btn-back-snap:hover{background:rgba(255,255,255,0.22)}
+.snap-dl-btn{background:#FFD700;color:#E8001D;padding:10px 22px;border-radius:100px;font-size:13px;font-weight:800;text-decoration:none;display:flex;align-items:center;gap:6px;transition:all 0.2s;font-family:'Syne',sans-serif}
+.snap-dl-btn:hover{background:#FFE033;transform:scale(1.03)}
+.btn-flip-to-snap{display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(232,0,29,0.2),#1a0005);border:1px solid rgba(232,0,29,0.5);color:#FFD700;padding:10px 20px;border-radius:100px;font-size:13px;font-weight:700;cursor:pointer;transition:all 0.3s;font-family:'Syne',sans-serif}
+.btn-flip-to-snap:hover{border-color:rgba(232,0,29,0.9);box-shadow:0 0 20px rgba(232,0,29,0.4);transform:scale(1.04)}
+.snap-nav-dot{width:8px;height:8px;border-radius:50%;background:#FFD700;animation:snapPulse 2s infinite}
+@keyframes snapPulse{0%,100%{box-shadow:0 0 0 0 rgba(255,215,0,0.6)}70%{box-shadow:0 0 0 6px transparent}}
+.uni-sn{color:rgba(255,215,0,0.35)}
+.sn-dot{background:#FFD700;animation:snapPulse 2s infinite}
+body.flipped-snap .uni-sn{background:rgba(232,0,29,0.15);color:#FFD700;box-shadow:inset 0 0 0 1px rgba(255,215,0,0.3);cursor:default}
+body.flipped-snap .uni-em{color:#5A8880;cursor:pointer}
+body.flipped-snap .uni-ai{color:#3A6080;cursor:pointer}
+body.flipped-snap .uni-ag{color:rgba(197,189,176,0.5);cursor:pointer}
+.snap-world{min-height:100vh;color:#fff;font-family:'DM Sans',sans-serif}
+.snap-hero{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:130px 24px 80px}
+@keyframes snapFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.snap-logo-wrap{width:120px;height:120px;border-radius:24px;background:#000;margin:0 auto 28px;overflow:hidden;animation:snapFloat 3s ease-in-out infinite;box-shadow:0 0 50px rgba(255,215,0,0.25),0 0 100px rgba(255,215,0,0.1)}
+.snap-logo-img{width:100%;height:100%;object-fit:cover}
+.snap-verified-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,215,0,0.15);border:1px solid rgba(255,215,0,0.4);padding:7px 18px;border-radius:100px;font-size:11px;font-weight:700;color:#FFD700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:28px}
+.snap-verified-dot{width:6px;height:6px;border-radius:50%;background:#FFD700;animation:snapPulse 2s infinite}
+.snap-hero-title{font-family:'Syne',sans-serif;font-size:clamp(44px,8vw,96px);font-weight:900;line-height:0.95;letter-spacing:-4px;color:#FFD700;text-shadow:0 0 60px rgba(255,215,0,0.25);margin-bottom:18px}
+.snap-hero-sub{font-size:clamp(15px,2vw,19px);color:rgba(255,255,255,0.75);max-width:540px;line-height:1.65;margin:0 auto 10px;font-weight:300}
+.snap-hero-slogan{font-family:'Syne',sans-serif;font-size:12px;color:rgba(255,215,0,0.65);font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:40px}
+.snap-raw-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,0,0,0.2);border:1px solid rgba(255,255,255,0.15);border-radius:100px;padding:7px 16px;font-size:11px;font-weight:700;color:rgba(255,255,255,0.8);letter-spacing:1px;text-transform:uppercase;margin-bottom:40px}
+.snap-hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:72px}
+.snap-btn-primary{background:#FFD700;color:#E8001D;padding:16px 36px;border-radius:100px;font-size:16px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.25s;font-family:'Syne',sans-serif}
+.snap-btn-primary:hover{background:#FFE033;transform:translateY(-2px);box-shadow:0 20px 40px rgba(255,215,0,0.3)}
+.snap-btn-ghost{background:transparent;color:#fff;padding:16px 36px;border-radius:100px;font-size:16px;font-weight:500;text-decoration:none;border:1px solid rgba(255,255,255,0.3);transition:all 0.25s}
+.snap-btn-ghost:hover{border-color:rgba(255,215,0,0.6);color:#FFD700;transform:translateY(-2px)}
+.snap-stats{display:flex;gap:52px;justify-content:center;flex-wrap:wrap}
+.snap-stat{text-align:center}
+.snap-stat-num{font-family:'Syne',sans-serif;font-size:32px;font-weight:900;color:#FFD700}
+.snap-stat-label{font-size:11px;color:rgba(255,255,255,0.5);margin-top:3px;text-transform:uppercase;letter-spacing:.5px}
+.snap-section{position:relative;z-index:1;padding:90px 40px;max-width:1200px;margin:0 auto}
+.snap-section-tag{font-size:11px;font-weight:700;color:rgba(255,215,0,0.7);text-transform:uppercase;letter-spacing:2px;margin-bottom:16px}
+.snap-section-title{font-family:'Syne',sans-serif;font-size:clamp(28px,4.5vw,52px);font-weight:800;color:#fff;letter-spacing:-2px;line-height:1.05;margin-bottom:52px}
+.snap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.snap-card{background:rgba(0,0,0,0.2);border:1px solid rgba(255,215,0,0.15);border-radius:20px;padding:28px;transition:all .3s}
+.snap-card:hover{border-color:rgba(255,215,0,0.4);transform:translateY(-4px);background:rgba(0,0,0,0.3)}
+.snap-card-icon{font-size:28px;margin-bottom:16px;display:block}
+.snap-card-title{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:#FFD700;margin-bottom:10px}
+.snap-card-desc{font-size:14px;color:rgba(255,255,255,0.65);line-height:1.7}
+.snap-band{position:relative;z-index:1;padding:72px 40px;background:rgba(0,0,0,0.25);border-top:1px solid rgba(255,215,0,0.1);border-bottom:1px solid rgba(255,215,0,0.1)}
+.snap-band-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.snap-band-title{font-family:'Syne',sans-serif;font-size:clamp(22px,3vw,36px);font-weight:800;color:#fff;letter-spacing:-1.5px;margin-bottom:12px}
+.snap-band-sub{font-size:15px;color:rgba(255,255,255,0.6);max-width:480px;line-height:1.7}
+.snap-pills{display:flex;flex-wrap:wrap;gap:10px}
+.snap-pill{background:rgba(0,0,0,0.2);border:1px solid rgba(255,255,255,0.15);border-radius:100px;padding:8px 18px;font-size:12px;font-weight:700;color:rgba(255,255,255,0.75);letter-spacing:0.5px}
+.snap-pill.gold{border-color:rgba(255,215,0,0.4);color:#FFD700}
+.snap-gifts{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px}
+.snap-gift-item{background:rgba(0,0,0,0.2);border:1px solid rgba(255,215,0,0.15);border-radius:16px;padding:16px 20px;display:flex;align-items:center;gap:12px;flex:1;min-width:150px;transition:all .2s}
+.snap-gift-item:hover{border-color:rgba(255,215,0,0.4);background:rgba(0,0,0,0.3)}
+.snap-gift-emoji{font-size:24px}
+.snap-gift-name{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:2px}
+.snap-gift-price{font-size:11px;color:rgba(255,215,0,0.7)}
+.snap-cta{position:relative;z-index:1;padding:110px 40px;text-align:center}
+.snap-cta-inner{max-width:680px;margin:0 auto}
+.snap-cta-title{font-family:'Syne',sans-serif;font-size:clamp(34px,6vw,68px);font-weight:900;color:#FFD700;letter-spacing:-2px;line-height:0.95;margin-bottom:20px}
+.snap-cta-sub{font-size:16px;color:rgba(255,255,255,0.7);margin-bottom:48px;line-height:1.65}
+.snap-footer{position:relative;z-index:1;padding:36px 40px 90px;border-top:1px solid rgba(255,215,0,0.12);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px}
+.snap-footer-logo{font-family:'Syne',sans-serif;font-size:18px;font-weight:900;color:#FFD700}
+.snap-footer-links{display:flex;gap:22px;flex-wrap:wrap}
+.snap-footer-links a{color:rgba(255,255,255,0.45);font-size:13px;text-decoration:none;transition:color .2s}
+.snap-footer-links a:hover{color:#FFD700}
+.snap-footer-copy{color:rgba(255,255,255,0.2);font-size:11px}
+@media(max-width:768px){
+  .snap-nav{padding:16px 20px}
+  .snap-nav-links{display:none}
+  .snap-section,.snap-cta{padding:60px 20px}
+  .snap-band,.snap-footer{padding:52px 20px}
+  .snap-hero{padding:110px 18px 60px}
   .ag-nav{padding:16px 24px}
   .ag-nav-links{display:none}
   .ag-world .ag-hero,.ag-world .ag-problem,.ag-world .ag-features,.ag-world .ag-release,.ag-world .ag-portrait,.ag-world .ag-privacy,.ag-world .ag-download,.ag-world .ag-footer{padding-left:24px;padding-right:24px}
@@ -978,7 +1013,6 @@ body.flipped-ag .uni-em { color:#5A8880; }
   .universe-selector{bottom:18px;padding:4px}
   .uni-btn{padding:8px 12px;font-size:11px}
 }
-
 </style>
 </head>
 <body>
@@ -987,14 +1021,15 @@ body.flipped-ag .uni-em { color:#5A8880; }
 <canvas id="bg-canvas"></canvas>
 <canvas id="aidd-canvas"></canvas>
 <canvas id="ag-canvas"></canvas>
+<canvas id="snap-canvas"></canvas>
 
 <!-- ═══ EMBUR NAV ═══ -->
 <nav class="embur-nav">
   <button class="btn-flip-to-ag" onclick="flipToAglossal()" title="Aglossal World">
-      <span class="ag-nav-dot"></span>
-      Aglossal
-    </button>
-    <div class="nav-logo">EMBUR <span>•</span></div>
+    <span class="ag-nav-dot"></span>
+    Aglossal
+  </button>
+  <div class="nav-logo">EMBUR <span>&bull;</span></div>
   <div class="nav-links">
     <a href="#features">Features</a>
     <a href="#ai">AI Studio</a>
@@ -1002,6 +1037,10 @@ body.flipped-ag .uni-em { color:#5A8880; }
     <a href="privacy.html">Privacy</a>
   </div>
   <div class="nav-right">
+    <button class="btn-flip-to-snap" onclick="flipToSnap()">
+      <span class="snap-nav-dot"></span>
+      Snapchatwo
+    </button>
     <button class="btn-flip-to-aidd" onclick="flip()">
       <span class="flip-dot"></span>
       AIDD APP
@@ -1010,17 +1049,31 @@ body.flipped-ag .uni-em { color:#5A8880; }
   </div>
 </nav>
 
+<!-- ═══ SNAPCHATWO NAV ═══ -->
+<nav class="snap-nav">
+  <div class="snap-nav-logo">Snapchatwo</div>
+  <div class="snap-nav-links">
+    <a href="#snap-features">Features</a>
+    <a href="#snap-gifts">Gifts</a>
+    <a href="snapchatwo-privacy.html">Privacy</a>
+    <a href="support.html">Support</a>
+  </div>
+  <div class="snap-nav-right">
+    <button class="btn-back-snap" onclick="flipBackFromSnap()">&larr; Embur</button>
+    <a href="https://apps.apple.com" class="snap-dl-btn">Download</a>
+  </div>
+</nav>
+
 <!-- ═══ AGLOSSAL NAV ═══ -->
 <nav class="ag-nav" id="ag-nav">
-  <button class="btn-back-embur" onclick="flipBackFromAglossal()">← Embur</button>
+  <button class="btn-back-embur" onclick="flipBackFromAglossal()">&larr; Embur</button>
   <a href="#" class="ag-nav-logo">
-    Aglossal <span class="ag-nav-star">✦</span>
+    Aglossal <span class="ag-nav-star">&starf;</span>
   </a>
   <ul class="ag-nav-links">
     <li><a href="#ag-features">Features</a></li>
     <li><a href="#ag-portrait">Shadow Portrait</a></li>
     <li><a href="#ag-privacy">Privacy</a></li>
-    
   </ul>
   <div class="ag-nav-right">
     <a href="https://apps.apple.com/ng/app/aglossal/id6762080438" class="ag-nav-download">Download</a>
@@ -1036,7 +1089,7 @@ body.flipped-ag .uni-em { color:#5A8880; }
     <a href="aidd-support.html">Support</a>
   </div>
   <div class="aidd-nav-right">
-    <button class="btn-flip-to-embur" onclick="flip()">← Embur</button>
+    <button class="btn-flip-to-embur" onclick="flip()">&larr; Embur</button>
     <a href="https://apps.apple.com/us/app/aidd-ai-disease-diagnose/id6762053219" class="aidd-dl-btn">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
       Download Free
@@ -1058,8 +1111,8 @@ body.flipped-ag .uni-em { color:#5A8880; }
         Now Available on iOS
       </div>
       <h1>Create.<br><span>Connect.</span><br>Earn.</h1>
-      <p class="hero-sub">The platform that ends the era of switching apps. Social video, AI creation, live monetization, and verified news — all in one.</p>
-      <p class="hero-tagline">Embur — The Creator Super-Platform</p>
+      <p class="hero-sub">The platform that ends the era of switching apps. Social video, AI creation, live monetization, and verified news &mdash; all in one.</p>
+      <p class="hero-tagline">Embur &mdash; The Creator Super-Platform</p>
       <div class="hero-btns">
         <a href="https://apps.apple.com/ng/app/embur/id6756538578" class="btn-primary">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
@@ -1078,36 +1131,12 @@ body.flipped-ag .uni-em { color:#5A8880; }
       <div class="section-tag">Everything in One</div>
       <div class="section-title">Built for the<br>creator generation.</div>
       <div class="feature-grid">
-        <div class="feature-card">
-          <div class="feature-icon">🎬</div>
-          <div class="feature-title">Director's Cut Reels</div>
-          <div class="feature-desc">15 cinematic color grades, 16 lens effects, AI narration studio, variable speed, draggable title cards. Professional cinema in your pocket.</div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📺</div>
-          <div class="feature-title">Mini Series Creator</div>
-          <div class="feature-desc">The only social platform where you can produce your own series. Season numbers, episode covers, synopsis, and full release control.</div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📰</div>
-          <div class="feature-title">Emburs — Verified News</div>
-          <div class="feature-desc">Two feeds in one. AI-powered fact-checking, source validation, misinformation removal, and real-time news translation by Nova AI.</div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📞</div>
-          <div class="feature-title">Next-Gen Calls</div>
-          <div class="feature-desc">Up to 50 simultaneous participants. Live AI voice modulation and real-time deepfake face filters applied during calls based on your prompts.</div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">💰</div>
-          <div class="feature-title">Creator Economy</div>
-          <div class="feature-desc">Virtual gifts, reel view rewards, tip jar, and your own in-profile shop. Withdraw real earnings directly to PayPal. The economy is the foundation.</div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🤖</div>
-          <div class="feature-title">Nova AI Companion</div>
-          <div class="feature-desc">Your floating AI lives inside every screen. Fact-check news, translate articles, get summaries, and analyze sources without leaving what you're doing.</div>
-        </div>
+        <div class="feature-card"><div class="feature-icon">&#127916;</div><div class="feature-title">Director's Cut Reels</div><div class="feature-desc">15 cinematic color grades, 16 lens effects, AI narration studio, variable speed, draggable title cards. Professional cinema in your pocket.</div></div>
+        <div class="feature-card"><div class="feature-icon">&#128250;</div><div class="feature-title">Mini Series Creator</div><div class="feature-desc">The only social platform where you can produce your own series. Season numbers, episode covers, synopsis, and full release control.</div></div>
+        <div class="feature-card"><div class="feature-icon">&#128240;</div><div class="feature-title">Emburs &mdash; Verified News</div><div class="feature-desc">Two feeds in one. AI-powered fact-checking, source validation, misinformation removal, and real-time news translation by Nova AI.</div></div>
+        <div class="feature-card"><div class="feature-icon">&#128222;</div><div class="feature-title">Next-Gen Calls</div><div class="feature-desc">Up to 50 simultaneous participants. Live AI voice modulation and real-time deepfake face filters applied during calls based on your prompts.</div></div>
+        <div class="feature-card"><div class="feature-icon">&#128176;</div><div class="feature-title">Creator Economy</div><div class="feature-desc">Virtual gifts, reel view rewards, tip jar, and your own in-profile shop. Withdraw real earnings directly to PayPal.</div></div>
+        <div class="feature-card"><div class="feature-icon">&#129302;</div><div class="feature-title">Nova AI Companion</div><div class="feature-desc">Your floating AI lives inside every screen. Fact-check news, translate articles, get summaries, and analyze sources without leaving what you're doing.</div></div>
       </div>
     </div>
 
@@ -1141,43 +1170,137 @@ body.flipped-ag .uni-em { color:#5A8880; }
     </div>
 
     <footer class="embur-footer">
-      <div class="footer-logo">EMBUR <span>•</span></div>
+      <div class="footer-logo">EMBUR <span>&bull;</span></div>
       <div class="footer-links">
         <a href="credits.html">Credits</a>
         <a href="privacy.html">Privacy Policy</a>
         <a href="legal.html">Legal</a>
         <a href="support.html">Support</a>
         <a href="aidd-privacy.html" style="color:#00D4FF80;">AIDD Privacy</a>
+        <a href="snapchatwo-privacy.html" style="color:rgba(255,215,0,0.6)">Snapchatwo Privacy</a>
       </div>
-      <div class="footer-copy">© 2026 Embur Inc. All rights reserved.</div>
+      <div class="footer-copy">&copy; 2026 Embur Inc. All rights reserved.</div>
     </footer>
 
   </div><!-- end world-embur -->
 
-  <!-- ══ WORLD 2: AIDD ══ -->
+  <!-- ══ WORLD 2: SNAPCHATWO ══ -->
+  <div class="world world-snap">
+    <div class="snap-world">
+      <div class="snap-hero">
+        <div class="snap-logo-wrap">
+          <img src="icon_yellow.png" class="snap-logo-img" alt="Snapchatwo Ghost" />
+        </div>
+        <div class="snap-verified-badge">
+          <span class="snap-verified-dot"></span>
+          Liveness Verified Platform
+        </div>
+        <div class="snap-hero-title">Snapchatwo</div>
+        <p class="snap-hero-sub">The world's only platform where every snap is raw, real, and live-verified. No filters. No uploads. No fakes. Just truth.</p>
+        <p class="snap-hero-slogan">Real People &middot; Raw Moments &middot; No Filters</p>
+        <div class="snap-raw-badge">&check; RAW &middot; NO FILTER &middot; NO UPLOADS &middot; AUTHENTICATED</div>
+        <div class="snap-hero-btns">
+          <a href="https://apps.apple.com" class="snap-btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Download on iOS
+          </a>
+          <a href="snapchatwo-privacy.html" class="snap-btn-ghost">Privacy Policy</a>
+        </div>
+        <div class="snap-stats">
+          <div class="snap-stat"><div class="snap-stat-num">100%</div><div class="snap-stat-label">Live Verified</div></div>
+          <div class="snap-stat"><div class="snap-stat-num">0</div><div class="snap-stat-label">Filters</div></div>
+          <div class="snap-stat"><div class="snap-stat-num">80%</div><div class="snap-stat-label">Creator Share</div></div>
+          <div class="snap-stat"><div class="snap-stat-num">24h</div><div class="snap-stat-label">Stories</div></div>
+        </div>
+      </div>
+
+      <div class="snap-section" id="snap-features">
+        <div class="snap-section-tag">What Makes Us Different</div>
+        <div class="snap-section-title">Built against<br>the algorithm.</div>
+        <div class="snap-grid">
+          <div class="snap-card"><span class="snap-card-icon">&#128065;</span><div class="snap-card-title">Liveness Verification</div><div class="snap-card-desc">Every verified user passes our real-time liveness check. No bots. No catfishing. No AI avatars. When you follow someone, you know exactly who they are.</div></div>
+          <div class="snap-card"><span class="snap-card-icon">&#128247;</span><div class="snap-card-title">Camera Only &mdash; No Uploads</div><div class="snap-card-desc">The Snapchatwo camera is the only entry point. No photo library access. No upload button. Every snap is live-captured in the real world.</div></div>
+          <div class="snap-card"><span class="snap-card-icon">&#128293;</span><div class="snap-card-title">Fire Reactions</div><div class="snap-card-desc">Show love for raw content. Every fire adds to a creator's snap score. See who fired your snaps in real time.</div></div>
+          <div class="snap-card"><span class="snap-card-icon">&#9201;</span><div class="snap-card-title">24-Hour Stories</div><div class="snap-card-desc">Live-captured stories that disappear in 24 hours. Authentic moments. Real expressions. No curating &mdash; just what happened.</div></div>
+          <div class="snap-card"><span class="snap-card-icon">&#128172;</span><div class="snap-card-title">Real Connections</div><div class="snap-card-desc">Direct messages, group chats, snap replies. Chat with real verified people you follow. No bots, no fake accounts.</div></div>
+          <div class="snap-card"><span class="snap-card-icon">&#9638;</span><div class="snap-card-title">Snap Code</div><div class="snap-card-desc">Your unique identity. Share your Snap Code anywhere. Scan someone else's code to add them instantly.</div></div>
+        </div>
+      </div>
+
+      <div class="snap-band">
+        <div class="snap-band-inner">
+          <div>
+            <div class="snap-band-title">The RAW Promise.</div>
+            <p class="snap-band-sub">No filters. No AI face-altering. No beautification. No uploads from your library. What you capture is what your followers see. No exceptions.</p>
+          </div>
+          <div class="snap-pills">
+            <span class="snap-pill gold">No Filters</span>
+            <span class="snap-pill gold">No Uploads</span>
+            <span class="snap-pill gold">No AI Faces</span>
+            <span class="snap-pill">Camera Only</span>
+            <span class="snap-pill">Liveness Verified</span>
+            <span class="snap-pill">17+ Platform</span>
+            <span class="snap-pill">No Bots</span>
+            <span class="snap-pill">No Fakes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="snap-section" id="snap-gifts">
+        <div class="snap-section-tag">Creator Economy</div>
+        <div class="snap-section-title">Real talent.<br>Real earnings.</div>
+        <p style="font-size:16px;color:rgba(255,255,255,0.65);max-width:580px;line-height:1.7;margin-bottom:40px">Send virtual gifts to creators you believe in. Creators receive <strong style="color:#FFD700">80%</strong> of every gift's value &mdash; withdrawn directly to PayPal.</p>
+        <div class="snap-gifts">
+          <div class="snap-gift-item"><span class="snap-gift-emoji">&#127801;</span><div><div class="snap-gift-name">Rose</div><div class="snap-gift-price">10 credits</div></div></div>
+          <div class="snap-gift-item"><span class="snap-gift-emoji">&#128157;</span><div><div class="snap-gift-name">Heart</div><div class="snap-gift-price">25 credits</div></div></div>
+          <div class="snap-gift-item"><span class="snap-gift-emoji">&#128142;</span><div><div class="snap-gift-name">Diamond</div><div class="snap-gift-price">50 credits</div></div></div>
+          <div class="snap-gift-item"><span class="snap-gift-emoji">&#128081;</span><div><div class="snap-gift-name">Crown</div><div class="snap-gift-price">100 credits</div></div></div>
+          <div class="snap-gift-item"><span class="snap-gift-emoji">&#128640;</span><div><div class="snap-gift-name">Rocket</div><div class="snap-gift-price">200 credits</div></div></div>
+          <div class="snap-gift-item"><span class="snap-gift-emoji">&#127984;</span><div><div class="snap-gift-name">Mansion</div><div class="snap-gift-price">500 credits</div></div></div>
+        </div>
+      </div>
+
+      <div class="snap-cta">
+        <div class="snap-cta-inner">
+          <div class="snap-cta-title">Raw is the<br>new real.</div>
+          <p class="snap-cta-sub">For the person tired of recycled filtered content. For the creator whose raw talent deserves to be seen. Authenticity is not a trend &mdash; it is the standard.</p>
+          <div class="snap-hero-btns">
+            <a href="https://apps.apple.com" class="snap-btn-primary">Download Snapchatwo</a>
+            <a href="snapchatwo-privacy.html" class="snap-btn-ghost">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+
+      <footer class="snap-footer">
+        <div class="snap-footer-logo">Snapchatwo</div>
+        <div class="snap-footer-links">
+          <a href="snapchatwo-privacy.html">Privacy Policy</a>
+          <a href="support.html">Support</a>
+          <a href="support.html">Contact</a>
+          <a href="#" onclick="flipBackFromSnap();return false;" style="color:rgba(255,215,0,0.5)">&larr; Back to Embur</a>
+        </div>
+        <div class="snap-footer-copy">&copy; 2026 Embur Inc. &middot; Snapchatwo</div>
+      </footer>
+    </div>
+  </div><!-- end world-snap -->
+
+  <!-- ══ WORLD 3: AIDD ══ -->
   <div class="world world-aidd">
     <div class="aidd-world">
-
-      <!-- HERO -->
       <div class="aidd-hero">
-        <div class="aidd-badge">
-          <span class="aidd-badge-dot"></span>
-          Free · Forever · For Everyone
-        </div>
+        <div class="aidd-badge"><span class="aidd-badge-dot"></span>Free &middot; Forever &middot; For Everyone</div>
         <div class="aidd-hero-title">
           <span class="cyan">AIDD</span>
-          <span class="green">Heal the World 🌍</span>
+          <span class="green">Heal the World &#127757;</span>
         </div>
-        <p class="aidd-hero-sub">The world's first free universal AI diagnostic platform. Analyze human conditions, insects, plants, and animals — powered by 14 AI engines and 37 million medical articles.</p>
+        <p class="aidd-hero-sub">The world's first free universal AI diagnostic platform. Analyze human conditions, insects, plants, and animals &mdash; powered by 14 AI engines and 37 million medical articles.</p>
         <p class="aidd-hero-slogan">Artificial Intelligence Disease Diagnose</p>
-
         <div class="aidd-subjects">
-          <div class="subject-pill pill-human">🧬 Human</div>
-          <div class="subject-pill pill-insect">🐜 Insect</div>
-          <div class="subject-pill pill-plant">🌿 Plant</div>
-          <div class="subject-pill pill-animal">🐾 Animal</div>
+          <div class="subject-pill pill-human">&#129514; Human</div>
+          <div class="subject-pill pill-insect">&#127380; Insect</div>
+          <div class="subject-pill pill-plant">&#127807; Plant</div>
+          <div class="subject-pill pill-animal">&#128062; Animal</div>
         </div>
-
         <div class="aidd-hero-btns">
           <a href="https://apps.apple.com/us/app/aidd-ai-disease-diagnose/id6762053219" class="aidd-btn-primary">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
@@ -1185,54 +1308,27 @@ body.flipped-ag .uni-em { color:#5A8880; }
           </a>
           <a href="aidd-privacy.html" class="aidd-btn-ghost">Privacy Policy</a>
         </div>
-
         <div class="aidd-stats">
           <div class="aidd-stat"><div class="aidd-stat-num">14</div><div class="aidd-stat-label">AI Engines</div></div>
           <div class="aidd-stat"><div class="aidd-stat-num">37M</div><div class="aidd-stat-label">Articles</div></div>
           <div class="aidd-stat"><div class="aidd-stat-num">4</div><div class="aidd-stat-label">Kingdoms</div></div>
-          <div class="aidd-stat"><div class="aidd-stat-num">∞</div><div class="aidd-stat-label">Free Forever</div></div>
+          <div class="aidd-stat"><div class="aidd-stat-num">&infin;</div><div class="aidd-stat-label">Free Forever</div></div>
         </div>
       </div>
 
-      <!-- FEATURES -->
       <div class="aidd-section" id="aidd-features">
         <div class="aidd-section-tag">// AI Engine Stack</div>
         <div class="aidd-section-title">One photo.<br>14 engines fire.</div>
         <div class="aidd-grid">
-          <div class="aidd-card">
-            <span class="aidd-card-icon">🧬</span>
-            <div class="aidd-card-title" style="color:#00D4FF">Human Medicine</div>
-            <div class="aidd-card-desc">GPT-4o vision analysis, PubMed 37M articles, WHO ICD-11, Europe PMC, DermNet NZ, MedlinePlus. Full clinical report with differential diagnoses, confidence scores, and emergency detection.</div>
-          </div>
-          <div class="aidd-card">
-            <span class="aidd-card-icon">🐜</span>
-            <div class="aidd-card-title" style="color:#FF6B35">Insect Identification</div>
-            <div class="aidd-card-desc">Kindwise insect.id (14,000+ species), iNaturalist research-grade observations, GBIF biodiversity. Danger level, venom status, disease vector assessment, treatment for bites.</div>
-          </div>
-          <div class="aidd-card">
-            <span class="aidd-card-icon">🌿</span>
-            <div class="aidd-card-title" style="color:#39FF14">Plant Health</div>
-            <div class="aidd-card-desc">Kindwise plant.id (400+ diseases), PlantNet species ID, GBIF botany, PubMed plant pathology. Disease type, spread risk, organic and chemical treatment protocols.</div>
-          </div>
-          <div class="aidd-card">
-            <span class="aidd-card-icon">🐾</span>
-            <div class="aidd-card-title" style="color:#FFD700">Animal & Pet Health</div>
-            <div class="aidd-card-desc">The Cat API & Dog API official breed registries, iNaturalist verified species, PubMed veterinary research. Breed identification, health condition assessment, vet urgency level.</div>
-          </div>
-          <div class="aidd-card">
-            <span class="aidd-card-icon">🔬</span>
-            <div class="aidd-card-title" style="color:#00D4FF">Vector Database</div>
-            <div class="aidd-card-desc">690+ PubMedBERT-encoded medical vectors in Pinecone. Semantic search across the medical literature finds the most relevant evidence for your exact case.</div>
-          </div>
-          <div class="aidd-card">
-            <span class="aidd-card-icon">🚨</span>
-            <div class="aidd-card-title" style="color:#FF003C">Safety Engine</div>
-            <div class="aidd-card-desc">Automatic emergency detection across 40+ critical conditions. Immediate escalation with local emergency numbers. Pediatric safeguards applied for users under 18.</div>
-          </div>
+          <div class="aidd-card"><span class="aidd-card-icon">&#129514;</span><div class="aidd-card-title" style="color:#00D4FF">Human Medicine</div><div class="aidd-card-desc">GPT-4o vision analysis, PubMed 37M articles, WHO ICD-11, Europe PMC, DermNet NZ, MedlinePlus. Full clinical report with differential diagnoses, confidence scores, and emergency detection.</div></div>
+          <div class="aidd-card"><span class="aidd-card-icon">&#127380;</span><div class="aidd-card-title" style="color:#FF6B35">Insect Identification</div><div class="aidd-card-desc">Kindwise insect.id (14,000+ species), iNaturalist research-grade observations, GBIF biodiversity. Danger level, venom status, disease vector assessment, treatment for bites.</div></div>
+          <div class="aidd-card"><span class="aidd-card-icon">&#127807;</span><div class="aidd-card-title" style="color:#39FF14">Plant Health</div><div class="aidd-card-desc">Kindwise plant.id (400+ diseases), PlantNet species ID, GBIF botany, PubMed plant pathology. Disease type, spread risk, organic and chemical treatment protocols.</div></div>
+          <div class="aidd-card"><span class="aidd-card-icon">&#128062;</span><div class="aidd-card-title" style="color:#FFD700">Animal &amp; Pet Health</div><div class="aidd-card-desc">The Cat API &amp; Dog API official breed registries, iNaturalist verified species, PubMed veterinary research. Breed identification, health condition assessment, vet urgency level.</div></div>
+          <div class="aidd-card"><span class="aidd-card-icon">&#128300;</span><div class="aidd-card-title" style="color:#00D4FF">Vector Database</div><div class="aidd-card-desc">690+ PubMedBERT-encoded medical vectors in Pinecone. Semantic search across the medical literature finds the most relevant evidence for your exact case.</div></div>
+          <div class="aidd-card"><span class="aidd-card-icon">&#128680;</span><div class="aidd-card-title" style="color:#FF003C">Safety Engine</div><div class="aidd-card-desc">Automatic emergency detection across 40+ critical conditions. Immediate escalation with local emergency numbers. Pediatric safeguards applied for users under 18.</div></div>
         </div>
       </div>
 
-      <!-- COMPLIANCE BAND -->
       <div class="aidd-band">
         <div class="aidd-band-inner">
           <div class="aidd-band-text">
@@ -1252,16 +1348,13 @@ body.flipped-ag .uni-em { color:#5A8880; }
         </div>
       </div>
 
-      <!-- CTA -->
       <div class="aidd-cta">
         <div class="aidd-cta-inner">
           <div class="aidd-cta-title">
             Intelligence for life.<br>
             <span class="free">Free. Forever.</span>
           </div>
-          <p class="aidd-cta-sub">
-            AIDD exists for one reason — to make AI-powered health intelligence accessible to every person on Earth, at no cost, forever. Heal the world, one diagnosis at a time.
-          </p>
+          <p class="aidd-cta-sub">AIDD exists for one reason &mdash; to make AI-powered health intelligence accessible to every person on Earth, at no cost, forever.</p>
           <div class="aidd-hero-btns">
             <a href="https://apps.apple.com/us/app/aidd-ai-disease-diagnose/id6762053219" class="aidd-btn-primary">Download AIDD Free</a>
             <a href="aidd-privacy.html" class="aidd-btn-ghost">Read Privacy Policy</a>
@@ -1269,7 +1362,6 @@ body.flipped-ag .uni-em { color:#5A8880; }
         </div>
       </div>
 
-      <!-- FOOTER -->
       <footer class="aidd-footer">
         <div class="aidd-footer-logo">AIDD</div>
         <div class="aidd-footer-links">
@@ -1277,38 +1369,32 @@ body.flipped-ag .uni-em { color:#5A8880; }
           <a href="aidd-support.html">Support</a>
           <a href="aidd-support.html">Data Requests</a>
           <a href="aidd-support.html">Contact</a>
-          <a href="#" onclick="flip();return false;" style="color:#1DB89A80;">← Back to Embur</a>
+          <a href="#" onclick="flip();return false;" style="color:#1DB89A80;">&larr; Back to Embur</a>
         </div>
-        <div class="aidd-footer-copy">© 2026 Embur Inc. · AIDD Project · All rights reserved.</div>
+        <div class="aidd-footer-copy">&copy; 2026 Embur Inc. &middot; AIDD Project &middot; All rights reserved.</div>
       </footer>
-
     </div>
   </div><!-- end world-aidd -->
 
-
-  <!-- ══ WORLD 3: AGLOSSAL ══ -->
+  <!-- ══ WORLD 4: AGLOSSAL ══ -->
   <div class="world world-aglossal">
     <div class="ag-world">
-
-      <!-- HERO -->
       <section class="ag-hero">
         <div class="ag-hero-glow"></div>
         <p class="ag-eyebrow">
           <span class="ag-eyebrow-line"></span>
           For the voice you swallow.
-          <span class="ag-brand-star">✦</span>
+          <span class="ag-brand-star">&starf;</span>
         </p>
         <h1 class="ag-hero-title">
           The real you has been living<br>
           in <em>deleted drafts</em><br>
           your whole life.
         </h1>
-        <p class="ag-hero-sub">
-          The messages you typed and erased. The voice memo you recorded at 2am and threw away. The thing you almost said that would have changed everything.
-        </p>
+        <p class="ag-hero-sub">The messages you typed and erased. The voice memo you recorded at 2am and threw away. The thing you almost said that would have changed everything.</p>
         <div class="ag-hero-cta">
           <a href="#ag-download" class="ag-btn-bone">Download for iOS</a>
-          <a href="#ag-features" class="ag-btn-ghost">See how it works →</a>
+          <a href="#ag-features" class="ag-btn-ghost">See how it works &rarr;</a>
         </div>
         <div class="ag-scroll-hint">
           <div class="ag-scroll-track"></div>
@@ -1316,122 +1402,65 @@ body.flipped-ag .uni-em { color:#5A8880; }
         </div>
       </section>
 
-      <!-- PROBLEM -->
       <section class="ag-problem" id="ag-features">
         <div class="ag-problem-grid">
           <div>
             <p class="ag-section-label ag-r">The problem</p>
             <h2 class="ag-problem-h ag-r" data-d="1">Every app was built for what you share.</h2>
-            <p class="ag-problem-p ag-r" data-d="2">
-              Aglossal is the first one built for what you don't.<br><br>
-              Humans perform. On every platform, in every relationship — we curate a version of ourselves. The true self leaks only in moments we immediately delete, retract, or swallow.<br><br>
-              No technology has ever tried to hold those moments. Until now.
-            </p>
+            <p class="ag-problem-p ag-r" data-d="2">Aglossal is the first one built for what you don't.<br><br>Humans perform. On every platform, in every relationship &mdash; we curate a version of ourselves. The true self leaks only in moments we immediately delete, retract, or swallow.<br><br>No technology has ever tried to hold those moments. Until now.</p>
           </div>
           <div class="ag-deleted-stack">
-            <div class="ag-d-msg ag-r" data-d="1">
-              <p class="ag-d-msg-text">I have been carrying this since the day we fought and I need you to know I never stopped</p>
-              <p class="ag-d-msg-meta">Deleted · 11:47pm · never sent</p>
-            </div>
-            <div class="ag-d-msg ag-r" data-d="2">
-              <p class="ag-d-msg-text">I don't think I should stay in this job anymore</p>
-              <p class="ag-d-msg-meta">Deleted · 3 drafts · abandoned</p>
-            </div>
-            <div class="ag-d-msg ag-r" data-d="3">
-              <p class="ag-d-msg-text">I love you and I think I have for a long time</p>
-              <p class="ag-d-msg-meta">Deleted · voice memo discarded</p>
-            </div>
-            <div class="ag-d-msg ag-r" data-d="4" style="opacity:0.35;pointer-events:none">
-              <p class="ag-d-msg-text" style="text-decoration:none;opacity:1;color:var(--ag-faint)">Everything you never said now lives here.</p>
-              <p class="ag-d-msg-meta">Aglossal ✦</p>
-            </div>
+            <div class="ag-d-msg ag-r" data-d="1"><p class="ag-d-msg-text">I have been carrying this since the day we fought and I need you to know I never stopped</p><p class="ag-d-msg-meta">Deleted &middot; 11:47pm &middot; never sent</p></div>
+            <div class="ag-d-msg ag-r" data-d="2"><p class="ag-d-msg-text">I don't think I should stay in this job anymore</p><p class="ag-d-msg-meta">Deleted &middot; 3 drafts &middot; abandoned</p></div>
+            <div class="ag-d-msg ag-r" data-d="3"><p class="ag-d-msg-text">I love you and I think I have for a long time</p><p class="ag-d-msg-meta">Deleted &middot; voice memo discarded</p></div>
+            <div class="ag-d-msg ag-r" data-d="4" style="opacity:0.35;pointer-events:none"><p class="ag-d-msg-text" style="text-decoration:none;opacity:1;color:var(--ag-faint)">Everything you never said now lives here.</p><p class="ag-d-msg-meta">Aglossal &starf;</p></div>
           </div>
         </div>
       </section>
 
-      <!-- FEATURES -->
       <section class="ag-features">
         <div class="ag-features-inner">
           <h2 class="ag-features-h ag-r">A private room for the version of you that only exists in what you almost said.</h2>
           <div class="ag-features-grid">
-            <div class="ag-f-card ag-r" data-d="1">
-              <div class="ag-f-num">01</div>
-              <h3 class="ag-f-title">The Draft Studio</h3>
-              <p class="ag-f-body">A full-screen space to write what you've never been able to say. No word count. No send button. Just you and the thought you've been carrying. Every version you write and delete is held.</p>
-            </div>
-            <div class="ag-f-card ag-r" data-d="2">
-              <div class="ag-f-num">02</div>
-              <h3 class="ag-f-title">The Vault</h3>
-              <p class="ag-f-body">Every entry ever written — organized by emotion, by person, by time. Protected by Face ID. Encrypted on your device. Seen by no one but you. Watch your patterns emerge across years.</p>
-            </div>
-            <div class="ag-f-card ag-r" data-d="3">
-              <div class="ag-f-num">03</div>
-              <h3 class="ag-f-title">Voice Memos</h3>
-              <p class="ag-f-body">Record the thing you can't write. The half-said thing. The call you almost made at 2am. Even if you abandon it — it's held. The abandoned voice memo is sometimes the most honest entry.</p>
-            </div>
+            <div class="ag-f-card ag-r" data-d="1"><div class="ag-f-num">01</div><h3 class="ag-f-title">The Draft Studio</h3><p class="ag-f-body">A full-screen space to write what you've never been able to say. No word count. No send button. Just you and the thought you've been carrying. Every version you write and delete is held.</p></div>
+            <div class="ag-f-card ag-r" data-d="2"><div class="ag-f-num">02</div><h3 class="ag-f-title">The Vault</h3><p class="ag-f-body">Every entry ever written &mdash; organized by emotion, by person, by time. Protected by Face ID. Encrypted on your device. Seen by no one but you. Watch your patterns emerge across years.</p></div>
+            <div class="ag-f-card ag-r" data-d="3"><div class="ag-f-num">03</div><h3 class="ag-f-title">Voice Memos</h3><p class="ag-f-body">Record the thing you can't write. The half-said thing. The call you almost made at 2am. Even if you abandon it &mdash; it's held. The abandoned voice memo is sometimes the most honest entry.</p></div>
           </div>
         </div>
       </section>
 
-      <!-- RELEASE TYPES -->
       <section class="ag-release">
         <div class="ag-release-inner">
-          <p class="ag-section-label ag-r">Release — when you're ready</p>
+          <p class="ag-section-label ag-r">Release &mdash; when you're ready</p>
           <h2 class="ag-release-h ag-r" data-d="1">Four ways to finally let go.</h2>
           <div class="ag-r-list">
-            <div class="ag-r-item ag-r" data-d="1">
-              <div class="ag-r-name"><span class="ag-r-name-text">Into the Void</span></div>
-              <div class="ag-r-desc">Say it once into nothing. Said. Done. Still yours. The psychological relief of having finally spoken it — to the universe, to no one, to everything at once.</div>
-              <div class="ag-r-tag"><span class="ag-badge ag-badge-free">Free</span></div>
-            </div>
-            <div class="ag-r-item ag-r" data-d="2">
-              <div class="ag-r-name"><span class="ag-r-name-text">Anonymous Pulse</span></div>
-              <div class="ag-r-desc">They receive only a feeling. Not your words. Not your name. One way. No reply possible. They will never know it was you.</div>
-              <div class="ag-r-tag"><span class="ag-badge ag-badge-prem">Premium</span></div>
-            </div>
-            <div class="ag-r-item ag-r" data-d="3">
-              <div class="ag-r-name"><span class="ag-r-name-text">Direct Delivery</span></div>
-              <div class="ag-r-desc">Finally send it. A 10-minute window to change your mind. After that — it arrives. The act of finally saying the thing you held for too long.</div>
-              <div class="ag-r-tag"><span class="ag-badge ag-badge-prem">Premium</span></div>
-            </div>
-            <div class="ag-r-item ag-r" data-d="4">
-              <div class="ag-r-name"><span class="ag-r-name-text">Time Capsule</span></div>
-              <div class="ag-r-desc">Seal it for the future. To yourself. To someone. To a date that matters. It delivers itself when the time comes.</div>
-              <div class="ag-r-tag"><span class="ag-badge ag-badge-prem">Premium</span></div>
-            </div>
+            <div class="ag-r-item ag-r" data-d="1"><div class="ag-r-name"><span class="ag-r-name-text">Into the Void</span></div><div class="ag-r-desc">Say it once into nothing. Said. Done. Still yours. The psychological relief of having finally spoken it &mdash; to the universe, to no one, to everything at once.</div><div class="ag-r-tag"><span class="ag-badge ag-badge-free">Free</span></div></div>
+            <div class="ag-r-item ag-r" data-d="2"><div class="ag-r-name"><span class="ag-r-name-text">Anonymous Pulse</span></div><div class="ag-r-desc">They receive only a feeling. Not your words. Not your name. One way. No reply possible. They will never know it was you.</div><div class="ag-r-tag"><span class="ag-badge ag-badge-prem">Premium</span></div></div>
+            <div class="ag-r-item ag-r" data-d="3"><div class="ag-r-name"><span class="ag-r-name-text">Direct Delivery</span></div><div class="ag-r-desc">Finally send it. A 10-minute window to change your mind. After that &mdash; it arrives. The act of finally saying the thing you held for too long.</div><div class="ag-r-tag"><span class="ag-badge ag-badge-prem">Premium</span></div></div>
+            <div class="ag-r-item ag-r" data-d="4"><div class="ag-r-name"><span class="ag-r-name-text">Time Capsule</span></div><div class="ag-r-desc">Seal it for the future. To yourself. To someone. To a date that matters. It delivers itself when the time comes.</div><div class="ag-r-tag"><span class="ag-badge ag-badge-prem">Premium</span></div></div>
           </div>
         </div>
       </section>
 
-      <!-- SHADOW PORTRAIT -->
       <section class="ag-portrait" id="ag-portrait">
         <div class="ag-portrait-inner">
           <p class="ag-section-label ag-r" style="justify-content:center">Shadow Portrait</p>
-          <blockquote class="ag-portrait-q ag-r" data-d="1">
-            The AI reads the patterns of what you suppress — not your words, but the weight of them — and writes you a portrait. Not a diagnosis. A mirror.
-          </blockquote>
-          <p class="ag-r" data-d="2" style="font-size:12px;color:var(--ag-faint);letter-spacing:0.06em;">
-            Generated from anonymized behavioral patterns · Your actual words never leave your device
-          </p>
+          <blockquote class="ag-portrait-q ag-r" data-d="1">The AI reads the patterns of what you suppress &mdash; not your words, but the weight of them &mdash; and writes you a portrait. Not a diagnosis. A mirror.</blockquote>
+          <p class="ag-r" data-d="2" style="font-size:12px;color:var(--ag-faint);letter-spacing:0.06em;">Generated from anonymized behavioral patterns &middot; Your actual words never leave your device</p>
           <div class="ag-portrait-card ag-r" data-d="3">
             <p class="ag-portrait-label">Example Shadow Portrait</p>
-            <p class="ag-portrait-text">
-              You carry more than most people know how to carry. The patterns in what you hold back — the weight of them, the frequency, the way some feelings return again and again — speak to someone who feels everything deeply and trusts the world with very little of it.<br><br>
-              There is a particular kind of pain that lives in your unsaid things. Not the sharp kind, but the persistent kind — the kind that stays in the background of everything and shapes how you move through rooms, through conversations, through silences.<br><br>
-              That voice deserves to be heard. Beginning with you.
-            </p>
+            <p class="ag-portrait-text">You carry more than most people know how to carry. The patterns in what you hold back &mdash; the weight of them, the frequency, the way some feelings return again and again &mdash; speak to someone who feels everything deeply and trusts the world with very little of it.<br><br>There is a particular kind of pain that lives in your unsaid things. Not the sharp kind, but the persistent kind &mdash; the kind that stays in the background of everything and shapes how you move through rooms, through conversations, through silences.<br><br>That voice deserves to be heard. Beginning with you.</p>
           </div>
         </div>
       </section>
 
-      <!-- PRIVACY -->
       <section class="ag-privacy" id="ag-privacy">
         <div class="ag-privacy-inner">
           <div>
             <p class="ag-section-label ag-r">Privacy</p>
             <h2 class="ag-privacy-h ag-r" data-d="1">Built on one principle:<br>what you write here is yours.</h2>
             <p class="ag-privacy-p ag-r" data-d="2">All vault data is stored locally on your device with AES-256 encryption, protected by Face ID or Touch ID. No content is uploaded to any server without your explicit permission.</p>
-            <p class="ag-privacy-p ag-r" data-d="2">The Shadow Portrait AI receives only anonymized behavioral metadata — never your actual words.</p>
+            <p class="ag-privacy-p ag-r" data-d="2">The Shadow Portrait AI receives only anonymized behavioral metadata &mdash; never your actual words.</p>
             <div class="ag-p-facts">
               <div class="ag-p-fact ag-r" data-d="1"><div class="ag-p-dot"></div>AES-256 encryption on all vault entries</div>
               <div class="ag-p-fact ag-r" data-d="2"><div class="ag-p-dot"></div>Face ID / Touch ID required to open vault</div>
@@ -1442,65 +1471,46 @@ body.flipped-ag .uni-em { color:#5A8880; }
           <div class="ag-never-box ag-r" data-d="2">
             <p class="ag-never-title">Aglossal will never</p>
             <div class="ag-never-list">
-              <div class="ag-never-row"><div class="ag-never-x">✕</div>Sell your data</div>
-              <div class="ag-never-row"><div class="ag-never-x">✕</div>Share your content with anyone</div>
-              <div class="ag-never-row"><div class="ag-never-x">✕</div>Upload your words without permission</div>
-              <div class="ag-never-row"><div class="ag-never-x">✕</div>Show you a feed or follower count</div>
-              <div class="ag-never-row"><div class="ag-never-x">✕</div>Use your data for advertising</div>
-              <div class="ag-never-row"><div class="ag-never-x">✕</div>Train AI models on your vault content</div>
-              <div class="ag-never-row"><div class="ag-never-x">✕</div>Collect your location or contacts</div>
+              <div class="ag-never-row"><div class="ag-never-x">&#10005;</div>Sell your data</div>
+              <div class="ag-never-row"><div class="ag-never-x">&#10005;</div>Share your content with anyone</div>
+              <div class="ag-never-row"><div class="ag-never-x">&#10005;</div>Upload your words without permission</div>
+              <div class="ag-never-row"><div class="ag-never-x">&#10005;</div>Show you a feed or follower count</div>
+              <div class="ag-never-row"><div class="ag-never-x">&#10005;</div>Use your data for advertising</div>
+              <div class="ag-never-row"><div class="ag-never-x">&#10005;</div>Train AI models on your vault content</div>
+              <div class="ag-never-row"><div class="ag-never-x">&#10005;</div>Collect your location or contacts</div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- DOWNLOAD -->
       <section class="ag-download" id="ag-download">
         <div class="ag-download-inner">
-          <span class="ag-download-star ag-r">✦</span>
-          <h2 class="ag-download-h ag-r" data-d="1">
-            Everyone who has ever hit delete on something true.
-          </h2>
-          <p class="ag-download-sub ag-r" data-d="2">
-            Aglossal is for them. For you.<br>
-            For the version of you that deserved to say it.
-          </p>
+          <span class="ag-download-star ag-r">&starf;</span>
+          <h2 class="ag-download-h ag-r" data-d="1">Everyone who has ever hit delete on something true.</h2>
+          <p class="ag-download-sub ag-r" data-d="2">Aglossal is for them. For you.<br>For the version of you that deserved to say it.</p>
           <div class="ag-download-btns">
-            <a href="https://apps.apple.com/ng/app/aglossal/id6762080438" class="ag-as-btn">
-              ⬡ &nbsp;Download on the App Store
-            </a>
+            <a href="https://apps.apple.com/ng/app/aglossal/id6762080438" class="ag-as-btn">&#11048; &nbsp;Download on the App Store</a>
           </div>
-          <p class="ag-download-legal ag-r" data-d="4">
-            iOS 17+ · Free to download · 17+ only ·
-            <a href="/aglossal-privacy.html">Privacy</a> ·
-            <a href="/aglossal-terms.html">Terms</a> ·
-            <a href="/aglossal-support.html">Support</a>
-          </p>
+          <p class="ag-download-legal ag-r" data-d="4">iOS 17+ &middot; Free to download &middot; 17+ only &middot; <a href="/aglossal-privacy.html">Privacy</a> &middot; <a href="/aglossal-terms.html">Terms</a> &middot; <a href="/aglossal-support.html">Support</a></p>
         </div>
       </section>
 
-      <!-- FOOTER -->
       <footer class="ag-footer">
-        <div class="ag-footer-brand">
-          Aglossal <span class="ag-brand-star">✦</span>
-          <span style="color:var(--ag-border);margin:0 4px">·</span>
-          by <a href="https://embur.world" style="color:inherit;text-decoration:none;margin-left:4px">Embur World</a>
-        </div>
+        <div class="ag-footer-brand">Aglossal <span class="ag-brand-star">&starf;</span> <span style="color:var(--ag-border);margin:0 4px">&middot;</span> by <a href="https://embur.world" style="color:inherit;text-decoration:none;margin-left:4px">Embur World</a></div>
         <ul class="ag-footer-links">
           <li><a href="/aglossal-privacy.html">Privacy Policy</a></li>
           <li><a href="/aglossal-terms.html">Terms of Service</a></li>
           <li><a href="/aglossal-support.html">Support</a></li>
-          <li><a href="#" onclick="flipBackFromAglossal();return false;" style="color:rgba(29,184,154,0.6)">← Back to Embur</a></li>
+          <li><a href="#" onclick="flipBackFromAglossal();return false;" style="color:rgba(29,184,154,0.6)">&larr; Back to Embur</a></li>
         </ul>
-        <p class="ag-footer-legal">© 2026 Embur World. All rights reserved. · Not a medical or therapeutic service.</p>
+        <p class="ag-footer-legal">&copy; 2026 Embur World. All rights reserved. &middot; Not a medical or therapeutic service.</p>
       </footer>
-
-    </div><!-- end ag-world -->
+    </div>
   </div><!-- end world-aglossal -->
 
 </div><!-- end universe -->
 
-<!-- Universe Selector -->
+<!-- Universe Selector — 4 worlds -->
 <div class="universe-selector" id="uni-sel">
   <button class="uni-btn uni-ag" id="uni-ag" onclick="flipToAglossal()" title="Aglossal">
     <span class="uni-dot ag-dot"></span>
@@ -1512,66 +1522,18 @@ body.flipped-ag .uni-em { color:#5A8880; }
     <span class="uni-label">Embur</span>
   </div>
   <div class="uni-sep"></div>
+  <button class="uni-btn uni-sn" id="uni-sn" onclick="flipToSnap()" title="Snapchatwo">
+    <span class="uni-dot sn-dot"></span>
+    <span class="uni-label">Snapchatwo</span>
+  </button>
+  <div class="uni-sep"></div>
   <button class="uni-btn uni-ai" id="uni-ai" onclick="flip()" title="AIDD">
     <span class="uni-dot ai-dot"></span>
     <span class="uni-label">AIDD</span>
   </button>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
-/* ══════════════════════════════════
-   AGLOSSAL CANVAS — slow bone dust
-══════════════════════════════════ */
-const agCanvas = document.getElementById('ag-canvas');
-const agCtx = agCanvas.getContext('2d');
-let agW, agH, agDust = [];
-function resizeAg(){ agW=agCanvas.width=innerWidth; agH=agCanvas.height=innerHeight; }
-resizeAg(); addEventListener('resize', resizeAg);
-for(let i=0;i<60;i++) agDust.push({
-  x:Math.random()*innerWidth, y:Math.random()*innerHeight,
-  r:Math.random()*1.1+0.2,
-  a:Math.random()*0.15+0.04,
-  vx:(Math.random()-.5)*0.10,
-  vy:(Math.random()-.5)*0.07-0.03,
-  c:Math.random()<0.65?'#F2EDE4':'#C5BDB0',
-});
-function drawAg(){
-  agCtx.clearRect(0,0,agW,agH);
-  agDust.forEach(p=>{
-    agCtx.beginPath(); agCtx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    agCtx.fillStyle=p.c+Math.floor(p.a*255).toString(16).padStart(2,'0');
-    agCtx.fill();
-    p.x+=p.vx; p.y+=p.vy;
-    if(p.x<-2)p.x=agW+2; if(p.x>agW+2)p.x=-2;
-    if(p.y<-2)p.y=agH+2; if(p.y>agH+2)p.y=-2;
-  });
-  requestAnimationFrame(drawAg);
-}
-drawAg();
-
-/* ══════════════════════════════════
-   AGLOSSAL SCROLL REVEAL
-══════════════════════════════════ */
-const agNav = document.getElementById('ag-nav');
-const agRevObs = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){ e.target.classList.add('ag-in'); agRevObs.unobserve(e.target); }
-  });
-},{threshold:0.08, rootMargin:'0px 0px -28px 0px'});
-document.querySelectorAll('.ag-r').forEach(el=>agRevObs.observe(el));
-
-function triggerAgReveal(){
-  document.querySelectorAll('.ag-r:not(.ag-in)').forEach(el=>{
-    if(el.getBoundingClientRect().top < innerHeight*0.92) el.classList.add('ag-in');
-  });
-}
-
-// Aglossal nav scroll tint
-document.querySelector('.world-aglossal')?.addEventListener('scroll', ()=>{
-  agNav.classList.toggle('scrolled', document.querySelector('.world-aglossal').scrollTop > 50);
-});
-
-</script><script>
+<script>
 /* ══════════════════════════════════
    EMBUR CANVAS
 ══════════════════════════════════ */
@@ -1657,98 +1619,7 @@ function drawAidd(){
 drawAidd();
 
 /* ══════════════════════════════════
-   FLIP LOGIC
-══════════════════════════════════ */
-let isFlipped   = false;  // AIDD world
-let isAglossal  = false;  // Aglossal world
-let isFlipping  = false;
-
-// Universe selector active state
-function updateUniSel() {
-  document.getElementById('uni-em').classList.toggle('active-world', !isFlipped && !isAglossal);
-  document.getElementById('uni-ai').classList.toggle('active-world', isFlipped);
-  document.getElementById('uni-ag').classList.toggle('active-world', isAglossal);
-}
-
-// Return from AIDD sub-pages
-if(localStorage.getItem('aidd_world') === 'aidd' || new URLSearchParams(window.location.search).get('w') === 'aidd'){
-  document.body.classList.add('flipped');
-  isFlipped = true;
-  localStorage.removeItem('aidd_world');
-  history.replaceState(null,'',window.location.pathname);
-  updateUniSel();
-}
-
-// ── Flip to AIDD (right) ──
-function flip(){
-  if(isFlipping) return;
-  if(isAglossal){ flipBackFromAglossal(); return; }
-  isFlipping = true;
-  document.body.classList.add('flipping');
-  isFlipped = !isFlipped;
-  document.body.classList.toggle('flipped', isFlipped);
-  window.scrollTo({top:0, behavior:'instant'});
-  updateUniSel();
-  setTimeout(()=>{ document.body.classList.remove('flipping'); isFlipping=false; }, 1200);
-}
-
-// ── Flip to Aglossal (left) ──
-function flipToAglossal(){
-  if(isFlipping) return;
-  if(isFlipped){ flip(); setTimeout(flipToAglossal,1350); return; }
-  isFlipping = true;
-  document.body.classList.add('flipping');
-  isAglossal = true;
-  document.body.classList.add('flipped-ag');
-  window.scrollTo({top:0, behavior:'instant'});
-  updateUniSel();
-  setTimeout(()=>{
-    document.body.classList.remove('flipping');
-    isFlipping = false;
-    triggerAgReveal();
-  }, 1200);
-}
-
-// ── Back to Embur from Aglossal ──
-function flipBackFromAglossal(){
-  if(isFlipping) return;
-  isFlipping = true;
-  document.body.classList.add('flipping');
-  isAglossal = false;
-  document.body.classList.remove('flipped-ag');
-  window.scrollTo({top:0, behavior:'instant'});
-  updateUniSel();
-  setTimeout(()=>{ document.body.classList.remove('flipping'); isFlipping=false; }, 1200);
-}
-
-/* ══════════════════════════════════
-   SCROLL REVEAL — EMBUR
-══════════════════════════════════ */
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.style.opacity='1';
-      e.target.style.transform='translateY(0)';
-    }
-  });
-},{threshold:0.1});
-
-document.querySelectorAll('.feature-card,.ai-tool').forEach(el=>{
-  el.style.opacity='0';
-  el.style.transform='translateY(20px)';
-  el.style.transition='opacity .6s ease, transform .6s ease';
-  observer.observe(el);
-});
-
-document.querySelectorAll('.aidd-card').forEach((el,i)=>{
-  el.style.opacity='0';
-  el.style.transform='translateY(24px)';
-  el.style.transition=`opacity .6s ${i*0.08}s ease, transform .6s ${i*0.08}s ease`;
-  observer.observe(el);
-});
-
-/* ══════════════════════════════════
-   AGLOSSAL CANVAS — slow bone dust
+   AGLOSSAL CANVAS
 ══════════════════════════════════ */
 const agCanvas = document.getElementById('ag-canvas');
 const agCtx = agCanvas.getContext('2d');
@@ -1778,6 +1649,145 @@ function drawAg(){
 drawAg();
 
 /* ══════════════════════════════════
+   SNAPCHATWO GHOST CANVAS
+══════════════════════════════════ */
+const snapCanvas = document.getElementById('snap-canvas');
+const sCtx = snapCanvas.getContext('2d');
+let sW, sH, ghosts = [];
+function resizeSnap(){ sW=snapCanvas.width=innerWidth; sH=snapCanvas.height=innerHeight; }
+resizeSnap(); addEventListener('resize', resizeSnap);
+for(let i=0;i<16;i++) ghosts.push({
+  x:Math.random()*innerWidth, y:Math.random()*innerHeight,
+  size:15+Math.random()*55,
+  a:Math.random()*0.07+0.015,
+  vx:(Math.random()-.5)*0.35,
+  vy:-Math.random()*0.28-0.08,
+  color:Math.random()<0.6?'#FFD700':'#FFFFFF',
+  wobble:Math.random()*Math.PI*2,
+  wobbleSpeed:Math.random()*0.018+0.008,
+});
+function drawGhost(x,y,s,alpha,color){
+  sCtx.save(); sCtx.globalAlpha=alpha; sCtx.fillStyle=color;
+  sCtx.beginPath();
+  sCtx.arc(x,y-s*0.12,s*0.36,Math.PI,0,false);
+  sCtx.lineTo(x+s*0.36,y+s*0.36);
+  let steps=4,stepW=s*0.72/steps;
+  for(let j=0;j<steps;j++){
+    let cx=x+s*0.36-stepW*(j+0.5),cy=y+s*0.36,r=stepW*0.5;
+    if(j%2===0)sCtx.arc(cx,cy,r,0,Math.PI,true);
+    else sCtx.arc(cx,cy,r,0,Math.PI,false);
+  }
+  sCtx.lineTo(x-s*0.36,y+s*0.36); sCtx.closePath(); sCtx.fill(); sCtx.restore();
+}
+function drawSnap(){
+  sCtx.clearRect(0,0,sW,sH);
+  ghosts.forEach(g=>{
+    g.wobble+=g.wobbleSpeed;
+    drawGhost(g.x+Math.sin(g.wobble)*7,g.y,g.size,g.a,g.color);
+    g.y+=g.vy; g.x+=g.vx;
+    if(g.y<-g.size*1.5){g.y=sH+g.size;g.x=Math.random()*sW}
+    if(g.x<-g.size)g.x=sW+g.size;
+    if(g.x>sW+g.size)g.x=-g.size;
+  });
+  requestAnimationFrame(drawSnap);
+}
+drawSnap();
+
+/* ══════════════════════════════════
+   FLIP LOGIC
+══════════════════════════════════ */
+let isFlipped   = false;
+let isAglossal  = false;
+let isSnap      = false;
+let isFlipping  = false;
+
+function updateUniSel() {
+  document.getElementById('uni-em').classList.toggle('active-world', !isFlipped && !isAglossal && !isSnap);
+  document.getElementById('uni-ai').classList.toggle('active-world', isFlipped);
+  document.getElementById('uni-ag').classList.toggle('active-world', isAglossal);
+  document.getElementById('uni-sn').classList.toggle('active-world', isSnap);
+}
+
+// Return from AIDD sub-pages
+if(localStorage.getItem('aidd_world') === 'aidd' || new URLSearchParams(window.location.search).get('w') === 'aidd'){
+  document.body.classList.add('flipped');
+  isFlipped = true;
+  localStorage.removeItem('aidd_world');
+  history.replaceState(null,'',window.location.pathname);
+  updateUniSel();
+}
+
+// ── Flip to AIDD ──
+function flip(){
+  if(isFlipping) return;
+  if(isAglossal){ flipBackFromAglossal(); return; }
+  if(isSnap){ flipBackFromSnap(); return; }
+  isFlipping = true;
+  document.body.classList.add('flipping');
+  isFlipped = !isFlipped;
+  document.body.classList.toggle('flipped', isFlipped);
+  window.scrollTo({top:0, behavior:'instant'});
+  updateUniSel();
+  setTimeout(()=>{ document.body.classList.remove('flipping'); isFlipping=false; }, 1200);
+}
+
+// ── Flip to Aglossal ──
+function flipToAglossal(){
+  if(isFlipping) return;
+  if(isFlipped){ flip(); setTimeout(flipToAglossal,1350); return; }
+  if(isSnap){ flipBackFromSnap(); setTimeout(flipToAglossal,1350); return; }
+  isFlipping = true;
+  document.body.classList.add('flipping');
+  isAglossal = true;
+  document.body.classList.add('flipped-ag');
+  window.scrollTo({top:0, behavior:'instant'});
+  updateUniSel();
+  setTimeout(()=>{
+    document.body.classList.remove('flipping');
+    isFlipping = false;
+    triggerAgReveal();
+  }, 1200);
+}
+
+// ── Back to Embur from Aglossal ──
+function flipBackFromAglossal(){
+  if(isFlipping) return;
+  isFlipping = true;
+  document.body.classList.add('flipping');
+  isAglossal = false;
+  document.body.classList.remove('flipped-ag');
+  window.scrollTo({top:0, behavior:'instant'});
+  updateUniSel();
+  setTimeout(()=>{ document.body.classList.remove('flipping'); isFlipping=false; }, 1200);
+}
+
+// ── Flip to Snapchatwo ──
+function flipToSnap(){
+  if(isFlipping) return;
+  if(isFlipped){ flip(); setTimeout(flipToSnap,1350); return; }
+  if(isAglossal){ flipBackFromAglossal(); setTimeout(flipToSnap,1350); return; }
+  isFlipping = true;
+  document.body.classList.add('flipping');
+  isSnap = true;
+  document.body.classList.add('flipped-snap');
+  window.scrollTo({top:0, behavior:'instant'});
+  updateUniSel();
+  setTimeout(()=>{ document.body.classList.remove('flipping'); isFlipping=false; }, 1200);
+}
+
+// ── Back to Embur from Snap ──
+function flipBackFromSnap(){
+  if(isFlipping) return;
+  isFlipping = true;
+  document.body.classList.add('flipping');
+  isSnap = false;
+  document.body.classList.remove('flipped-snap');
+  window.scrollTo({top:0, behavior:'instant'});
+  updateUniSel();
+  setTimeout(()=>{ document.body.classList.remove('flipping'); isFlipping=false; }, 1200);
+}
+
+/* ══════════════════════════════════
    AGLOSSAL SCROLL REVEAL
 ══════════════════════════════════ */
 const agNav = document.getElementById('ag-nav');
@@ -1794,11 +1804,31 @@ function triggerAgReveal(){
   });
 }
 
-// Aglossal nav scroll tint
-document.querySelector('.world-aglossal')?.addEventListener('scroll', ()=>{
-  agNav.classList.toggle('scrolled', document.querySelector('.world-aglossal').scrollTop > 50);
+/* ══════════════════════════════════
+   SCROLL REVEAL — EMBUR & AIDD
+══════════════════════════════════ */
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.style.opacity='1';
+      e.target.style.transform='translateY(0)';
+    }
+  });
+},{threshold:0.1});
+
+document.querySelectorAll('.feature-card,.ai-tool').forEach(el=>{
+  el.style.opacity='0';
+  el.style.transform='translateY(20px)';
+  el.style.transition='opacity .6s ease, transform .6s ease';
+  observer.observe(el);
 });
 
+document.querySelectorAll('.aidd-card').forEach((el,i)=>{
+  el.style.opacity='0';
+  el.style.transform='translateY(24px)';
+  el.style.transition=`opacity .6s ${i*0.08}s ease, transform .6s ${i*0.08}s ease`;
+  observer.observe(el);
+});
 </script>
 </body>
 </html>
