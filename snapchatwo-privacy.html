@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Snapchatwo</title>
+<style>
+  :root {
+    --red: #E8001D;
+    --black: #0D0D0D;
+    --white: #FFFFFF;
+    --grey: #F5F5F5;
+    --muted: #6B7280;
+    --border: #E5E7EB;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--white);
+    color: var(--black);
+    line-height: 1.7;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--red);
+    padding: 48px 24px 40px;
+    text-align: center;
+  }
+  .ghost-logo {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 20px;
+    display: block;
+  }
+  header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+  header p {
+    color: rgba(255,255,255,0.75);
+    font-size: 15px;
+  }
+  .updated {
+    display: inline-block;
+    margin-top: 12px;
+    background: rgba(255,255,255,0.15);
+    color: var(--white);
+    padding: 4px 14px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--black);
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    overflow-x: auto;
+  }
+  nav a {
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 14px 0;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+  }
+  nav a:hover { color: var(--white); border-bottom-color: var(--red); }
+
+  /* MAIN */
+  main {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  /* SECTIONS */
+  .section {
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section:last-child { border-bottom: none; }
+
+  .section-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: var(--red);
+    color: var(--white);
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 16px;
+  }
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--black);
+    margin: 24px 0 10px;
+  }
+  p { font-size: 15px; color: #374151; margin-bottom: 12px; }
+  ul { padding-left: 20px; margin-bottom: 12px; }
+  li { font-size: 15px; color: #374151; margin-bottom: 6px; }
+
+  /* CALLOUT BOXES */
+  .callout {
+    background: var(--grey);
+    border-left: 4px solid var(--red);
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    margin: 20px 0;
+  }
+  .callout.green { border-left-color: #16A34A; }
+  .callout.yellow { border-left-color: #D97706; }
+  .callout p { margin: 0; font-size: 14px; }
+  .callout strong { color: var(--black); }
+
+  /* DATA TABLE */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 14px;
+  }
+  .data-table th {
+    background: var(--black);
+    color: var(--white);
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+  }
+  .data-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    color: #374151;
+    vertical-align: top;
+  }
+  .data-table tr:nth-child(even) td { background: var(--grey); }
+  .badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 99px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+  .badge.yes { background: #DCFCE7; color: #166534; }
+  .badge.no  { background: #FEE2E2; color: #991B1B; }
+
+  /* FOOTER */
+  footer {
+    background: var(--black);
+    padding: 40px 24px;
+    text-align: center;
+  }
+  footer p { color: rgba(255,255,255,0.5); font-size: 13px; }
+  footer a { color: var(--red); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  .footer-logo {
+    width: 48px;
+    margin: 0 auto 16px;
+    display: block;
+    opacity: 0.8;
+  }
+
+  @media (max-width: 640px) {
+    header h1 { font-size: 24px; }
+    h2 { font-size: 18px; }
+    .data-table { font-size: 12px; }
+    .data-table th, .data-table td { padding: 8px 10px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <svg class="ghost-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20 75V42C20 27.088 32.088 15 47 15H53C67.912 15 80 27.088 80 42V75L70 65L60 75L50 65L40 75L30 65L20 75Z" fill="rgba(255,255,255,0.2)" stroke="#FFD700" stroke-width="3"/>
+    <circle cx="40" cy="43" r="5" fill="#FFD700"/>
+    <circle cx="60" cy="43" r="5" fill="#FFD700"/>
+  </svg>
+  <h1>Privacy Policy</h1>
+  <p>Snapchatwo — Real People. Raw Moments. Verified.</p>
+  <span class="updated">Last Updated: May 23, 2026</span>
+</header>
+
+<nav>
+  <a href="#overview">Overview</a>
+  <a href="#collect">What We Collect</a>
+  <a href="#liveness">Liveness</a>
+  <a href="#camera">Camera</a>
+  <a href="#iap">Purchases</a>
+  <a href="#gifts">Gifts</a>
+  <a href="#messages">Messages</a>
+  <a href="#rights">Your Rights</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<main>
+
+  <!-- INTRO CALLOUT -->
+  <div class="callout" style="margin-bottom: 40px;">
+    <p>This Privacy Policy describes how <strong>Embur Inc.</strong> ("we", "us", "our") collects, uses, and protects your information when you use the <strong>Snapchatwo</strong> mobile application. By using Snapchatwo, you agree to this policy.</p>
+  </div>
+
+  <!-- 1. OVERVIEW -->
+  <div class="section" id="overview">
+    <div class="section-num">1</div>
+    <h2>Overview &amp; Our Core Promise</h2>
+    <p>Snapchatwo is built on one principle: <strong>authenticity</strong>. Every snap is captured live through the Snapchatwo camera. There are no uploads from photo libraries. There are no filters. There are no fake personas. Every verified user on Snapchatwo is a real, liveness-confirmed human being.</p>
+    <p>This Privacy Policy reflects our commitment to that principle. We collect only what is necessary to operate the platform, protect our users, enable creator earnings, and comply with applicable laws.</p>
+
+    <div class="callout green">
+      <p><strong>We do not sell your personal data.</strong> We do not share your data with advertisers. Snapchatwo is ad-free. Your data is never used for third-party marketing purposes.</p>
+    </div>
+
+    <h3>Who We Are</h3>
+    <p><strong>Embur Inc.</strong><br>
+    Operating: Snapchatwo<br>
+    Email: support@embur.world<br>
+    Website: embur.world</p>
+
+    <h3>Age Restriction</h3>
+    <p>Snapchatwo is intended for users aged <strong>17 and older</strong>. We do not knowingly collect data from individuals under 17. If we discover that a user under 17 has registered, we immediately terminate the account and delete all associated data. Parents or guardians who believe their child has registered should contact us immediately at support@embur.world.</p>
+  </div>
+
+  <!-- 2. WHAT WE COLLECT -->
+  <div class="section" id="collect">
+    <div class="section-num">2</div>
+    <h2>Information We Collect</h2>
+
+    <h3>2.1 Account Registration</h3>
+    <table class="data-table">
+      <tr><th>Data</th><th>Purpose</th><th>Stored</th></tr>
+      <tr><td>First &amp; Last Name</td><td>Profile display</td><td><span class="badge yes">Yes</span></td></tr>
+      <tr><td>Username</td><td>Unique identity, Snap Code, search</td><td><span class="badge yes">Yes</span></td></tr>
+      <tr><td>Email Address</td><td>Authentication, account recovery</td><td><span class="badge yes">Yes</span></td></tr>
+      <tr><td>Password (hashed)</td><td>Authentication — bcrypt hashed, never plain text</td><td><span class="badge yes">Yes</span></td></tr>
+      <tr><td>Date of Birth</td><td>Age verification (17+ requirement)</td><td><span class="badge yes">Yes</span></td></tr>
+      <tr><td>Bio / Category</td><td>Profile display, discoverability</td><td><span class="badge yes">Optional</span></td></tr>
+      <tr><td>Profile Photo</td><td>Identity display — captured live via camera only</td><td><span class="badge yes">Yes</span></td></tr>
+    </table>
+
+    <h3>2.2 Content You Create</h3>
+    <table class="data-table">
+      <tr><th>Data</th><th>Purpose</th><th>Stored</th></tr>
+      <tr><td>Snaps (photos/videos)</td><td>Feed, profile, stories — live camera only</td><td><span class="badge yes">Yes</span></td></tr>
+      <tr><td>Stories</td><td>24-hour story display</td><td><span class="badge yes">24hrs</span></td></tr>
+      <tr><td>Captions / Tags</td><td>Content context</td><td><span class="badge yes">Yes</span></td></tr>
+      <tr><td>Photo Library</td><td>NOT accessed — ever</td><td><span class="badge no">Never</span></td></tr>
+    </table>
+
+    <div class="callout">
+      <p><strong>Camera-only policy:</strong> Snapchatwo accesses your camera exclusively for live snap capture and liveness verification. We never access your photo library, screenshots, or saved images. Content on Snapchatwo can only originate from the live Snapchatwo camera at the moment of capture.</p>
+    </div>
+
+    <h3>2.3 Usage &amp; Interaction Data</h3>
+    <table class="data-table">
+      <tr><th>Data</th><th>Purpose</th></tr>
+      <tr><td>Snaps fired (liked)</td><td>Engagement, snap score, creator ranking</td></tr>
+      <tr><td>Snaps viewed / seen</td><td>View counts, story analytics</td></tr>
+      <tr><td>Search queries</td><td>User discovery within app</td></tr>
+      <tr><td>Follow / Unfollow actions</td><td>Social graph, feed personalization</td></tr>
+      <tr><td>Screenshots taken of content</td><td>Creator notification (screenshot awareness feature)</td></tr>
+    </table>
+
+    <h3>2.4 Device &amp; Technical Data</h3>
+    <p>We collect minimal technical data necessary for app functionality:</p>
+    <ul>
+      <li>Device type and iOS version (for compatibility)</li>
+      <li>App version</li>
+      <li>Crash reports and performance data (for stability)</li>
+      <li>Authentication tokens (stored encrypted in iOS Keychain via Expo SecureStore)</li>
+    </ul>
+    <p>We do <strong>not</strong> collect: precise GPS location, advertising identifiers (IDFA), IP address history, or device fingerprints beyond what is technically necessary for API security.</p>
+  </div>
+
+  <!-- 3. LIVENESS VERIFICATION -->
+  <div class="section" id="liveness">
+    <div class="section-num">3</div>
+    <h2>Liveness Verification</h2>
+    <p>Snapchatwo uses a proprietary real-time liveness detection system to confirm that every verified user is a living, breathing human being — not a bot, AI avatar, deepfake, or impersonator.</p>
+
+    <h3>What Liveness Verification Does</h3>
+    <ul>
+      <li>Confirms you are physically present using your device camera</li>
+      <li>Detects real facial movement and depth — not a static photo or video replay</li>
+      <li>Issues a time-limited verification token upon successful completion</li>
+      <li>Marks your profile with a verified badge visible to other users</li>
+    </ul>
+
+    <h3>What We Do NOT Do</h3>
+    <div class="callout green">
+      <p><strong>Liveness verification is not facial recognition and is not biometric data collection.</strong> We do not store facial geometry, facial templates, biometric identifiers, or any data that can be used to identify you by your face outside of Snapchatwo. The liveness check confirms your presence — it does not record or retain your facial data. All liveness processing occurs in real time and the raw frame data is discarded immediately after verification.</p>
+    </div>
+
+    <h3>Face ID / Touch ID Login</h3>
+    <p>If you enable biometric login (Face ID or Touch ID), your authentication credentials are stored exclusively in the iOS Keychain on your device using Apple's Secure Enclave. Snapchatwo never receives, transmits, or stores your biometric data. Face ID authentication is processed entirely by Apple's operating system — we only receive a success or failure signal.</p>
+  </div>
+
+  <!-- 4. CAMERA -->
+  <div class="section" id="camera">
+    <div class="section-num">4</div>
+    <h2>Camera Access</h2>
+    <p>Camera access is the foundation of Snapchatwo's authenticity guarantee.</p>
+
+    <h3>Why We Require Camera Access</h3>
+    <ul>
+      <li><strong>Snap capture:</strong> All content on Snapchatwo must be captured live through the in-app camera</li>
+      <li><strong>Liveness verification:</strong> Real-time presence confirmation during account setup</li>
+      <li><strong>Snap Code scanning:</strong> QR code scanning to add friends</li>
+      <li><strong>Profile photo:</strong> Profile pictures must be live-captured</li>
+    </ul>
+
+    <h3>What We Do NOT Use the Camera For</h3>
+    <div class="callout">
+      <p>The camera is never activated in the background. It is never accessed when the app is not open and in active use. We never use the camera for surveillance, advertising profiling, or any purpose other than the features listed above. Camera access can be revoked at any time in iOS Settings → Privacy → Camera → Snapchatwo.</p>
+    </div>
+
+    <h3>Microphone Access</h3>
+    <p>Microphone access is requested only when recording video snaps. Audio is captured solely as part of video content you actively choose to record and post. No audio is captured passively or in the background.</p>
+  </div>
+
+  <!-- 5. IN-APP PURCHASES -->
+  <div class="section" id="iap">
+    <div class="section-num">5</div>
+    <h2>In-App Purchases &amp; Credits</h2>
+    <p>Snapchatwo offers credit packages available for purchase through Apple's In-App Purchase system (StoreKit). Credits are used to send virtual gifts to creators.</p>
+
+    <h3>Credit Packages</h3>
+    <table class="data-table">
+      <tr><th>Package</th><th>Credits</th><th>Price</th></tr>
+      <tr><td>Starter</td><td>100 credits</td><td>$0.99</td></tr>
+      <tr><td>Popular</td><td>550 credits</td><td>$3.99</td></tr>
+      <tr><td>Pro</td><td>1,350 credits</td><td>$8.99</td></tr>
+      <tr><td>Elite</td><td>3,600 credits</td><td>$19.99</td></tr>
+    </table>
+
+    <div class="callout yellow">
+      <p><strong>Important:</strong> All payments are processed exclusively by Apple. Snapchatwo never receives, stores, or processes your credit card number, Apple Pay details, or any payment instrument. For refund requests, contact Apple Support at reportaproblem.apple.com. Credits are non-refundable per Apple's consumable in-app purchase policy.</p>
+    </div>
+
+    <h3>Purchase Data We Receive</h3>
+    <p>Upon a successful purchase, Apple provides us with:</p>
+    <ul>
+      <li>The product ID purchased (e.g. com.drz.embr.credits.100)</li>
+      <li>A transaction ID for fraud verification</li>
+      <li>An encrypted receipt for server-side validation</li>
+    </ul>
+    <p>We use this data solely to credit your account with the purchased credits. Transaction records are stored for accounting, fraud prevention, and legal compliance purposes.</p>
+
+    <h3>Credit Balance</h3>
+    <p>Your credit balance is stored on our servers linked to your account. Credits expire only upon account deletion. Credits cannot be transferred between accounts or converted to cash.</p>
+  </div>
+
+  <!-- 6. GIFTS & EARNINGS -->
+  <div class="section" id="gifts">
+    <div class="section-num">6</div>
+    <h2>Virtual Gifts &amp; Creator Earnings</h2>
+
+    <h3>Sending Gifts</h3>
+    <p>Users may send virtual gifts to creators using their credit balance. Available gifts: Rose (10cr), Heart (25cr), Diamond (50cr), Crown (100cr), Rocket (200cr), Mansion (500cr).</p>
+    <p>When you send a gift, we record:</p>
+    <ul>
+      <li>Sender user ID</li>
+      <li>Recipient creator user ID</li>
+      <li>Gift type and credit value</li>
+      <li>Snap ID the gift was sent on (if applicable)</li>
+      <li>Timestamp</li>
+    </ul>
+
+    <h3>Creator Earnings</h3>
+    <p>Creators receive <strong>80% of the gross value</strong> of each gift received. Snapchatwo retains a 20% platform fee, deducted at the time of withdrawal — not from the sender.</p>
+
+    <h3>PayPal Withdrawals</h3>
+    <p>Creators who request earnings withdrawal provide their PayPal email address. This email is stored securely and used solely for processing withdrawal payments. We do not store any other PayPal account details. Withdrawal data is subject to applicable tax reporting requirements. Creators are responsible for declaring earnings as income in their jurisdiction.</p>
+
+    <div class="callout">
+      <p><strong>Identity note:</strong> Creators requesting withdrawals above applicable thresholds may be required to provide additional identity verification information for tax and anti-money laundering compliance. This information is handled in accordance with applicable financial regulations.</p>
+    </div>
+  </div>
+
+  <!-- 7. MESSAGES -->
+  <div class="section" id="messages">
+    <div class="section-num">7</div>
+    <h2>Messages &amp; Communications</h2>
+
+    <h3>Direct Messages</h3>
+    <p>Snapchatwo supports direct messaging between users. Message content is stored on our servers to enable message delivery and conversation history. We do not sell, analyze for advertising, or share message content with third parties. Messages between users are private and not visible to other users.</p>
+
+    <h3>Group Chats</h3>
+    <p>Group chat messages are stored and visible to all members of the group. When you leave a group, you no longer receive new messages but your prior messages may remain visible to remaining members until the group is deleted.</p>
+
+    <h3>Snap Replies</h3>
+    <p>When you send a snap reply to another user's content, the reply is delivered as a direct message and stored accordingly.</p>
+
+    <div class="callout">
+      <p><strong>Safety note:</strong> While we do not monitor message content in real time, we reserve the right to review messages reported by users as abusive, illegal, or in violation of our Terms of Service. We cooperate with law enforcement requests as required by applicable law.</p>
+    </div>
+  </div>
+
+  <!-- 8. CONTACTS -->
+  <div class="section">
+    <div class="section-num">8</div>
+    <h2>Contacts Access</h2>
+    <p>Snapchatwo requests optional access to your device contacts for the sole purpose of allowing you to invite friends to join the platform.</p>
+
+    <div class="callout green">
+      <p><strong>We do not upload, store, or transmit your contacts to our servers.</strong> Contact data is accessed locally on your device only to generate an invite message via the native iOS Share Sheet. Your contacts list never leaves your device through Snapchatwo.</p>
+    </div>
+
+    <p>Contact access can be denied or revoked at any time via iOS Settings → Privacy → Contacts → Snapchatwo without affecting any other app functionality.</p>
+  </div>
+
+  <!-- 9. HOW WE USE DATA -->
+  <div class="section">
+    <div class="section-num">9</div>
+    <h2>How We Use Your Information</h2>
+    <table class="data-table">
+      <tr><th>Purpose</th><th>Legal Basis</th></tr>
+      <tr><td>Providing the Snapchatwo service</td><td>Contractual necessity</td></tr>
+      <tr><td>Account authentication and security</td><td>Contractual necessity / Legitimate interest</td></tr>
+      <tr><td>Liveness verification to prevent fraud and fake accounts</td><td>Legitimate interest / Legal obligation</td></tr>
+      <tr><td>Processing credit purchases and gift transactions</td><td>Contractual necessity</td></tr>
+      <tr><td>Processing creator earnings withdrawals</td><td>Contractual necessity</td></tr>
+      <tr><td>Displaying your content to followers and the feed</td><td>Contractual necessity / Your consent</td></tr>
+      <tr><td>Sending push notifications (with your permission)</td><td>Your consent</td></tr>
+      <tr><td>App stability, crash reporting, performance</td><td>Legitimate interest</td></tr>
+      <tr><td>Responding to support requests</td><td>Legitimate interest</td></tr>
+      <tr><td>Legal compliance and fraud prevention</td><td>Legal obligation</td></tr>
+    </table>
+  </div>
+
+  <!-- 10. SHARING -->
+  <div class="section">
+    <div class="section-num">10</div>
+    <h2>How We Share Your Information</h2>
+    <p>We do not sell, rent, or trade your personal information. We share data only in the following limited circumstances:</p>
+
+    <h3>Service Providers</h3>
+    <ul>
+      <li><strong>Cloudinary</strong> — Secure media storage and delivery for snaps and stories</li>
+      <li><strong>Railway</strong> — Backend infrastructure and database hosting</li>
+      <li><strong>Resend</strong> — Transactional email delivery (account verification, OTP)</li>
+      <li><strong>PayPal</strong> — Creator earnings withdrawal processing</li>
+      <li><strong>Apple</strong> — In-app purchase processing via StoreKit</li>
+    </ul>
+    <p>All service providers are contractually required to process your data only as instructed by us and in accordance with applicable privacy laws.</p>
+
+    <h3>Legal Requirements</h3>
+    <p>We may disclose your information when required by law, court order, or governmental authority. We will notify you of such disclosure where legally permitted to do so.</p>
+
+    <h3>Safety</h3>
+    <p>We may share information when we believe disclosure is necessary to prevent imminent harm to a user or third party, or to address fraud, security threats, or violations of our Terms of Service.</p>
+
+    <h3>Business Transfers</h3>
+    <p>In the event of a merger, acquisition, or sale of assets, your information may be transferred to the acquiring entity. You will be notified of any such transfer and the privacy policy that will govern your data.</p>
+  </div>
+
+  <!-- 11. DATA RETENTION -->
+  <div class="section">
+    <div class="section-num">11</div>
+    <h2>Data Retention</h2>
+    <table class="data-table">
+      <tr><th>Data Type</th><th>Retention Period</th></tr>
+      <tr><td>Account data (name, email, username)</td><td>Until account deletion</td></tr>
+      <tr><td>Snaps and profile media</td><td>Until deleted by user or account deletion</td></tr>
+      <tr><td>Stories</td><td>24 hours from posting, then auto-deleted</td></tr>
+      <tr><td>Direct messages</td><td>Until deleted by user or account deletion</td></tr>
+      <tr><td>Purchase transaction records</td><td>7 years (legal/tax compliance)</td></tr>
+      <tr><td>Creator earnings records</td><td>7 years (legal/tax compliance)</td></tr>
+      <tr><td>Liveness verification tokens</td><td>Session only — not stored after verification</td></tr>
+      <tr><td>Crash and performance data</td><td>90 days</td></tr>
+      <tr><td>Deleted account data</td><td>Purged within 30 days of deletion request</td></tr>
+    </table>
+  </div>
+
+  <!-- 12. YOUR RIGHTS -->
+  <div class="section" id="rights">
+    <div class="section-num">12</div>
+    <h2>Your Rights</h2>
+    <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+
+    <h3>Universal Rights (All Users)</h3>
+    <ul>
+      <li><strong>Access:</strong> Request a copy of the personal data we hold about you</li>
+      <li><strong>Correction:</strong> Request correction of inaccurate personal data</li>
+      <li><strong>Deletion:</strong> Request deletion of your account and all associated data. This is available directly in-app: Me → Settings → Delete Account</li>
+      <li><strong>Portability:</strong> Request your data in a machine-readable format</li>
+      <li><strong>Objection:</strong> Object to processing based on legitimate interests</li>
+      <li><strong>Restriction:</strong> Request restriction of certain processing activities</li>
+    </ul>
+
+    <h3>GDPR Rights (European Users)</h3>
+    <p>If you are located in the European Economic Area, you have all rights under the General Data Protection Regulation (GDPR), including the right to lodge a complaint with your local supervisory authority.</p>
+
+    <h3>CCPA Rights (California Users)</h3>
+    <p>California residents have the right to know what personal information is collected, to delete personal information, to opt-out of sale (we do not sell data), and to non-discrimination for exercising privacy rights.</p>
+
+    <h3>How to Exercise Your Rights</h3>
+    <p>For most actions, use the in-app controls (Settings, Edit Profile, Delete Account). For data requests or concerns, contact us at: <strong>support@embur.world</strong></p>
+    <p>We respond to all verified requests within <strong>30 days</strong>.</p>
+
+    <h3>Account Deletion</h3>
+    <div class="callout green">
+      <p><strong>How to delete your account:</strong> Open Snapchatwo → Me tab → Settings → Delete Account. All your data (snaps, messages, profile, follower connections, credit balance) is permanently and irreversibly deleted within 30 days. Transaction records are retained for the legally required 7-year period for financial compliance only.</p>
+    </div>
+  </div>
+
+  <!-- 13. SECURITY -->
+  <div class="section">
+    <div class="section-num">13</div>
+    <h2>Security</h2>
+    <p>We implement industry-standard security measures to protect your personal information:</p>
+    <ul>
+      <li>All data transmitted between the app and our servers is encrypted using TLS 1.2 or higher</li>
+      <li>Passwords are hashed using bcrypt — never stored in plain text</li>
+      <li>Authentication tokens are stored in the iOS Keychain via Expo SecureStore</li>
+      <li>Media files are stored via Cloudinary with access controls</li>
+      <li>Our backend infrastructure is hosted on Railway with restricted access</li>
+      <li>Liveness tokens are single-use and time-limited</li>
+      <li>Regular security reviews of our codebase and infrastructure</li>
+    </ul>
+    <div class="callout yellow">
+      <p><strong>No system is 100% secure.</strong> In the event of a data breach that affects your personal information, we will notify you as required by applicable law, typically within 72 hours of becoming aware of the breach.</p>
+    </div>
+  </div>
+
+  <!-- 14. THIRD PARTY LINKS -->
+  <div class="section">
+    <div class="section-num">14</div>
+    <h2>Third-Party Links &amp; Services</h2>
+    <p>Snapchatwo may contain links to external websites or services (e.g., PayPal, Apple). These third parties have their own privacy policies, and we are not responsible for their data practices. We encourage you to review the privacy policies of any third-party services you access through Snapchatwo.</p>
+  </div>
+
+  <!-- 15. CHILDREN -->
+  <div class="section">
+    <div class="section-num">15</div>
+    <h2>Children's Privacy</h2>
+    <p>Snapchatwo is strictly for users aged <strong>17 and older</strong>. We do not knowingly collect personal information from individuals under 17. Our liveness verification and account creation process is designed to prevent underage registration.</p>
+    <p>If you are a parent or guardian and believe your child under 17 has created an account, please contact us immediately at support@embur.world with the subject line "MINOR ACCOUNT REMOVAL" and we will delete the account and all associated data within 48 hours.</p>
+  </div>
+
+  <!-- 16. INTERNATIONAL -->
+  <div class="section">
+    <div class="section-num">16</div>
+    <h2>International Data Transfers</h2>
+    <p>Snapchatwo is operated by Embur Inc. based in Kuwait. Your data may be stored and processed in servers located in the United States (via Railway and Cloudinary). By using Snapchatwo, you consent to the transfer of your data to countries that may have different data protection laws than your home country.</p>
+    <p>For European users, we ensure that such transfers comply with GDPR requirements through appropriate safeguards.</p>
+  </div>
+
+  <!-- 17. CHANGES -->
+  <div class="section">
+    <div class="section-num">17</div>
+    <h2>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we make significant changes, we will:</p>
+    <ul>
+      <li>Update the "Last Updated" date at the top of this page</li>
+      <li>Send you a notification via the app or email</li>
+      <li>For material changes, request your re-acknowledgment before continued use</li>
+    </ul>
+    <p>Continued use of Snapchatwo after changes take effect constitutes your acceptance of the revised policy.</p>
+  </div>
+
+  <!-- 18. CONTACT -->
+  <div class="section" id="contact">
+    <div class="section-num">18</div>
+    <h2>Contact Us</h2>
+    <p>For any privacy-related questions, data requests, or concerns:</p>
+
+    <div style="background: var(--grey); border-radius: 12px; padding: 24px; margin-top: 16px;">
+      <p style="margin-bottom: 6px;"><strong>Embur Inc. — Privacy Team</strong></p>
+      <p style="margin-bottom: 6px;">Email: <a href="mailto:support@embur.world" style="color: var(--red); text-decoration: none;">support@embur.world</a></p>
+      <p style="margin-bottom: 6px;">Website: <a href="https://embur.world" style="color: var(--red); text-decoration: none;">embur.world</a></p>
+      <p>Response time: Within 30 days for data requests, within 48 hours for urgent safety matters.</p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <svg class="footer-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20 75V42C20 27.088 32.088 15 47 15H53C67.912 15 80 27.088 80 42V75L70 65L60 75L50 65L40 75L30 65L20 75Z" fill="rgba(255,255,255,0.3)" stroke="#E8001D" stroke-width="3"/>
+    <circle cx="40" cy="43" r="5" fill="#E8001D"/>
+    <circle cx="60" cy="43" r="5" fill="#E8001D"/>
+  </svg>
+  <p style="margin-bottom: 8px;">© 2026 Embur Inc. All rights reserved.</p>
+  <p style="margin-bottom: 12px;">Snapchatwo is a product of Embur Inc., Kuwait.</p>
+  <p><a href="https://embur.world">embur.world</a> · <a href="mailto:support@embur.world">support@embur.world</a></p>
+</footer>
+
+</body>
+</html>
