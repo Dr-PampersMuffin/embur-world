@@ -888,7 +888,7 @@ body.flipped-ag .uni-em { color:#5A8880; }
 }
 
 /* ═══════════════════════════════════════════
-   SNAPCHATWO WORLD — ADDED
+   OWGEE WORLD — ADDED
 ═══════════════════════════════════════════ */
 #snap-canvas{
   position:fixed;top:0;left:0;width:100%;height:100%;
@@ -901,7 +901,7 @@ body.flipped-snap #ag-canvas{opacity:0}
 
 .world-snap{
   transform:rotateX(-180deg);
-  background:#E8001D;
+  background:#2D0A4E;
   z-index:1;
   will-change:transform;
 }
@@ -917,9 +917,9 @@ body.flipped-snap .ag-nav{opacity:0;pointer-events:none}
   position:fixed;top:0;left:0;right:0;z-index:100;
   padding:20px 40px;
   display:flex;align-items:center;justify-content:space-between;
-  background:rgba(190,0,12,0.9);
+  background:rgba(45,10,78,0.9);
   backdrop-filter:blur(24px);
-  border-bottom:1px solid rgba(255,215,0,0.25);
+  border-bottom:1px solid rgba(201,162,39,0.35);
   opacity:0;pointer-events:none;
   transition:opacity 0.4s 0.5s;
 }
@@ -931,22 +931,22 @@ body.flipped-snap .snap-nav{opacity:1;pointer-events:all}
 .snap-nav-right{display:flex;align-items:center;gap:12px}
 .btn-back-snap{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:10px 20px;border-radius:100px;font-size:13px;font-weight:700;cursor:pointer;transition:all 0.3s;font-family:'Syne',sans-serif}
 .btn-back-snap:hover{background:rgba(255,255,255,0.22)}
-.snap-dl-btn{background:#FFD700;color:#E8001D;padding:10px 22px;border-radius:100px;font-size:13px;font-weight:800;text-decoration:none;display:flex;align-items:center;gap:6px;transition:all 0.2s;font-family:'Syne',sans-serif}
-.snap-dl-btn:hover{background:#FFE033;transform:scale(1.03)}
-.btn-flip-to-snap{display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(232,0,29,0.2),#1a0005);border:1px solid rgba(232,0,29,0.5);color:#FFD700;padding:10px 20px;border-radius:100px;font-size:13px;font-weight:700;cursor:pointer;transition:all 0.3s;font-family:'Syne',sans-serif}
-.btn-flip-to-snap:hover{border-color:rgba(232,0,29,0.9);box-shadow:0 0 20px rgba(232,0,29,0.4);transform:scale(1.04)}
+.snap-dl-btn{background:#C9A227;color:#1A0530;padding:10px 22px;border-radius:100px;font-size:13px;font-weight:800;text-decoration:none;display:flex;align-items:center;gap:6px;transition:all 0.2s;font-family:'Syne',sans-serif}
+.snap-dl-btn:hover{background:#E8C84B;transform:scale(1.03)}
+.btn-flip-to-snap{display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(91,45,139,0.3),#1A0530);border:1px solid rgba(91,45,139,0.6);color:#C9A227;padding:10px 20px;border-radius:100px;font-size:13px;font-weight:700;cursor:pointer;transition:all 0.3s;font-family:'Syne',sans-serif}
+.btn-flip-to-snap:hover{border-color:rgba(91,45,139,0.9);box-shadow:0 0 20px rgba(91,45,139,0.4);transform:scale(1.04)}
 .snap-nav-dot{width:8px;height:8px;border-radius:50%;background:#FFD700;animation:snapPulse 2s infinite}
 @keyframes snapPulse{0%,100%{box-shadow:0 0 0 0 rgba(255,215,0,0.6)}70%{box-shadow:0 0 0 6px transparent}}
-.uni-sn{color:rgba(255,215,0,0.35)}
+.uni-sn{color:rgba(201,162,39,0.5)}
 .sn-dot{background:#FFD700;animation:snapPulse 2s infinite}
-body.flipped-snap .uni-sn{background:rgba(232,0,29,0.15);color:#FFD700;box-shadow:inset 0 0 0 1px rgba(255,215,0,0.3);cursor:default}
+body.flipped-snap .uni-sn{background:rgba(91,45,139,0.25);color:#C9A227;box-shadow:inset 0 0 0 1px rgba(201,162,39,0.4);cursor:default}
 body.flipped-snap .uni-em{color:#5A8880;cursor:pointer}
 body.flipped-snap .uni-ai{color:#3A6080;cursor:pointer}
 body.flipped-snap .uni-ag{color:rgba(197,189,176,0.5);cursor:pointer}
 .snap-world{min-height:100vh;color:#fff;font-family:'DM Sans',sans-serif}
 .snap-hero{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:130px 24px 80px}
 @keyframes snapFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-.snap-logo-wrap{width:120px;height:120px;background:transparent;margin:0 auto 28px;animation:snapFloat 3s ease-in-out infinite;} 
+.snap-logo-wrap{width:120px;height:120px;border-radius:24px;background:#000;margin:0 auto 28px;overflow:hidden;animation:snapFloat 3s ease-in-out infinite;box-shadow:0 0 50px rgba(255,215,0,0.25),0 0 100px rgba(255,215,0,0.1)}
 .snap-logo-img{width:100%;height:100%;object-fit:cover}
 .snap-verified-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,215,0,0.15);border:1px solid rgba(255,215,0,0.4);padding:7px 18px;border-radius:100px;font-size:11px;font-weight:700;color:#FFD700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:28px}
 .snap-verified-dot{width:6px;height:6px;border-radius:50%;background:#FFD700;animation:snapPulse 2s infinite}
@@ -955,8 +955,8 @@ body.flipped-snap .uni-ag{color:rgba(197,189,176,0.5);cursor:pointer}
 .snap-hero-slogan{font-family:'Syne',sans-serif;font-size:12px;color:rgba(255,215,0,0.65);font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:40px}
 .snap-raw-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,0,0,0.2);border:1px solid rgba(255,255,255,0.15);border-radius:100px;padding:7px 16px;font-size:11px;font-weight:700;color:rgba(255,255,255,0.8);letter-spacing:1px;text-transform:uppercase;margin-bottom:40px}
 .snap-hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:72px}
-.snap-btn-primary{background:#FFD700;color:#E8001D;padding:16px 36px;border-radius:100px;font-size:16px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.25s;font-family:'Syne',sans-serif}
-.snap-btn-primary:hover{background:#FFE033;transform:translateY(-2px);box-shadow:0 20px 40px rgba(255,215,0,0.3)}
+.snap-btn-primary{background:#C9A227;color:#1A0530;padding:16px 36px;border-radius:100px;font-size:16px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.25s;font-family:'Syne',sans-serif}
+.snap-btn-primary:hover{background:#E8C84B;transform:translateY(-2px);box-shadow:0 20px 40px rgba(201,162,39,0.4)}
 .snap-btn-ghost{background:transparent;color:#fff;padding:16px 36px;border-radius:100px;font-size:16px;font-weight:500;text-decoration:none;border:1px solid rgba(255,255,255,0.3);transition:all 0.25s}
 .snap-btn-ghost:hover{border-color:rgba(255,215,0,0.6);color:#FFD700;transform:translateY(-2px)}
 .snap-stats{display:flex;gap:52px;justify-content:center;flex-wrap:wrap}
@@ -1039,7 +1039,7 @@ body.flipped-snap .uni-ag{color:rgba(197,189,176,0.5);cursor:pointer}
   <div class="nav-right">
     <button class="btn-flip-to-snap" onclick="flipToSnap()">
       <span class="snap-nav-dot"></span>
-      Snapchatwo
+      Owgee
     </button>
     <button class="btn-flip-to-aidd" onclick="flip()">
       <span class="flip-dot"></span>
@@ -1051,11 +1051,11 @@ body.flipped-snap .uni-ag{color:rgba(197,189,176,0.5);cursor:pointer}
 
 <!-- ═══ SNAPCHATWO NAV ═══ -->
 <nav class="snap-nav">
-  <div class="snap-nav-logo">Snapchatwo</div>
+  <div class="snap-nav-logo">Owgee</div>
   <div class="snap-nav-links">
     <a href="#snap-features">Features</a>
     <a href="#snap-gifts">Gifts</a>
-    <a href="snapchatwo-privacy.html">Privacy</a>
+    <a href="owgee-privacy.html">Privacy</a>
     <a href="support.html">Support</a>
   </div>
   <div class="snap-nav-right">
@@ -1177,7 +1177,7 @@ body.flipped-snap .uni-ag{color:rgba(197,189,176,0.5);cursor:pointer}
         <a href="legal.html">Legal</a>
         <a href="support.html">Support</a>
         <a href="aidd-privacy.html" style="color:#00D4FF80;">AIDD Privacy</a>
-        <a href="snapchatwo-privacy.html" style="color:rgba(255,215,0,0.6)">Snapchatwo Privacy</a>
+        <a href="owgee-privacy.html" style="color:rgba(255,215,0,0.6)">Owgee Privacy</a>
       </div>
       <div class="footer-copy">&copy; 2026 Embur Inc. All rights reserved.</div>
     </footer>
@@ -1189,14 +1189,14 @@ body.flipped-snap .uni-ag{color:rgba(197,189,176,0.5);cursor:pointer}
     <div class="snap-world">
       <div class="snap-hero">
         <div class="snap-logo-wrap">
-          <img src="icon_yellow.png" class="snap-logo-img" alt="Snapchatwo Ghost" />
+          <img src="icon_yellow.png" class="snap-logo-img" alt="Owgee Crown" />
         </div>
         <div class="snap-verified-badge">
           <span class="snap-verified-dot"></span>
           Liveness Verified Platform
         </div>
-        <div class="snap-hero-title">Snapchatwo</div>
-        <p class="snap-hero-sub">The world's only platform where every snap is raw, real, and live-verified. No filters. No uploads. No fakes. Just truth.</p>
+        <div class="snap-hero-title">Owgee</div>
+        <p class="snap-hero-sub">The world's only platform where every moment is raw, real, and live-verified. No filters. No uploads. No fakes. Just truth.</p>
         <p class="snap-hero-slogan">Real People &middot; Raw Moments &middot; No Filters</p>
         <div class="snap-raw-badge">&check; RAW &middot; NO FILTER &middot; NO UPLOADS &middot; AUTHENTICATED</div>
         <div class="snap-hero-btns">
@@ -1204,13 +1204,13 @@ body.flipped-snap .uni-ag{color:rgba(197,189,176,0.5);cursor:pointer}
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
             Download on iOS
           </a>
-          <a href="snapchatwo-privacy.html" class="snap-btn-ghost">Privacy Policy</a>
+          <a href="owgee-privacy.html" class="snap-btn-ghost">Privacy Policy</a>
         </div>
         <div class="snap-stats">
           <div class="snap-stat"><div class="snap-stat-num">100%</div><div class="snap-stat-label">Live Verified</div></div>
           <div class="snap-stat"><div class="snap-stat-num">0</div><div class="snap-stat-label">Filters</div></div>
           <div class="snap-stat"><div class="snap-stat-num">80%</div><div class="snap-stat-label">Creator Share</div></div>
-          <div class="snap-stat"><div class="snap-stat-num">24h</div><div class="snap-stat-label">Stories</div></div>
+          <div class="snap-stat"><div class="snap-stat-num">24h</div><div class="snap-stat-label">Drops</div></div>
         </div>
       </div>
 
@@ -1219,11 +1219,11 @@ body.flipped-snap .uni-ag{color:rgba(197,189,176,0.5);cursor:pointer}
         <div class="snap-section-title">Built against<br>the algorithm.</div>
         <div class="snap-grid">
           <div class="snap-card"><span class="snap-card-icon">&#128065;</span><div class="snap-card-title">Liveness Verification</div><div class="snap-card-desc">Every verified user passes our real-time liveness check. No bots. No catfishing. No AI avatars. When you follow someone, you know exactly who they are.</div></div>
-          <div class="snap-card"><span class="snap-card-icon">&#128247;</span><div class="snap-card-title">Camera Only &mdash; No Uploads</div><div class="snap-card-desc">The Snapchatwo camera is the only entry point. No photo library access. No upload button. Every snap is live-captured in the real world.</div></div>
-          <div class="snap-card"><span class="snap-card-icon">&#128293;</span><div class="snap-card-title">Fire Reactions</div><div class="snap-card-desc">Show love for raw content. Every fire adds to a creator's snap score. See who fired your snaps in real time.</div></div>
-          <div class="snap-card"><span class="snap-card-icon">&#9201;</span><div class="snap-card-title">24-Hour Stories</div><div class="snap-card-desc">Live-captured stories that disappear in 24 hours. Authentic moments. Real expressions. No curating &mdash; just what happened.</div></div>
-          <div class="snap-card"><span class="snap-card-icon">&#128172;</span><div class="snap-card-title">Real Connections</div><div class="snap-card-desc">Direct messages, group chats, snap replies. Chat with real verified people you follow. No bots, no fake accounts.</div></div>
-          <div class="snap-card"><span class="snap-card-icon">&#9638;</span><div class="snap-card-title">Snap Code</div><div class="snap-card-desc">Your unique identity. Share your Snap Code anywhere. Scan someone else's code to add them instantly.</div></div>
+          <div class="snap-card"><span class="snap-card-icon">&#128247;</span><div class="snap-card-title">Camera Only &mdash; No Uploads</div><div class="snap-card-desc">The Owgee camera is the only entry point. No photo library access. No upload button. Every moment is live-captured in the real world.</div></div>
+          <div class="snap-card"><span class="snap-card-icon">&#128293;</span><div class="snap-card-title">Crown Reactions</div><div class="snap-card-desc">Show love for raw content. Every crown adds to a creator's OG Score. See who crowned your moments in real time.</div></div>
+          <div class="snap-card"><span class="snap-card-icon">&#9201;</span><div class="snap-card-title">24-Hour Drops</div><div class="snap-card-desc">Live-captured drops that disappear in 24 hours. Authentic moments. Real expressions. No curating &mdash; just what happened.</div></div>
+          <div class="snap-card"><span class="snap-card-icon">&#128172;</span><div class="snap-card-title">Real Connections</div><div class="snap-card-desc">Direct messages, group chats, moment replies. Chat with real verified people you follow. No bots, no fake accounts.</div></div>
+          <div class="snap-card"><span class="snap-card-icon">&#9638;</span><div class="snap-card-title">OG Code</div><div class="snap-card-desc">Your unique identity. Share your OG Code anywhere. Scan someone else's code to add them instantly.</div></div>
         </div>
       </div>
 
@@ -1265,21 +1265,21 @@ body.flipped-snap .uni-ag{color:rgba(197,189,176,0.5);cursor:pointer}
           <div class="snap-cta-title">Raw is the<br>new real.</div>
           <p class="snap-cta-sub">For the person tired of recycled filtered content. For the creator whose raw talent deserves to be seen. Authenticity is not a trend &mdash; it is the standard.</p>
           <div class="snap-hero-btns">
-            <a href="https://apps.apple.com" class="snap-btn-primary">Download Snapchatwo</a>
-            <a href="snapchatwo-privacy.html" class="snap-btn-ghost">Privacy Policy</a>
+            <a href="https://apps.apple.com" class="snap-btn-primary">Download Owgee</a>
+            <a href="owgee-privacy.html" class="snap-btn-ghost">Privacy Policy</a>
           </div>
         </div>
       </div>
 
       <footer class="snap-footer">
-        <div class="snap-footer-logo">Snapchatwo</div>
+        <div class="snap-footer-logo">Owgee</div>
         <div class="snap-footer-links">
-          <a href="snapchatwo-privacy.html">Privacy Policy</a>
+          <a href="owgee-privacy.html">Privacy Policy</a>
           <a href="support.html">Support</a>
           <a href="support.html">Contact</a>
           <a href="#" onclick="flipBackFromSnap();return false;" style="color:rgba(255,215,0,0.5)">&larr; Back to Embur</a>
         </div>
-        <div class="snap-footer-copy">&copy; 2026 Embur Inc. &middot; Snapchatwo</div>
+        <div class="snap-footer-copy">&copy; 2026 Embur Inc. &middot; Owgee</div>
       </footer>
     </div>
   </div><!-- end world-snap -->
@@ -1522,9 +1522,9 @@ body.flipped-snap .uni-ag{color:rgba(197,189,176,0.5);cursor:pointer}
     <span class="uni-label">Embur</span>
   </div>
   <div class="uni-sep"></div>
-  <button class="uni-btn uni-sn" id="uni-sn" onclick="flipToSnap()" title="Snapchatwo">
+  <button class="uni-btn uni-sn" id="uni-sn" onclick="flipToSnap()" title="Owgee">
     <span class="uni-dot sn-dot"></span>
-    <span class="uni-label">Snapchatwo</span>
+    <span class="uni-label">Owgee</span>
   </button>
   <div class="uni-sep"></div>
   <button class="uni-btn uni-ai" id="uni-ai" onclick="flip()" title="AIDD">
@@ -1649,43 +1649,56 @@ function drawAg(){
 drawAg();
 
 /* ══════════════════════════════════
-   SNAPCHATWO GHOST CANVAS
+   OWGEE CROWN CANVAS
 ══════════════════════════════════ */
 const snapCanvas = document.getElementById('snap-canvas');
 const sCtx = snapCanvas.getContext('2d');
-let sW, sH, ghosts = [];
+let sW, sH, crowns = [];
 function resizeSnap(){ sW=snapCanvas.width=innerWidth; sH=snapCanvas.height=innerHeight; }
 resizeSnap(); addEventListener('resize', resizeSnap);
-for(let i=0;i<16;i++) ghosts.push({
-  x:Math.random()*innerWidth, y:Math.random()*innerHeight,
-  size:15+Math.random()*55,
-  a:Math.random()*0.07+0.015,
-  vx:(Math.random()-.5)*0.35,
-  vy:-Math.random()*0.28-0.08,
-  color:Math.random()<0.6?'#FFD700':'#FFFFFF',
+for(let i=0;i<22;i++) crowns.push({
+  x:Math.random()*innerWidth,
+  y:Math.random()*innerHeight,
+  size:8+Math.random()*18,
+  a:Math.random()*0.06+0.02,
+  vx:(Math.random()-.5)*0.25,
+  vy:-Math.random()*0.22-0.06,
+  color:Math.random()<0.65?'#C9A227':Math.random()<0.5?'#E8C84B':'rgba(255,255,255,0.8)',
   wobble:Math.random()*Math.PI*2,
-  wobbleSpeed:Math.random()*0.018+0.008,
+  wobbleSpeed:Math.random()*0.012+0.005,
+  rotation:Math.random()*Math.PI*2,
+  rotSpeed:(Math.random()-.5)*0.015,
 });
-function drawGhost(x,y,s,alpha,color){
-  sCtx.save(); sCtx.globalAlpha=alpha; sCtx.fillStyle=color;
+function drawCrown(x,y,s,alpha,color,rot){
+  sCtx.save();
+  sCtx.globalAlpha=alpha;
+  sCtx.translate(x,y);
+  sCtx.rotate(rot);
+  sCtx.fillStyle=color;
   sCtx.beginPath();
-  sCtx.arc(x,y-s*0.12,s*0.36,Math.PI,0,false);
-  sCtx.lineTo(x+s*0.36,y+s*0.36);
-  let steps=4,stepW=s*0.72/steps;
-  for(let j=0;j<steps;j++){
-    let cx=x+s*0.36-stepW*(j+0.5),cy=y+s*0.36,r=stepW*0.5;
-    if(j%2===0)sCtx.arc(cx,cy,r,0,Math.PI,true);
-    else sCtx.arc(cx,cy,r,0,Math.PI,false);
-  }
-  sCtx.lineTo(x-s*0.36,y+s*0.36); sCtx.closePath(); sCtx.fill(); sCtx.restore();
+  // Base
+  sCtx.fillRect(-s*0.6,s*0.15,s*1.2,s*0.45);
+  // Left spike
+  sCtx.beginPath(); sCtx.moveTo(-s*0.6,s*0.15); sCtx.lineTo(-s*0.6,-s*0.5); sCtx.lineTo(-s*0.2,s*0.15); sCtx.fill();
+  // Center spike
+  sCtx.beginPath(); sCtx.moveTo(-s*0.2,s*0.15); sCtx.lineTo(0,-s*0.7); sCtx.lineTo(s*0.2,s*0.15); sCtx.fill();
+  // Right spike
+  sCtx.beginPath(); sCtx.moveTo(s*0.2,s*0.15); sCtx.lineTo(s*0.6,-s*0.5); sCtx.lineTo(s*0.6,s*0.15); sCtx.fill();
+  // Gems (dots)
+  sCtx.fillStyle='rgba(255,255,255,0.6)';
+  sCtx.beginPath(); sCtx.arc(0,-s*0.6,s*0.08,0,Math.PI*2); sCtx.fill();
+  sCtx.beginPath(); sCtx.arc(-s*0.52,-s*0.42,s*0.06,0,Math.PI*2); sCtx.fill();
+  sCtx.beginPath(); sCtx.arc(s*0.52,-s*0.42,s*0.06,0,Math.PI*2); sCtx.fill();
+  sCtx.restore();
 }
 function drawSnap(){
   sCtx.clearRect(0,0,sW,sH);
-  ghosts.forEach(g=>{
+  crowns.forEach(g=>{
     g.wobble+=g.wobbleSpeed;
-    drawGhost(g.x+Math.sin(g.wobble)*7,g.y,g.size,g.a,g.color);
+    g.rotation+=g.rotSpeed;
+    drawCrown(g.x+Math.sin(g.wobble)*5,g.y,g.size,g.a,g.color,g.rotation);
     g.y+=g.vy; g.x+=g.vx;
-    if(g.y<-g.size*1.5){g.y=sH+g.size;g.x=Math.random()*sW}
+    if(g.y<-g.size*2){g.y=sH+g.size;g.x=Math.random()*sW}
     if(g.x<-g.size)g.x=sW+g.size;
     if(g.x>sW+g.size)g.x=-g.size;
   });
@@ -1761,7 +1774,7 @@ function flipBackFromAglossal(){
   setTimeout(()=>{ document.body.classList.remove('flipping'); isFlipping=false; }, 1200);
 }
 
-// ── Flip to Snapchatwo ──
+// ── Flip to Owgee ──
 function flipToSnap(){
   if(isFlipping) return;
   if(isFlipped){ flip(); setTimeout(flipToSnap,1350); return; }
