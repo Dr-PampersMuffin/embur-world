@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FoodBirdQ8 — Privacy Policy</title>
+  <style>
+    :root {
+      --bg: #0A0A0F;
+      --surface: #1A1D27;
+      --border: rgba(255,255,255,0.07);
+      --orange: #FF6B2B;
+      --white: #ffffff;
+      --muted: rgba(255,255,255,0.5);
+      --body: rgba(255,255,255,0.75);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--body);
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+    .logo {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      text-decoration: none;
+    }
+    .logo-food { color: var(--white); }
+    .logo-bird { color: var(--orange); }
+    .logo-q8 { color: var(--white); }
+    .live-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(123,198,126,0.12);
+      border: 1px solid rgba(123,198,126,0.3);
+      border-radius: 20px;
+      padding: 4px 12px;
+    }
+    .live-dot {
+      width: 6px; height: 6px;
+      background: #7BC67E;
+      border-radius: 50%;
+    }
+    .live-txt { font-size: 11px; font-weight: 700; color: #7BC67E; letter-spacing: 0.5px; }
+
+    .hero {
+      text-align: center;
+      padding: 60px 24px 40px;
+      background: linear-gradient(180deg, rgba(255,107,43,0.06) 0%, transparent 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-icon { font-size: 48px; margin-bottom: 16px; }
+    .hero h1 {
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+    }
+    .hero h1 span { color: var(--orange); }
+    .hero p { color: var(--muted); font-size: 14px; }
+    .updated {
+      display: inline-block;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 20px;
+    }
+    .section-icon {
+      width: 44px; height: 44px;
+      background: rgba(255,107,43,0.12);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 14px;
+    }
+    h2 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 12px;
+      letter-spacing: -0.3px;
+    }
+    p { color: var(--body); margin-bottom: 10px; }
+    p:last-child { margin-bottom: 0; }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+    }
+    ul li {
+      color: var(--body);
+      padding: 6px 0 6px 20px;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+    }
+    ul li:last-child { border-bottom: none; }
+    ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 7px; height: 7px;
+      background: var(--orange);
+      border-radius: 50%;
+    }
+    .highlight {
+      background: rgba(255,107,43,0.08);
+      border: 1px solid rgba(255,107,43,0.2);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-top: 12px;
+    }
+    .highlight p { color: rgba(255,255,255,0.85); margin: 0; }
+    a { color: var(--orange); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .contact-btn {
+      display: inline-block;
+      background: var(--orange);
+      color: white;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 12px 24px;
+      border-radius: 12px;
+      margin-top: 16px;
+      text-decoration: none;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .footer-logo { font-size: 18px; font-weight: 900; letter-spacing: -1px; margin-bottom: 8px; }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 24px; }
+      .section { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="https://embur.world" class="logo">
+    <span class="logo-food">Food</span><span class="logo-bird">Bird</span><span class="logo-q8">Q8</span>
+  </a>
+  <div class="live-pill">
+    <div class="live-dot"></div>
+    <span class="live-txt">LIVE</span>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-icon">🔒</div>
+  <h1>Privacy <span>Policy</span></h1>
+  <p>Your privacy is our baseline, not an afterthought.</p>
+  <span class="updated">Last updated: July 3, 2026</span>
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <div class="section-icon">👋</div>
+    <h2>About FoodBirdQ8</h2>
+    <p>FoodBirdQ8 is a food price comparison app built for Kuwait. We help you find the cheapest delivery price for any dish across Talabat, Deliveroo, and Snoonu — instantly.</p>
+    <p>FoodBirdQ8 is a product of Embur Inc., a Kuwait-based technology company. This Privacy Policy explains what data we collect, why we collect it, and how we protect it.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-icon">📊</div>
+    <h2>What We Collect</h2>
+    <p>We collect only what is strictly necessary to make the app work.</p>
+    <ul>
+      <li><strong>Search queries</strong> — the dish names you search for, stored locally on your device only</li>
+      <li><strong>Location data</strong> — used only to calculate accurate delivery fees; never stored on our servers</li>
+      <li><strong>Device identifiers</strong> — anonymous crash and performance data via standard iOS diagnostics</li>
+    </ul>
+    <div class="highlight">
+      <p>We do not collect your name, email, phone number, or payment information. FoodBirdQ8 requires no account or registration.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-icon">🚫</div>
+    <h2>What We Never Do</h2>
+    <ul>
+      <li>Sell your data to third parties — ever</li>
+      <li>Show you ads or serve targeted advertising</li>
+      <li>Share your search history with any food platform</li>
+      <li>Track you across other apps or websites</li>
+      <li>Store your location on our servers</li>
+      <li>Require an account or personal information</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-icon">📍</div>
+    <h2>Location Data</h2>
+    <p>FoodBirdQ8 requests access to your device location solely to calculate delivery fees accurately. Your coordinates are sent to our backend to retrieve pricing — they are never stored, logged, or shared.</p>
+    <p>You can deny location access at any time in your iPhone Settings. The app will still work with reduced accuracy on delivery fee calculations.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-icon">🔗</div>
+    <h2>Third-Party Platforms</h2>
+    <p>When you tap "Order" in FoodBirdQ8, you are redirected to a third-party platform (Talabat, Deliveroo, or Snoonu). At that point, their own privacy policies and terms of service apply.</p>
+    <p>FoodBirdQ8 is not affiliated with, sponsored by, or partnered with any of these platforms. We are an independent comparison service.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-icon">🍪</div>
+    <h2>Analytics & Crash Reporting</h2>
+    <p>We use standard Apple iOS crash reporting to identify and fix technical issues. This data is anonymized and does not include any personally identifiable information.</p>
+    <p>We do not use Google Analytics, Facebook Pixel, or any third-party advertising analytics.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-icon">👶</div>
+    <h2>Children's Privacy</h2>
+    <p>FoodBirdQ8 is rated 4+ on the App Store. The app does not knowingly collect any personal information from children under the age of 13. Since we collect no personal data from any user, no special measures are required.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-icon">🔄</div>
+    <h2>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last updated" date at the top of this page. Continued use of FoodBirdQ8 after changes constitutes acceptance of the updated policy.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-icon">✉️</div>
+    <h2>Contact Us</h2>
+    <p>Have questions about your privacy or this policy? We're here.</p>
+    <p>Embur Inc.<br>Kuwait City, Kuwait<br>
+    <a href="mailto:support@embur.world">support@embur.world</a></p>
+    <a href="mailto:support@embur.world" class="contact-btn">Contact Us →</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">
+    <span style="color:#fff">Food</span><span style="color:#FF6B2B">Bird</span><span style="color:#fff">Q8</span>
+  </div>
+  <p>© 2026 Embur Inc. · Kuwait · All rights reserved</p>
+  <p style="margin-top:8px">
+    <a href="https://embur.world">embur.world</a>
+  </p>
+</footer>
+
+</body>
+</html>
