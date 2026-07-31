@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Continuum Engine — AI post-production that remembers, not invents</title>
+<meta name="description" content="A per-production AI for film post-production that repairs footage without inventing it. Consent, provenance, and human approval built into the architecture.">
+<!-- Open Graph for link previews -->
+<meta property="og:title" content="Continuum Engine — It remembers your film. It doesn't imagine it.">
+<meta property="og:description" content="A per-production AI that repairs footage without inventing it. The first AI post system a studio's legal team and a performer's union can both sign off on.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://embur.world/continuum">
+<link rel="canonical" href="https://embur.world/continuum">
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+  :root{
+    --bg:#0a0c10; --ink:#eef2f8; --dim:#98a2b4; --faint:#59616f;
+    --line:#20262f; --panel:#12151b; --panel2:#171b23;
+    --amber:#e8a13c; --amber-d:#3d2f16; --cyan:#4bc5d6; --violet:#9b8cff;
+    --red:#e5615b; --green:#5fce9b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;
+    line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+  .mono{font-family:'JetBrains Mono',monospace}
+  .serif{font-family:'Fraunces',serif}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:50;background:rgba(10,12,16,.85);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line)}
+  .nav-in{max-width:1080px;margin:0 auto;padding:14px 26px;display:flex;align-items:center;
+    justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:700;letter-spacing:.3px;font-size:15px}
+  .nav-links{display:flex;gap:26px;align-items:center;font-size:14px;color:var(--dim)}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-cta{background:var(--amber);color:#0a0c10;padding:8px 16px;border-radius:8px;
+    font-weight:600;font-size:13.5px}
+  @media(max-width:680px){.nav-links a:not(.nav-cta){display:none}}
+
+  /* hero */
+  .hero{padding:110px 0 80px;text-align:center;position:relative}
+  .hero::before{content:"";position:absolute;left:50%;top:0;width:1px;height:100%;
+    background:linear-gradient(180deg,transparent,var(--line) 20%,var(--line) 80%,transparent);
+    transform:translateX(-50%);opacity:.4}
+  .badge{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.5px;
+    color:var(--amber);border:1px solid var(--amber-d);background:rgba(232,161,60,.06);
+    padding:6px 14px;border-radius:100px;margin-bottom:30px;position:relative}
+  .badge .dot{width:6px;height:6px;border-radius:6px;background:var(--amber);animation:pulse 2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(232,161,60,.5)}70%{box-shadow:0 0 0 7px transparent}100%{box-shadow:0 0 0 0 transparent}}
+  h1{font-family:'Fraunces',serif;font-weight:800;font-size:clamp(40px,6.5vw,74px);
+    line-height:1.03;letter-spacing:-1.5px;margin-bottom:24px;position:relative}
+  h1 em{font-style:italic;color:var(--amber)}
+  .lede{font-size:clamp(17px,2.3vw,20px);color:var(--dim);max-width:620px;margin:0 auto 32px;
+    line-height:1.55;position:relative}
+  .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
+  .btn{padding:13px 24px;border-radius:9px;font-weight:600;font-size:15px;border:1px solid transparent;
+    transition:all .15s;cursor:pointer;display:inline-block}
+  .btn-primary{background:var(--amber);color:#0a0c10}
+  .btn-primary:hover{background:#f0b04f}
+  .btn-ghost{border-color:var(--line);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--amber-d)}
+
+  section{position:relative;z-index:1;padding:72px 0}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2px;
+    text-transform:uppercase;color:var(--amber);margin-bottom:14px}
+  h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,4vw,40px);
+    letter-spacing:-.5px;line-height:1.12;margin-bottom:18px}
+  .body-lg{font-size:17px;color:var(--dim);max-width:640px;line-height:1.6}
+
+  /* the divide */
+  .divide{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
+    border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:36px}
+  @media(max-width:640px){.divide{grid-template-columns:1fr}}
+  .divide>div{background:var(--panel);padding:32px 28px}
+  .divide h3{font-size:12px;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;font-weight:600}
+  .divide .them h3{color:var(--faint)}
+  .divide .us h3{color:var(--amber)}
+  .big-word{font-family:'Fraunces',serif;font-size:28px;font-weight:600;display:block;margin-bottom:10px}
+  .them .big-word{color:var(--dim)}
+  .us .big-word{color:var(--ink)}
+  .divide p{font-size:15px;line-height:1.55}
+  .them p{color:var(--faint)}
+  .us p{color:var(--dim)}
+
+  /* laws */
+  .laws{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+  @media(max-width:760px){.laws{grid-template-columns:1fr}}
+  .law{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px;
+    transition:border-color .3s}
+  .law:hover{border-color:var(--amber-d)}
+  .law .n{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--amber);margin-bottom:12px}
+  .law h4{font-size:16px;font-weight:600;margin-bottom:7px}
+  .law p{font-size:13.5px;color:var(--dim);line-height:1.5}
+
+  /* proof */
+  .proof{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);
+    border-radius:18px;padding:44px 40px;margin-top:20px}
+  .proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;text-align:center}
+  @media(max-width:640px){.proof-grid{grid-template-columns:repeat(2,1fr);gap:24px}}
+  .proof .num{font-family:'Fraunces',serif;font-size:40px;font-weight:800;color:var(--amber);
+    line-height:1;letter-spacing:-1px}
+  .proof .lbl{font-size:12.5px;color:var(--dim);margin-top:8px;line-height:1.4}
+  .honest{border:1px solid var(--line);border-left:3px solid var(--cyan);background:rgba(75,197,214,.04);
+    border-radius:10px;padding:22px 26px;margin-top:32px}
+  .honest .tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1px;color:var(--cyan);
+    text-transform:uppercase;margin-bottom:10px}
+  .honest p{font-size:14.5px;color:var(--dim);line-height:1.6}
+
+  /* who it's for */
+  .audience{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+  @media(max-width:760px){.audience{grid-template-columns:1fr}}
+  .aud{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px 22px}
+  .aud .ic{font-family:'JetBrains Mono',monospace;color:var(--amber);font-size:13px;margin-bottom:10px}
+  .aud h4{font-size:17px;margin-bottom:8px}
+  .aud p{font-size:13.5px;color:var(--dim);line-height:1.5}
+
+  /* contact */
+  .contact{background:var(--panel);border:1px solid var(--line);border-radius:18px;
+    padding:44px 40px;margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:44px}
+  @media(max-width:760px){.contact{grid-template-columns:1fr;padding:32px 26px}}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:12.5px;color:var(--dim);margin-bottom:6px;font-weight:500}
+  .field input,.field textarea,.field select{width:100%;background:var(--bg);border:1px solid var(--line);
+    border-radius:9px;padding:11px 13px;color:var(--ink);font-family:inherit;font-size:14px}
+  .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--amber)}
+  .field textarea{resize:vertical;min-height:90px}
+  .submitted{background:rgba(95,206,155,.08);border:1px solid var(--green);border-radius:10px;
+    padding:20px;color:var(--green);font-size:14px;display:none}
+
+  footer{border-top:1px solid var(--line);padding:36px 0;margin-top:40px}
+  .foot-in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
+    font-size:13px;color:var(--faint)}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <div class="brand">
+      <svg width="22" height="22" viewBox="0 0 22 22"><circle cx="11" cy="11" r="9" fill="none" stroke="#e8a13c" stroke-width="1.6"/><path d="M6 11h10" stroke="#e8a13c" stroke-width="1.6" stroke-linecap="round"/><circle cx="16" cy="11" r="1.7" fill="#e8a13c"/></svg>
+      CONTINUUM<span style="color:#e8a13c">·</span>ENGINE
+    </div>
+    <div class="nav-links">
+      <a href="#how">How it works</a>
+      <a href="#laws">The laws</a>
+      <a href="#proof">Proof</a>
+      <a href="#contact" class="nav-cta">Request access</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="badge"><span class="dot"></span> BUILDING IN PUBLIC · RELEASE CANDIDATE</div>
+    <h1>It remembers your film.<br>It doesn't <em>imagine</em> it.</h1>
+    <p class="lede">A per-production AI for film post-production that repairs footage without
+      inventing it — with consent, provenance, and human approval built into the architecture,
+      not bolted on.</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-primary">Request access</a>
+      <a href="#how" class="btn btn-ghost">See how it works</a>
+    </div>
+  </div>
+</header>
+
+<!-- THE DIVIDE -->
+<section style="padding-top:20px">
+  <div class="wrap reveal">
+    <div class="eyebrow">The idea</div>
+    <h2>Don't build AI that invents. Build AI that remembers.</h2>
+    <div class="divide">
+      <div class="them">
+        <h3>Generative AI</h3>
+        <span class="big-word">Invents.</span>
+        <p>Trained on everyone's work. Produces plausible pixels from a prompt. Can't tell you
+          where a face came from, whether the performer agreed, or whether any of it was real.
+          The industry's nightmare.</p>
+      </div>
+      <div class="us">
+        <h3>Continuum Engine</h3>
+        <span class="big-word">Remembers.</span>
+        <p>Trained only on <em>your</em> production — its dailies, its lenses, its light. Repairs
+          a shot from footage that actually exists. Every synthesized region names its sources,
+          its approvals, and its consent. The industry's answer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="wrap reveal">
+    <div class="eyebrow">How it works</div>
+    <h2>Every repair walks the same chain of proof.</h2>
+    <p class="body-lg">Detect the error → propose from real footage first → gate on consent →
+      collect human approvals → render locked to the approved bytes → seal with permanent
+      provenance. If no honest repair exists, the answer is a clean <span class="mono" style="color:var(--red)">CANNOT</span>.
+      There is no "generate anyway."</p>
+  </div>
+</section>
+
+<!-- LAWS -->
+<section id="laws">
+  <div class="wrap reveal">
+    <div class="eyebrow">The moat</div>
+    <h2>Five laws, compiled into code.</h2>
+    <p class="body-lg">Most tools bolt on safety after the fact. Here it's the foundation —
+      enforced by the system, not promised by a policy.</p>
+    <div class="laws">
+      <div class="law"><div class="n">LAW 01</div><h4>One production, one model</h4>
+        <p>A model learns a single film and can only ever serve that film. Checked at render time, fails closed.</p></div>
+      <div class="law"><div class="n">LAW 02</div><h4>Repair, never invent</h4>
+        <p>Real footage first; generation only as a bounded last resort; an honest CANNOT when nothing works.</p></div>
+      <div class="law"><div class="n">LAW 03</div><h4>Consent is the gate</h4>
+        <p>Nothing touches a performer's identity without a two-person consent scope. Synthesis is structurally ungrantable.</p></div>
+      <div class="law"><div class="n">LAW 04</div><h4>Total provenance</h4>
+        <p>Every action in a tamper-evident chain. Approvals bind to the exact bytes approved.</p></div>
+      <div class="law"><div class="n">LAW 05</div><h4>Humans decide</h4>
+        <p>The machine proposes; people approve. Higher risk demands more signatures, from different people.</p></div>
+      <div class="law" style="background:linear-gradient(160deg,var(--amber-d),var(--panel));border-color:var(--amber-d)">
+        <div class="n" style="color:var(--amber)">THE RESULT</div><h4>Trust, by design</h4>
+        <p style="color:var(--ink)">The first AI post system a studio's legal team and a performer's union can both sign off on.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section id="proof">
+  <div class="wrap reveal">
+    <div class="eyebrow">Not a mockup</div>
+    <h2>The detection pipeline runs on real pixels.</h2>
+    <p class="body-lg">We damaged a frame with forty dust specks and three scratches, then let the
+      engine survey it. Measured results from real computer vision — not a demo animation.</p>
+    <div class="proof">
+      <div class="proof-grid">
+        <div><div class="num">40/40</div><div class="lbl">dust specks found</div></div>
+        <div><div class="num">3/3</div><div class="lbl">scratches found</div></div>
+        <div><div class="num">23.7%</div><div class="lbl">pixel error reduced</div></div>
+        <div><div class="num">206</div><div class="lbl">automated tests, green</div></div>
+      </div>
+    </div>
+    <div class="honest">
+      <div class="tag">◆ Built in public, stated plainly</div>
+      <p>The trust layer, the full repair lifecycle, real damage detection, authentication, and
+        encryption are operational now. The deep neural networks for photorealistic reconstruction
+        are the next build — and they plug into gates that already exist, inheriting isolation,
+        consent, and provenance from day one. We'd rather show you exactly where we stand than sell
+        a mirage. That honesty is the whole point of the product.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section>
+  <div class="wrap reveal">
+    <div class="eyebrow">Who it's for</div>
+    <h2>Three problems, one architecture.</h2>
+    <div class="audience">
+      <div class="aud"><div class="ic">STUDIOS</div><h4>Repairs without reshoots</h4>
+        <p>Catch continuity errors on set, not weeks later in the cut. Fix a shot instead of reshooting it — a direct, measurable saving.</p></div>
+      <div class="aud"><div class="ic">PERFORMERS &amp; GUILDS</div><h4>Consent you can verify</h4>
+        <p>Every operation that touches an identity is recorded, with its consent basis — maintained continuously, not assembled under legal pressure.</p></div>
+      <div class="aud"><div class="ic">RESTORATION</div><h4>Damage detection at scale</h4>
+        <p>Real dust, scratch, flicker, and grain-loss detection with provenance — for streamers remastering vast back-catalogs today.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap reveal">
+    <div class="eyebrow">Get in touch</div>
+    <h2>Request access or a conversation.</h2>
+    <div class="contact">
+      <div>
+        <p style="font-size:15px;color:var(--dim);line-height:1.6;margin-bottom:24px">
+          For pilot partnerships, studio evaluations, investment, or advisory conversations.
+          Technical materials — the full blueprint, deployment guide, and codebase — are available
+          under NDA to serious parties.</p>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--faint);line-height:2">
+          <div><span style="color:var(--amber)">→</span> Embur Inc.</div>
+          <div><span style="color:var(--amber)">→</span> Dr Z, Founder</div>
+          <div><span style="color:var(--amber)">→</span> <span id="emailslot">[ your email ]</span></div>
+        </div>
+      </div>
+      <div>
+        <form id="cform" onsubmit="return handleSubmit(event)">
+          <div class="field"><label>Name</label><input required type="text" name="name" placeholder="Your name"></div>
+          <div class="field"><label>Organization</label><input type="text" name="org" placeholder="Studio, post house, fund…"></div>
+          <div class="field"><label>Email</label><input required type="email" name="email" placeholder="you@company.com"></div>
+          <div class="field"><label>I'm interested in</label>
+            <select name="interest">
+              <option>A pilot on real footage</option>
+              <option>A studio evaluation</option>
+              <option>Investment</option>
+              <option>Advising</option>
+              <option>Just learning more</option>
+            </select></div>
+          <div class="field"><label>Message</label><textarea name="msg" placeholder="A line about what you're looking for…"></textarea></div>
+          <button type="submit" class="btn btn-primary" style="width:100%;border:none">Send</button>
+        </form>
+        <div class="submitted" id="done">Thanks — your message is ready to send. (Wire this form to your email or a form service — see the note in the file.)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <div>Continuum Engine · Embur Inc.</div>
+    <div class="serif" style="font-style:italic;color:var(--amber);font-size:15px">It doesn't imagine your film. It remembers it.</div>
+    <div class="mono">© 2026</div>
+  </div>
+</footer>
+
+<script>
+  // reveal on scroll
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // ---- CONTACT FORM ----
+  // By default this opens the visitor's email client with the message pre-filled,
+  // sending TO the address you set below. To use a real backend form service
+  // (Formspree, Basin, Getform), replace the mailto logic with a fetch() POST to
+  // your form endpoint — instructions are one line each on those services.
+  const YOUR_EMAIL = "pampersmuffin@gmail.com";
+  document.getElementById('emailslot').textContent = YOUR_EMAIL;
+  function handleSubmit(e){
+    e.preventDefault();
+    const f=e.target;
+    const subject=encodeURIComponent("Continuum Engine — "+f.interest.value+" — "+f.name.value);
+    const body=encodeURIComponent(
+      "Name: "+f.name.value+"\nOrganization: "+f.org.value+"\nEmail: "+f.email.value+
+      "\nInterested in: "+f.interest.value+"\n\n"+f.msg.value);
+    window.location.href="mailto:"+YOUR_EMAIL+"?subject="+subject+"&body="+body;
+    document.getElementById('cform').style.display='none';
+    document.getElementById('done').style.display='block';
+    return false;
+  }
+</script>
+</body>
+</html>
