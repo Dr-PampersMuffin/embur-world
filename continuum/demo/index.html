@@ -545,7 +545,8 @@ function Panel({
   }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     style: {
       fontSize: 13,
-      fontWeight: 620
+      fontWeight: 620,
+      color: C.ink
     }
   }, title), sub && /*#__PURE__*/React.createElement("div", {
     style: {
@@ -750,7 +751,8 @@ function Projects({
   }, /*#__PURE__*/React.createElement("span", {
     style: {
       fontSize: 16,
-      fontWeight: 640
+      fontWeight: 640,
+      color: C.ink
     }
   }, p.title), /*#__PURE__*/React.createElement(Tag, {
     c: p.status === "restoration" ? C.cyan : C.green
@@ -935,7 +937,8 @@ function ReviewQueue() {
   }), /*#__PURE__*/React.createElement("span", {
     style: {
       fontWeight: 620,
-      fontSize: 14
+      fontSize: 14,
+      color: C.ink
     }
   }, it.shot), /*#__PURE__*/React.createElement(Tag, {
     c: tierColor(it.tier)
@@ -992,7 +995,8 @@ function Provenance() {
   }, /*#__PURE__*/React.createElement(SealMark, null), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     style: {
       fontSize: 15,
-      fontWeight: 640
+      fontWeight: 640,
+      color: C.ink
     }
   }, pv.render, " · ", pv.shot), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -1047,7 +1051,8 @@ function Provenance() {
     c: C.cyan
   }), " ", /*#__PURE__*/React.createElement("b", {
     style: {
-      fontWeight: 600
+      fontWeight: 600,
+      color: C.ink
     }
   }, a.role), /*#__PURE__*/React.createElement("span", {
     style: {
@@ -1152,7 +1157,8 @@ function Ledger() {
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       fontSize: 16,
-      fontWeight: 640
+      fontWeight: 640,
+      color: C.ink
     }
   }, L.performer), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -1604,7 +1610,7 @@ function SealMark() {
   }));
 }
 const rootEl = document.getElementById('root');
-ReactDOM.createRoot(rootEl).render(/*#__PURE__*/React.createElement(StudioConsole, null));
+ReactDOM.createRoot(rootEl).render(React.createElement(StudioConsole));
 
 </script>
 </body>
