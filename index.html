@@ -1066,6 +1066,10 @@ body.flipped-cc .cc-nav{opacity:1;pointer-events:all}
 
 .btn-flip-to-cc{display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(233,30,140,0.2),#1A0014);border:1px solid rgba(233,30,140,0.5);color:#FF5FA8;padding:10px 20px;border-radius:100px;font-size:13px;font-weight:700;cursor:pointer;transition:all 0.3s;font-family:'Syne',sans-serif}
 .btn-flip-to-cc:hover{border-color:rgba(233,30,140,0.9);box-shadow:0 0 20px rgba(233,30,140,0.4);transform:scale(1.04)}
+.btn-to-continuum{display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(232,161,60,0.2),#1A1206);border:1px solid rgba(232,161,60,0.5);color:#E8A13C;padding:10px 20px;border-radius:100px;font-size:13px;font-weight:700;cursor:pointer;transition:all 0.3s;font-family:'Syne',sans-serif;text-decoration:none}
+.btn-to-continuum:hover{border-color:rgba(232,161,60,0.9);box-shadow:0 0 20px rgba(232,161,60,0.4);transform:scale(1.04)}
+.continuum-nav-dot{width:8px;height:8px;border-radius:50%;background:#E8A13C;animation:contPulse 2s infinite}
+@keyframes contPulse{0%,100%{box-shadow:0 0 0 0 rgba(232,161,60,0.6)}70%{box-shadow:0 0 0 6px transparent}}
 .cc-nav-dot{width:8px;height:8px;border-radius:50%;background:#E91E8C;animation:ccPulse 2s infinite}
 @keyframes ccPulse{0%,100%{box-shadow:0 0 0 0 rgba(233,30,140,0.6)}70%{box-shadow:0 0 0 6px transparent}}
 
@@ -1176,6 +1180,10 @@ body.flipped-cc .uni-sn{color:rgba(201,162,39,0.5);cursor:pointer}
       <span class="flip-dot"></span>
       AIDD APP
     </button>
+    <a href="continuum" class="btn-to-continuum" title="Continuum Engine — AI film post-production">
+      <span class="continuum-nav-dot"></span>
+      Continuum
+    </a>
     <a href="credits.html" class="nav-cta">Get Credits</a>
   </div>
 </nav>
@@ -1431,11 +1439,6 @@ body.flipped-cc .uni-sn{color:rgba(201,162,39,0.5);cursor:pointer}
   </div><!-- end world-snap -->
 
   <!-- ══ WORLD 5: CRUSHCIRCLE ══ -->
-  <div class="world world-cc"> ... </div>
-   anywhere inside <div class="universe"> ... </div>, e.g. right after
-   the closing "</div><!-- end world-snap -->"
-═══════════════════════════════════════════
-
 <div class="world world-cc">
   <div class="cc-world">
     <div class="cc-hero">
