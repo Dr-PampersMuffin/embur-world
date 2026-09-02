@@ -2281,26 +2281,47 @@ function closeWaitlist(){
 }
 document.addEventListener('keydown', e => { if(e.key === 'Escape') closeWaitlist(); });
 
-function submitWaitlist(){
+async function submitWaitlist(){
   const email = document.getElementById('wk-email').value.trim();
   if(!email || !email.includes('@')){ 
     document.getElementById('wk-email').style.borderColor = '#FF4444';
     document.getElementById('wk-email').placeholder = 'Please enter a valid email · أدخل بريدك';
     return; 
   }
-  // Save to localStorage
-  const entries = JSON.parse(localStorage.getItem('wk_waitlist')||'[]');
-  if(!entries.includes(email)){ entries.push(email); localStorage.setItem('wk_waitlist', JSON.stringify(entries)); }
-  
-  const pos = wkBase + 1;
-  wkBase = pos;
-  document.getElementById('wk-position').textContent = '#' + pos;
-  document.getElementById('wk-count').textContent = pos;
-  
-  document.getElementById('wk-form-view').style.display = 'none';
-  const sv = document.getElementById('wk-success-view');
-  sv.style.display = 'flex';
-  sv.style.animation = 'wkSlideUp 0.4s ease forwards';
+  const btn = document.querySelector('.wk-submit');
+  btn.textContent = '📡 جاري التسجيل...';
+  btn.disabled = true;
+  try {
+    const res = await fetch('https://api.freewaitlists.com/waitlists/cmtjmmz85034j01qth7xqx19b/waiters', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email })
+    });
+    const data = await res.json();
+    if(res.ok){
+      const pos = data.position || (wkBase + 1);
+      wkBase = pos;
+      document.getElementById('wk-position').textContent = '#' + pos;
+      document.getElementById('wk-count').textContent = pos;
+      document.getElementById('wk-form-view').style.display = 'none';
+      const sv = document.getElementById('wk-success-view');
+      sv.style.display = 'flex';
+    } else {
+      btn.textContent = '📡 سجّل قبل الجميع — Join the Radar';
+      btn.disabled = false;
+      if(data.message && data.message.toLowerCase().includes('already')){
+        document.getElementById('wk-email').style.borderColor = '#FFD700';
+        document.getElementById('wk-email').value = '';
+        document.getElementById('wk-email').placeholder = 'Already registered! · مسجّل مسبقاً';
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    }
+  } catch(e){
+    btn.textContent = '📡 سجّل قبل الجميع — Join the Radar';
+    btn.disabled = false;
+    alert('Connection error. Please try again.');
+  }
 }
 
 const shareText = 'وينكم؟ — Real-time anonymous proximity radar. Coming soon to iOS 📡';
