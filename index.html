@@ -1230,7 +1230,7 @@ body.flipped-cc .uni-sn{color:rgba(201,162,39,0.5);cursor:pointer}
   </div>
   <div class="cc-nav-right">
     <button class="btn-back-cc" onclick="flipBackFromCC()">&larr; Embur</button>
-    <a href="https://apps.apple.com/app/crushcircle/id6773629146" class="cc-dl-btn">Download</a>
+    <button onclick="openWaitlist()" class="cc-dl-btn" style="border:none;cursor:pointer;">سجّل الآن</button>
   </div>
 </nav>
 
@@ -1453,10 +1453,10 @@ body.flipped-cc .uni-sn{color:rgba(201,162,39,0.5);cursor:pointer}
       <p class="cc-hero-sub">Real-time anonymous proximity radar. Discover who is physically around you right now — no profiles, no swiping, no city-wide feeds.</p>
       <p class="cc-hero-slogan">وينكم؟ &middot; Proximity Radar &middot; Anonymous</p>
       <div class="cc-hero-btns">
-        <a href="https://apps.apple.com/app/crushcircle/id6773629146" class="cc-btn-primary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-          Download on iOS
-        </a>
+        <button onclick="openWaitlist()" class="cc-btn-primary" style="border:none;cursor:pointer;">
+          <span style="font-size:18px">📡</span>
+          وينكم قريباً — سجّل الآن
+        </button>
         <a href="crushcircle-privacy.html" class="cc-btn-ghost">Privacy Policy</a>
       </div>
       <div class="cc-stats">
@@ -1469,7 +1469,7 @@ body.flipped-cc .uni-sn{color:rgba(201,162,39,0.5);cursor:pointer}
 
     <div class="cc-section" id="cc-features">
       <div class="cc-section-tag">How It Works</div>
-      <div class="cc-section-title">Crushes are<br>closer than you think.</div>
+      <div class="cc-section-title">وينكم؟<br>Who's nearby right now.</div>
       <div class="cc-grid">
         <div class="cc-card"><span class="cc-card-icon">&#128205;</span><div class="cc-card-title">Radar</div><div class="cc-card-desc">Activate Radar to discover people nearby. Your exact location is never shown &mdash; only relative proximity like "Very nearby" or "Close".</div></div>
         <div class="cc-card"><span class="cc-card-icon">&#128293;</span><div class="cc-card-title">Heat Radar</div><div class="cc-card-desc">Premium members get ultra-precise detection &mdash; exact distance in meters &mdash; so you always know how close your crush really is.</div></div>
@@ -1484,11 +1484,11 @@ body.flipped-cc .uni-sn{color:rgba(201,162,39,0.5);cursor:pointer}
       <div class="cc-band-inner">
         <div>
           <div class="cc-band-title">Wainkom+ — Premium Radar</div>
-          <p class="cc-band-sub">Unlimited likes, see who liked you, Heat Radar precision, Ghost Mode, and Panic Hide &mdash; available monthly or annually.</p>
+          <p class="cc-band-sub">Unlimited signals, see who signaled you, Heat Radar precision, Ghost Mode, and Panic Hide &mdash; available monthly or annually.</p>
         </div>
         <div class="cc-pills">
-          <span class="cc-pill pink">Unlimited Likes</span>
-          <span class="cc-pill pink">See Who Liked You</span>
+          <span class="cc-pill pink">Unlimited Signals</span>
+          <span class="cc-pill pink">See Who Signaled You</span>
           <span class="cc-pill gold">Heat Radar</span>
           <span class="cc-pill gold">Ghost Mode</span>
           <span class="cc-pill">Panic Hide</span>
@@ -1502,7 +1502,7 @@ body.flipped-cc .uni-sn{color:rgba(201,162,39,0.5);cursor:pointer}
         <div class="cc-cta-title">وينكم؟<br><span>Where are you?</span></div>
         <p class="cc-cta-sub">Anonymous by design. Real by proximity. Wainkom helps you discover who is physically around you — anonymously, with no identity revealed until both consent.</p>
         <div class="cc-hero-btns">
-          <a href="https://apps.apple.com/app/crushcircle/id6773629146" class="cc-btn-primary">Download Wainkom</a>
+          <button onclick="openWaitlist()" class="cc-btn-primary" style="border:none;cursor:pointer;">📡 وينكم قريباً — سجّل الآن</button>
           <a href="crushcircle-privacy.html" class="cc-btn-ghost">Privacy Policy</a>
         </div>
       </div>
@@ -2152,5 +2152,170 @@ document.querySelectorAll('.aidd-card').forEach((el,i)=>{
   observer.observe(el);
 });
 </script>
+
+<!-- WAINKOM WAITLIST MODAL -->
+<style>
+#wk-overlay{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:20px}
+#wk-overlay.open{display:flex}
+#wk-backdrop{position:absolute;inset:0;background:rgba(0,0,0,0.85);backdrop-filter:blur(12px)}
+#wk-modal{
+  position:relative;z-index:1;
+  width:100%;max-width:480px;
+  background:linear-gradient(135deg,#1a0028 0%,#0D0010 60%,#0a000f 100%);
+  border:1px solid rgba(233,30,140,0.4);
+  border-radius:28px;
+  padding:48px 40px;
+  text-align:center;
+  box-shadow:0 0 80px rgba(233,30,140,0.2), 0 0 160px rgba(233,30,140,0.08);
+  animation:wkSlideUp 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards;
+}
+@keyframes wkSlideUp{from{opacity:0;transform:translateY(40px) scale(0.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+#wk-modal .wk-close{position:absolute;top:20px;right:24px;background:rgba(255,255,255,0.08);border:none;color:rgba(255,255,255,0.5);width:36px;height:36px;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+#wk-modal .wk-close:hover{background:rgba(255,255,255,0.15);color:#fff}
+.wk-radar-icon{width:72px;height:72px;border-radius:20px;background:linear-gradient(135deg,#E91E8C,#FF4D6D);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:32px;animation:wkPulse 2s ease-in-out infinite}
+@keyframes wkPulse{0%,100%{box-shadow:0 0 0 0 rgba(233,30,140,0.5)}70%{box-shadow:0 0 0 16px rgba(233,30,140,0)}}
+.wk-tag{display:inline-block;background:rgba(233,30,140,0.15);border:1px solid rgba(233,30,140,0.4);color:#FF5FA8;padding:6px 16px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px}
+.wk-title{font-family:'Syne',sans-serif;font-size:clamp(28px,6vw,40px);font-weight:900;color:#fff;margin-bottom:8px;letter-spacing:-1px;line-height:1.1}
+.wk-title span{color:#FF5FA8}
+.wk-arabic{font-size:22px;color:rgba(255,95,168,0.7);font-weight:700;margin-bottom:12px;letter-spacing:1px}
+.wk-sub{font-size:15px;color:rgba(255,255,255,0.55);margin-bottom:32px;line-height:1.6}
+.wk-counter{display:flex;justify-content:center;gap:24px;margin-bottom:32px}
+.wk-count-box{text-align:center}
+.wk-count-num{font-family:'Syne',sans-serif;font-size:28px;font-weight:900;color:#FF5FA8}
+.wk-count-label{font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;margin-top:2px}
+.wk-form{display:flex;flex-direction:column;gap:12px;margin-bottom:20px}
+.wk-input{background:rgba(255,255,255,0.06);border:1px solid rgba(233,30,140,0.25);border-radius:14px;padding:16px 20px;color:#fff;font-size:15px;outline:none;transition:border .2s;font-family:'DM Sans',sans-serif;text-align:center}
+.wk-input::placeholder{color:rgba(255,255,255,0.35)}
+.wk-input:focus{border-color:rgba(233,30,140,0.6);background:rgba(233,30,140,0.06)}
+.wk-submit{background:linear-gradient(135deg,#E91E8C,#FF4D6D);border:none;border-radius:14px;padding:18px;color:#fff;font-size:16px;font-weight:800;cursor:pointer;transition:all .25s;font-family:'Syne',sans-serif;letter-spacing:0.5px}
+.wk-submit:hover{transform:translateY(-2px);box-shadow:0 20px 40px rgba(233,30,140,0.4)}
+.wk-submit:active{transform:translateY(0)}
+.wk-legal{font-size:11px;color:rgba(255,255,255,0.25);line-height:1.6}
+.wk-success{display:none;flex-direction:column;align-items:center;gap:16px}
+.wk-success-icon{font-size:56px;animation:wkBounce 0.6s cubic-bezier(0.34,1.56,0.64,1)}
+@keyframes wkBounce{from{transform:scale(0)}to{transform:scale(1)}}
+.wk-success-title{font-family:'Syne',sans-serif;font-size:26px;font-weight:900;color:#fff}
+.wk-success-title span{color:#FF5FA8}
+.wk-success-sub{font-size:14px;color:rgba(255,255,255,0.55);text-align:center;line-height:1.7}
+.wk-share-btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+.wk-share-btn{padding:10px 20px;border-radius:100px;font-size:13px;font-weight:700;cursor:pointer;border:none;transition:all .2s;display:flex;align-items:center;gap:6px}
+.wk-share-x{background:#000;color:#fff}
+.wk-share-ig{background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);color:#fff}
+.wk-share-wa{background:#25D366;color:#fff}
+.wk-share-btn:hover{transform:scale(1.05)}
+.wk-position{font-size:12px;color:rgba(255,95,168,0.7);margin-top:4px}
+@media(max-width:480px){#wk-modal{padding:36px 24px;border-radius:20px}}
+</style>
+
+<div id="wk-overlay">
+  <div id="wk-backdrop" onclick="closeWaitlist()"></div>
+  <div id="wk-modal">
+    <button class="wk-close" onclick="closeWaitlist()">✕</button>
+
+    <div id="wk-form-view">
+      <div class="wk-radar-icon">📡</div>
+      <div class="wk-tag">COMING SOON · قريباً</div>
+      <div class="wk-arabic">وينكم؟</div>
+      <div class="wk-title">Who's <span>nearby</span><br>right now?</div>
+      <p class="wk-sub">Real-time anonymous proximity radar. No profiles. No swiping. Just who's physically around you — right now.</p>
+
+      <div class="wk-counter">
+        <div class="wk-count-box">
+          <div class="wk-count-num" id="wk-count">247</div>
+          <div class="wk-count-label">On Waitlist</div>
+        </div>
+        <div class="wk-count-box">
+          <div class="wk-count-num">500</div>
+          <div class="wk-count-label">Get Wainkom+</div>
+        </div>
+        <div class="wk-count-box">
+          <div class="wk-count-num">Free</div>
+          <div class="wk-count-label">3 Months</div>
+        </div>
+      </div>
+
+      <div class="wk-form">
+        <input class="wk-input" id="wk-email" type="email" placeholder="your@email.com · بريدك الإلكتروني" />
+        <button class="wk-submit" onclick="submitWaitlist()">
+          📡 &nbsp; سجّل قبل الجميع — Join the Radar
+        </button>
+      </div>
+      <p class="wk-legal">First 500 get Wainkom+ free for 3 months. Share your link and move up the list.</p>
+    </div>
+
+    <div class="wk-success" id="wk-success-view">
+      <div class="wk-success-icon">📡</div>
+      <div class="wk-success-title">You're on the <span>Radar</span></div>
+      <p class="wk-success-sub">You're <strong id="wk-position" style="color:#FF5FA8">#248</strong> on the list.<br>Share your link to move up — and unlock Wainkom+ for free.</p>
+      <div class="wk-share-btns">
+        <button class="wk-share-btn wk-share-x" onclick="shareX()">𝕏 &nbsp;Share on X</button>
+        <button class="wk-share-btn wk-share-wa" onclick="shareWhatsApp()">💬 &nbsp;WhatsApp</button>
+        <button class="wk-share-btn wk-share-ig" onclick="copyLink()">🔗 &nbsp;Copy Link</button>
+      </div>
+      <p class="wk-position">Invite 3 friends → unlock Wainkom+ free for 3 months 🎁</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// Animated counter
+let wkBase = 247;
+function animateCounter(){
+  const el = document.getElementById('wk-count');
+  if(!el) return;
+  const target = wkBase + Math.floor(Math.random()*3);
+  wkBase = target;
+  el.style.transform = 'scale(1.15)';
+  el.style.color = '#FF5FA8';
+  setTimeout(()=>{ el.textContent = target; el.style.transform = 'scale(1)'; el.style.color = '#FF5FA8'; }, 150);
+}
+setInterval(animateCounter, 8000);
+
+function openWaitlist(){
+  document.getElementById('wk-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeWaitlist(){
+  document.getElementById('wk-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeWaitlist(); });
+
+function submitWaitlist(){
+  const email = document.getElementById('wk-email').value.trim();
+  if(!email || !email.includes('@')){ 
+    document.getElementById('wk-email').style.borderColor = '#FF4444';
+    document.getElementById('wk-email').placeholder = 'Please enter a valid email · أدخل بريدك';
+    return; 
+  }
+  // Save to localStorage
+  const entries = JSON.parse(localStorage.getItem('wk_waitlist')||'[]');
+  if(!entries.includes(email)){ entries.push(email); localStorage.setItem('wk_waitlist', JSON.stringify(entries)); }
+  
+  const pos = wkBase + 1;
+  wkBase = pos;
+  document.getElementById('wk-position').textContent = '#' + pos;
+  document.getElementById('wk-count').textContent = pos;
+  
+  document.getElementById('wk-form-view').style.display = 'none';
+  const sv = document.getElementById('wk-success-view');
+  sv.style.display = 'flex';
+  sv.style.animation = 'wkSlideUp 0.4s ease forwards';
+}
+
+const shareText = 'وينكم؟ — Real-time anonymous proximity radar. Coming soon to iOS 📡';
+const shareUrl = 'https://embur.world/?world=wainkom';
+
+function shareX(){ window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(shareText)+'&url='+encodeURIComponent(shareUrl),'_blank'); }
+function shareWhatsApp(){ window.open('https://wa.me/?text='+encodeURIComponent(shareText+' '+shareUrl),'_blank'); }
+function copyLink(){ 
+  navigator.clipboard.writeText(shareUrl).then(()=>{ 
+    const btn = document.querySelector('.wk-share-ig'); 
+    btn.textContent = '✅ Copied!'; 
+    setTimeout(()=>{ btn.innerHTML = '🔗 &nbsp;Copy Link'; }, 2000); 
+  }); 
+}
+</script>
+
 </body>
 </html>
