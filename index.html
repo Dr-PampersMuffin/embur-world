@@ -2292,7 +2292,7 @@ async function submitWaitlist(){
   btn.textContent = '📡 جاري التسجيل...';
   btn.disabled = true;
   try {
-    const res = await fetch('https://api.freewaitlists.com/waitlists/cmtjmmz85034j01qth7xqx19b/waiters', {
+    const res = await fetch('https://crushcircle-backend-production.up.railway.app/api/waitlist', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: email })
