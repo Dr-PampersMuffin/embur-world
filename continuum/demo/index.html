@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Continuum Engine — See it in action</title>
-<meta name="description" content="Watch the Naked Frame run: a sealed film frame is destroyed — resized, recompressed, renamed, metadata stripped — and its full provenance is recovered from the pixels alone. Real commands, real output.">
-<meta property="og:title" content="Continuum Engine — See it in action">
-<meta property="og:description" content="Destroy the file. The proof survives. Watch the Naked Frame recover provenance from re-encoded pixels — real terminal, real commands.">
+<title>Continuum Engine · See it in action</title>
+<meta name="description" content="Watch the Naked Frame run: a sealed film frame is destroyed, resized, recompressed, renamed, metadata stripped, and its full provenance is recovered from the pixels alone. Real commands, real output.">
+<meta property="og:title" content="Continuum Engine · See it in action">
+<meta property="og:description" content="Destroy the file. The proof survives. Watch the Naked Frame recover provenance from re-encoded pixels, real terminal, real commands.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#0a0c10; --panel:#12151b; --ink:#eef2f8; --dim:#98a2b4; --faint:#59616f;
-    --line:#20262f; --amber:#e8a13c; --amber-d:#3d2f16; --green:#5fce9b; --red:#e5615b;
+    --line:#20262f; --amber:#e8a13c; --amber-d:#3d2f16; --green:#5fce9b; --red:#e5615b; --cyan:#4bc5d6;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -55,6 +55,13 @@
   /* honest note */
   .note{border-left:3px solid var(--amber);background:rgba(232,161,60,.05);padding:20px 24px;border-radius:0 10px 10px 0;color:var(--dim);font-size:15px}
   .note b{color:var(--ink)}
+  /* sibling cross-link */
+  .sibling{border:1px solid var(--line);border-left:3px solid var(--cyan);background:rgba(75,197,214,.04);
+    padding:22px 24px;border-radius:0 12px 12px 0;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  .sibling .k{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:1px;color:var(--cyan);text-transform:uppercase;margin-bottom:8px}
+  .sibling p{color:var(--dim);font-size:14.5px;max-width:560px}
+  .sibling a{color:var(--cyan);font-weight:600;font-size:14px;white-space:nowrap;border:1px solid rgba(75,197,214,.4);padding:9px 16px;border-radius:22px}
+  .sibling a:hover{background:rgba(75,197,214,.1)}
   /* try it */
   .try{text-align:center}
   .try h2{margin-bottom:14px}
@@ -76,8 +83,8 @@
     <a href="/continuum" class="brand">CONTINUUM · <b>ENGINE</b></a>
     <div class="nav-links">
       <a href="/continuum#how">How it works</a>
-      <a href="/continuum#ledger">Ledger</a>
-      <a href="/continuum#proof">Proof</a>
+      <a href="/continuum#clocks">Consent</a>
+      <a href="/continuum#verify">Verify</a>
       <a href="/continuum#contact" class="nav-cta">Request access</a>
     </div>
   </div>
@@ -127,6 +134,20 @@
   </div>
 </section>
 
+<section>
+  <div class="wrap">
+    <div class="sibling">
+      <div>
+        <div class="k">◆ The other half</div>
+        <p>This demo recovers provenance from the <b>content</b>. The same honesty runs under consent and
+          authority: every grant, use, and revocation is sealed into a ledger that anyone can verify
+          offline, and that refuses to answer when it has been tampered with.</p>
+      </div>
+      <a href="/continuum#verify">Verify a consent ledger &rarr;</a>
+    </div>
+  </div>
+</section>
+
 <section class="try">
   <div class="wrap">
     <div class="section-eyebrow">Don't take our word for it</div>
@@ -141,7 +162,7 @@
 
 <footer>
   <div class="wrap">
-    Embur Inc. · Continuum Engine · durable provenance for the AI content era<br>
+    Embur · Continuum Engine · durable provenance for the AI content era<br>
     <a href="/continuum">embur.world/continuum</a>
   </div>
 </footer>
